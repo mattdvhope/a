@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Reaching Thailand`,
+    title: `Relationships Thailand`,
     description: `A whole new beginning....`,
     author: `Bangkok Media Team`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
