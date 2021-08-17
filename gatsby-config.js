@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const { spaceId, accessToken } = process.env;
+
 module.exports = {
   siteMetadata: {
     title: `Relationships Thailand`,
@@ -14,6 +20,13 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId,
+        accessToken
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
