@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-
-
 const Header = ({ data, header }) => {
   const [menu, setMenu] = useState(false);
   return (
