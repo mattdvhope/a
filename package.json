@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@hutsoninc/gatsby-plugin-facebook-pixel": "^1.0.1",
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "gatsby": "^3.11.1",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
