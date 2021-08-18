@@ -40,7 +40,7 @@ const Header = ({ data, header }) => {
                   .map(t => {
                     return (
                       <li key={t} >
-                        <Link to={`/#About`}>เกี่ยวกับเรา</Link>
+                        <Link to={`/#About`}>About</Link>
                       </li>
                     );
                   })}
@@ -59,7 +59,7 @@ const Header = ({ data, header }) => {
                   .map(t => {
                     return (
                       <li key={t} >
-                        <Link to={`/#Contact`}>Contact</Link>
+                        <Link to={`/#Contact`}>Contact Us</Link>
                       </li>
                     );
                   })}

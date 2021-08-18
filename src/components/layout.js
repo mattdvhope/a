@@ -43,10 +43,14 @@ const Layout = ({ children, header }) => {
             siteTitle={data.contentfulHomePage.siteName}
             header={header}
           />
+          <br/>
+          <br/>
+          <br/>
+
           <div>
             <main id="home">{children}</main>
           </div>
-          <Footer siteName={data.contentfulHomePage.siteName} />
+      {/* <Footer siteName={data.contentfulHomePage.siteName} />  */}
         </>
       )}
     />
