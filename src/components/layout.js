@@ -1,10 +1,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet";
 
-import Header from "./header"
+import Header from "./header2"
+import Footer from "./footer";
 import "./layout.css"
-
+import "../css/style.css";
 
 const Layout = ({ children, header }) => {
   return (
@@ -45,9 +47,6 @@ const Layout = ({ children, header }) => {
             <main id="home">{children}</main>
           </div>
           <Footer siteName={data.contentfulHomePage.siteName} />
-          <script>
-            alert("Hello");
-          </script>
         </>
       )}
     />
