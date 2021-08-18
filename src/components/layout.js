@@ -1,6 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import "bootstrap/dist/css/bootstrap.css";
 import Helmet from "react-helmet";
 
 import Header from "./header"
@@ -43,10 +44,6 @@ const Layout = ({ children, header }) => {
             siteTitle={data.contentfulHomePage.siteName}
             header={header}
           />
-          <br/>
-          <br/>
-          <br/>
-
           <div>
             <main id="home">{children}</main>
           </div>

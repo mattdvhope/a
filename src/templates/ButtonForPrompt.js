@@ -5,6 +5,7 @@ const ButtonForPrompt = ({onClick, buttonWords}) => {
 		<button
       id="button-for-youtube-survey"
       type="button"
+      className="btn btn-outline-success"
       style={{ color: `brown`, borderColor: `#BF8F63`, backgroundColor: `#fff`, width: `14em` }}
       onClick={onClick}
     >

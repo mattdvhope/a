@@ -17,7 +17,6 @@ const YoutubeHolder = ({data}) => {
     if (promptsElementNum === 0) {
       return (
         <div>
-          <hr/>
           <ButtonForPrompt
             onClick={() => {
               fbq('trackCustom', 'ClickedFirstButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
@@ -29,7 +28,6 @@ const YoutubeHolder = ({data}) => {
     } else if (promptsElementNum !== prompts.length-1) {
       return (
         <div>
-          <hr/>
           <h2 
             onClick={() => {
               setPrompt(promptsElementNum - 1);
@@ -62,7 +60,6 @@ const YoutubeHolder = ({data}) => {
     <div className="container-fluid">
       <div>
         <YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} />
-        <hr/>
         <div
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.promptContent

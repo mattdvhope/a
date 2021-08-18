@@ -11,6 +11,7 @@ const BlogPost = ({data}) => {
     <div className="site-container blog-post">
       {edges.map(({ node }, i) => (
         <div key={i} className="container">
+          <hr/>
           <YoutubeHolder data={node} />
           <hr/>
         </div>
