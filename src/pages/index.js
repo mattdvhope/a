@@ -16,7 +16,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query BlogPostsQuery {
-    allContentfulBlogs(limit: 2) {
+    allContentfulBlogs {
       edges {
         node {
           id

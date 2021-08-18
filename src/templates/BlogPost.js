@@ -6,7 +6,7 @@ import YoutubeHolder from "./YoutubeHolder"
 
 const BlogPost = ({data}) => {
   const { edges } = data.allContentfulBlogs;
-  
+
   return (
     <div className="site-container blog-post">
       {edges.map(({ node }, i) => (
@@ -17,7 +17,6 @@ const BlogPost = ({data}) => {
       ))}
     </div>
   )
-
 }
 
 export default BlogPost;
