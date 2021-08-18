@@ -1,19 +1,46 @@
 import * as React from "react"
 import axios from 'axios';
-import { Link } from "gatsby"
-
+import { Link, graphql } from "gatsby";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import BlogPost from "../templates/BlogPost"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout header="home">
     <Seo title="Home" />
-
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    <BlogPost data={data}/>
   </Layout>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query BlogPostsQuery {
+    allContentfulBlogs(limit: 2) {
+      edges {
+        node {
+          id
+          slug
+          title
+          ctaFirst
+          youtubeUrl
+          description {
+            description
+          }
+          featureImage {
+            fluid {
+              src
+            }
+          }
+          promptsForResponse {
+            promptSlug
+            promptContent {
+              promptContent
+            }
+            buttonInvitation
+          }
+        }
+      }
+    }
+  }
+`;

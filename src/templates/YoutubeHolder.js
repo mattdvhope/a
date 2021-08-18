@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, navigate } from "gatsby";
 import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
-// import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
-// import YoutubeVideo from "./YoutubeVideo";
-// import ButtonForPrompt from "./ButtonForPrompt";
+import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
+import YoutubeVideo from "./YoutubeVideo";
+import ButtonForPrompt from "./ButtonForPrompt";
 
 const YoutubeHolder = ({data}) => {
 
@@ -11,7 +11,7 @@ const YoutubeHolder = ({data}) => {
   const [promptsElementNum, setPrompt] = useState(0);
   const buttonWords = prompts[promptsElementNum].buttonInvitation;
 
-  const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
+  // const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
@@ -22,7 +22,7 @@ const YoutubeHolder = ({data}) => {
             onClick={() => {
               fbq('trackCustom', 'ClickedFirstButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
               setPrompt(promptsElementNum + 1);
-              scrollToTopOfBlog();
+              // scrollToTopOfBlog();
             }}
             buttonWords={buttonWords} />
         </div>)
@@ -30,12 +30,17 @@ const YoutubeHolder = ({data}) => {
       return (
         <div>
           <hr/>
-          <h2 onClick={() => { setPrompt(promptsElementNum - 1); scrollToTopOfBlog(); }} >⬅️&nbsp;</h2>
+          <h2 
+            onClick={() => {
+              setPrompt(promptsElementNum - 1);
+              // scrollToTopOfBlog();
+            }}
+          >⬅️&nbsp;</h2>
           <ButtonForPrompt
             onClick={() => {
               fbq('trackCustom', 'ClickedNextButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
               setPrompt(promptsElementNum + 1);
-              scrollToTopOfBlog();
+              // scrollToTopOfBlog();
             }}
             buttonWords={buttonWords} />
         </div>)
@@ -43,19 +48,24 @@ const YoutubeHolder = ({data}) => {
       return (
         <div>
           <br/>
-          <h1 onClick={() => { setPrompt(promptsElementNum - 1); scrollToTopOfBlog(); }} >⬅️&nbsp;</h1>
+          <h1
+            onClick={() => {
+              setPrompt(promptsElementNum - 1);
+              // scrollToTopOfBlog();
+            }}
+          >⬅️&nbsp;</h1>
         </div>)
     }
   }
 
   return (
-    <div id="YoutubeHolderPrompts" className="container-fluid">
+    <div className="container-fluid">
       <div>
         <YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} />
         <hr/>
         <div
           dangerouslySetInnerHTML={{
-            __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
+            __html: prompts[promptsElementNum].promptContent.promptContent
           }}
         />
         {ButtonProvidedIfNeeded()}
@@ -65,4 +75,4 @@ const YoutubeHolder = ({data}) => {
 
 }
 
-export default YoutubeHolderPrompts
+export default YoutubeHolder
