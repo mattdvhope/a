@@ -9,6 +9,7 @@ const SetFirstVideoPosition = (firstVideoRef) => {
 
   useEffect(() => {
     if (!afterRender) return;
+console.log(firstVideoRef)
     setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top);
 console.log(firstVideoPosition)
       setTimeout(function(){
