@@ -10,7 +10,13 @@ const SetFirstVideoPosition = (firstVideoRef) => {
   useEffect(() => {
     if (!afterRender) return;
     setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top);
-console.log("HERE1111")
+console.log(firstVideoPosition)
+      setTimeout(function(){
+        window.scrollTo({
+          top: firstVideoPosition,
+          behavior: "smooth"
+        })
+      }, 1200);
     setAfterRender(false);
   }, [afterRender]);
 
