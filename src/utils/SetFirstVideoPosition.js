@@ -17,22 +17,25 @@ const SetFirstVideoPosition = (firstVideoRef) => {
     setAfterRender(true); // (1) will be called after DOM rendered
   }, [rerender]); // or don't set any if you want to listen to all re-render events
 
-  const PositionVideo = () => {
-    if (firstVideoPosition !== null) {
-      setTimeout(function(){
-        window.scrollTo({
-          top: firstVideoPosition,
-          behavior: "smooth"
-        })
-      }, 1200);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("videoPositioned") !== "true") {
+      Promise.resolve(PositionVideo()).then(res => {
+        sessionStorage.setItem("videoPositioned", "true")
+      })
     };
-  }
-  
-  if (sessionStorage.getItem("videoPositioned") !== "true") {
-    Promise.resolve(PositionVideo()).then(res => {
-      sessionStorage.setItem("videoPositioned", "true")
-    })
-  };
+
+    function PositionVideo() {
+      if (firstVideoPosition !== null) {
+        setTimeout(function(){
+          window.scrollTo({
+            top: firstVideoPosition,
+            behavior: "smooth"
+          })
+        }, 1200);
+      };
+    };
+  }, [firstVideoPosition]);
  
 };
 
