@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 const SetFirstVideoPosition = (firstVideoRef) => {
 
   const [firstVideoPosition, setFirstVideoPosition] = useState(null);
-
   const [rerender, setRerender] = useState(); // or any state
   const [afterRender, setAfterRender] = useState();// internal state
 
@@ -18,15 +17,23 @@ const SetFirstVideoPosition = (firstVideoRef) => {
     setAfterRender(true); // (1) will be called after DOM rendered
   }, [rerender]); // or don't set any if you want to listen to all re-render events
 
-  if (firstVideoPosition !== null) {
-    setTimeout(function(){
-      window.scrollTo({
-        top: firstVideoPosition,
-        behavior: "smooth"
-      })
-    }, 1800);
+  const PositionVideo = () => {
+    if (firstVideoPosition !== null) {
+      setTimeout(function(){
+        window.scrollTo({
+          top: firstVideoPosition,
+          behavior: "smooth"
+        })
+      }, 1200);
+    };
+  }
+  
+  if (sessionStorage.getItem("videoPositioned") !== "true") {
+    Promise.resolve(PositionVideo()).then(res => {
+      sessionStorage.setItem("videoPositioned", "true")
+    })
   };
-
+ 
 };
 
 export default SetFirstVideoPosition;
