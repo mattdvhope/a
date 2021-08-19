@@ -10,6 +10,7 @@ const SetFirstVideoPosition = (firstVideoRef) => {
   useEffect(() => {
     if (!afterRender) return;
     setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top);
+console.log("HERE1111")
     setAfterRender(false);
   }, [afterRender]);
 
@@ -19,17 +20,18 @@ const SetFirstVideoPosition = (firstVideoRef) => {
 
 
   useEffect(() => {
-console.log("HEREEEEE")
+console.log("HERE2222")
     if (sessionStorage.getItem("videoPositioned") !== "true") {
 console.log(firstVideoPosition)
       Promise.resolve(PositionVideo()).then(res => {
-console.log("HERE2222")
+console.log("HERE3333")
         sessionStorage.setItem("videoPositioned", "true")
       })
     };
 
     function PositionVideo() {
       if (firstVideoPosition !== null) {
+console.log("HERE4444")
         setTimeout(function(){
           window.scrollTo({
             top: firstVideoPosition,
