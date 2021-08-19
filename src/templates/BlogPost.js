@@ -13,7 +13,7 @@ const BlogPost = ({ data }) => {
   // Set infinite scrolling
   const [pictures, setPictures] = useState([]);
   const [isFetching, setIsFetching] = useInfiniteScroll(videosAbove, videosBelow);
-
+console.log("rendering");
   // Set position of first video, which is arrived at via the URL suffix
   const firstVideoRef = useRef(null)
   SetFirstVideoPosition(firstVideoRef);

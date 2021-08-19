@@ -4,49 +4,24 @@ import React, { useState, useEffect, useRef } from "react";
 const SetFirstVideoPosition = (firstVideoRef) => {
 
   const [firstVideoPosition, setFirstVideoPosition] = useState(null);
-  const [rerender, setRerender] = useState(); // or any state
-  const [afterRender, setAfterRender] = useState();// internal state
 
   useEffect(() => {
-    if (!afterRender) return;
-console.log(firstVideoRef)
-    setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top);
-console.log(firstVideoPosition)
-      setTimeout(function(){
-        window.scrollTo({
-          top: firstVideoPosition,
-          behavior: "smooth"
-        })
-      }, 1200);
-    setAfterRender(false);
-  }, [afterRender]);
+    let myPromise = new Promise(function(resolve, reject) {
+      resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
+    });
 
-  useEffect(() => {
-console.log("HERE11AA")
-    setAfterRender(true); // (1) will be called after DOM rendered
-  }, [rerender]); // or don't set any if you want to listen to all re-render events
-
-
-  useEffect(() => {
-console.log("HERE2222")
-    if (sessionStorage.getItem("videoPositioned") !== "true") {
-console.log(firstVideoPosition)
-      Promise.resolve(PositionVideo()).then(res => {
-console.log("HERE3333")
-        sessionStorage.setItem("videoPositioned", "true")
-      })
-    };
+    myPromise.then(
+      function(value) { PositionVideo() },
+      function(error) { console.log("error") }
+    );
 
     function PositionVideo() {
-      if (firstVideoPosition !== null) {
-console.log("HERE4444")
         setTimeout(function(){
           window.scrollTo({
             top: firstVideoPosition,
             behavior: "smooth"
           })
         }, 1200);
-      };
     };
   }, [firstVideoPosition]);
  
