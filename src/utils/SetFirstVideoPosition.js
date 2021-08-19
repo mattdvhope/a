@@ -19,8 +19,11 @@ const SetFirstVideoPosition = (firstVideoRef) => {
 
 
   useEffect(() => {
+console.log("HEREEEEE")
     if (sessionStorage.getItem("videoPositioned") !== "true") {
+console.log(firstVideoPosition)
       Promise.resolve(PositionVideo()).then(res => {
+console.log("HERE2222")
         sessionStorage.setItem("videoPositioned", "true")
       })
     };
