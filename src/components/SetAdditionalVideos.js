@@ -3,6 +3,7 @@ import YoutubeHolder from "../templates/YoutubeHolder"
 
 //   // To set the first video's position AFTER the DOM loaded...////
 const SetAdditionalVideos = (data) => {
+  const slug = data.contentfulBlogs.slug;
   const [additionalVideos, setAdditionalVideos] = useState(null);
 
   useLayoutEffect(() => {
