@@ -25,7 +25,7 @@ const SetFirstVideoPosition = (firstVideoRef) => {
         top: firstVideoPosition,
         behavior: "smooth"
       })
-    }, 1700);
+    }, 1800);
   };
 
 };
