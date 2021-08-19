@@ -15,6 +15,7 @@ console.log("HERE1111")
   }, [afterRender]);
 
   useEffect(() => {
+console.log("HERE11AA")
     setAfterRender(true); // (1) will be called after DOM rendered
   }, [rerender]); // or don't set any if you want to listen to all re-render events
 
