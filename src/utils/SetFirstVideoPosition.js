@@ -16,7 +16,6 @@ const SetFirstVideoPosition = (firstVideoRef) => {
 
   useEffect(() => {
     setAfterRender(true); // (1) will be called after DOM rendered
-    console.log(firstVideoPosition)
   }, [rerender]); // or don't set any if you want to listen to all re-render events
 
   if (firstVideoPosition !== null) {
