@@ -4,6 +4,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
+import SetAdditionalVideos from "../components/SetAdditionalVideos";
+import SetEvenMoreVideos from "../components/SetEvenMoreVideos";
 
 const BlogPost = ({ data }) => {
 
@@ -12,44 +14,8 @@ const BlogPost = ({ data }) => {
 
   // Videos above and below the first video (which is arrived at via the URL)
   const slug = data.contentfulBlogs.slug;
-  const [evenMoreVideos, setEvenMoreVideos] = useState(null);
-  const [additionalVideos, setAdditionalVideos] = useState(null);
-
-  useLayoutEffect(() => {
-    setAdditionalVideos(() => 
-      <div className="site-container blog-post">
-        {data.allContentfulBlogs.edges
-          .filter(edge => edge.node.slug === "i-am")
-          .map(({ node }, i) => (
-            <div key={i} className="container">
-              <YoutubeHolder data={node} />
-              <br/>
-              <hr/>
-              <hr/>
-            </div>
-          )
-        )}
-      </div>
-    )
-  }, []);
-
-  useLayoutEffect(() => {
-    setEvenMoreVideos(() =>
-      <div className="site-container blog-post">
-        {data.allContentfulBlogs.edges
-          .filter(edge => edge.node.slug === "doubting-thomas")
-          .map(({ node }, i) => (
-            <div key={i} className="container">
-              <YoutubeHolder data={node} />
-              <br/>
-              <hr/>
-              <hr/>
-            </div>
-          )
-        )}
-      </div>
-    )
-  }, []);
+  const [additionalVideos, setAdditionalVideos] = SetAdditionalVideos(data);
+  const [evenMoreVideos, setEvenMoreVideos] = SetEvenMoreVideos(data);
 
   return (
     <Layout>
