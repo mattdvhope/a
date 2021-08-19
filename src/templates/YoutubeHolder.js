@@ -6,7 +6,6 @@ import YoutubeVideo from "./YoutubeVideo";
 import ButtonForPrompt from "./ButtonForPrompt";
 
 const YoutubeHolder = ({data}) => {
-
   const prompts = data.promptsForResponse;
   const [promptsElementNum, setPrompt] = useState(0);
   const buttonWords = prompts[promptsElementNum].buttonInvitation;
