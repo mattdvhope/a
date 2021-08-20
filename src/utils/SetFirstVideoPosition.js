@@ -11,7 +11,20 @@ const SetFirstVideoPosition = (firstVideoRef) => {
       resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
     });
 
-    myPromise.then(
+    myPromise
+    .then(
+      function(value) { ScrollToSmoothly(firstVideoPosition, 2200) },
+      function(error) { console.log("error") }
+    )
+    .then(
+      function(value) { ScrollToSmoothly(firstVideoPosition, 2200) },
+      function(error) { console.log("error") }
+    )
+    .then(
+      function(value) { ScrollToSmoothly(firstVideoPosition, 2200) },
+      function(error) { console.log("error") }
+    )
+    .then(
       function(value) { ScrollToSmoothly(firstVideoPosition, 2200) },
       function(error) { console.log("error") }
     );

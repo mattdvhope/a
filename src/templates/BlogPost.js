@@ -37,6 +37,15 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
+
+      <ul id='list'>
+        { 
+          pictures.map((img, i) => {
+            return (<li key={i} style={{backgroundImage: `url(${img})`, height: `290px`, width: `290px`}}/>)
+          })
+        }
+      </ul>
+
       {initialVideosAbove}
       <hr/>
       <div className="container" ref={firstVideoRef}>
@@ -47,13 +56,13 @@ const BlogPost = ({ data }) => {
       <hr/>
       {initialVideosBelow}
 
-    <ul id='list'>
-      { 
-        pictures.map((img, i) => {
-          return (<li key={i} style={{backgroundImage: `url(${img})`, height: `400px`, width: `400px`}}/>)
-        })
-      }
-    </ul>
+      <ul id='list'>
+        { 
+          pictures.map((img, i) => {
+            return (<li key={i} style={{backgroundImage: `url(${img})`, height: `290px`, width: `290px`}}/>)
+          })
+        }
+      </ul>
 
 
     </Layout>
