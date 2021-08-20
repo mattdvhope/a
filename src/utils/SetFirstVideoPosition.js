@@ -12,7 +12,7 @@ const SetFirstVideoPosition = (firstVideoRef) => {
     });
 
     myPromise.then(
-      function(value) { ScrollToSmoothly(firstVideoPosition, 2500) },
+      function(value) { ScrollToSmoothly(firstVideoPosition, 1700) },
       function(error) { console.log("error") }
     );
   }, [firstVideoPosition]);

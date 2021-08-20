@@ -8,12 +8,12 @@ const SetInitialVideosAbove = (data) => {
   const edgesArray = data.allContentfulBlogs.edges;
   const edgesAbove = edgesArray.filter(obj => obj.node.order < orderOfInitialVideo);
   const edAbvSorted = edgesAbove.sort((a,b) => a.node.order - b.node.order)
-  const twoAbove = edAbvSorted.slice(-2);
+  const oneAbove = edAbvSorted.slice(-1);
 
   useEffect(() => {
     setInitialVideosAbove(() => 
       <div className="site-container blog-post">
-        {twoAbove
+        {oneAbove
           .map(({ node }, i) => (
             <div key={i} className="container">
               <YoutubeHolder data={node} />
