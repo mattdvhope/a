@@ -4,23 +4,14 @@ import { useState, useEffect } from 'react';
 const useInfiniteScroll = (elementsFromScrolling) => {
   const [isFetching, setIsFetching] = useState(false);
 
-  // Add elements above when window top reached
+  // Add elements above & below when window Y-ends reached
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY !== 0) return;
-      setIsFetching(true);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-
-  }, []);
-
-  // Add elements above when window bottom reached
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-      setIsFetching(true);
+      const topOfWindowNow = document.documentElement.scrollTop
+      if (window.innerHeight + topOfWindowNow !== document.documentElement.offsetHeight && topOfWindowNow !== 0) return;
+      if (topOfWindowNow !== 0) {
+        setIsFetching(true);
+      }
     }
 
     window.addEventListener("scroll", handleScroll);
