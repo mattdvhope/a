@@ -7,23 +7,24 @@ import SetEvenMoreVideos from "../components/SetEvenMoreVideos";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
+import { HandleResponse } from "../utils/HandleResponse";
 
 const BlogPost = ({ data }) => {
 
   // Set infinite scrolling
   const [pictures, setPictures] = useState([]);
-  const [isFetching, setIsFetching] = useInfiniteScroll(videosAbove, videosBelow);
-
+  const [isFetching, setIsFetching] = useInfiniteScroll(videosLoadedAbove, videosLoadedBelow);
+console.log("rendering a lot!!!!!");
   // Set position of first video, which is arrived at via the URL suffix
   const firstVideoRef = useRef(null)
   SetFirstVideoPosition(firstVideoRef);
 
   // Videos above and below the first video
-  const [additionalVideos, setAdditionalVideos] = SetAdditionalVideos(data);
-  const [evenMoreVideos, setEvenMoreVideos] = SetEvenMoreVideos(data);
+  const [additionalVideos, setAdditionalVideos] = SetAdditionalVideos(data); // above
+  const [evenMoreVideos, setEvenMoreVideos] = SetEvenMoreVideos(data); // below
 
 
-  function videosAbove() {
+  function videosLoadedAbove() {
     fetch('https://dog.ceo/api/breeds/image/random/3')
       // post request:
       //   userid: localStorage.getItem("userid");
@@ -31,11 +32,7 @@ const BlogPost = ({ data }) => {
       //   userid: localStorage.getItem("userid");
 
       .then(res => {
-        if (!res.ok) {
-          res.json().then(e => Promise.reject(e))
-        } else {
-          return res.json()
-        }
+        return HandleResponse(res);
       })
       .then(res => {
         setPictures([...res.message])
@@ -43,22 +40,16 @@ const BlogPost = ({ data }) => {
       .catch(console.log);
   }
   
-  function videosBelow() {
+  function videosLoadedBelow() {
     fetch('https://dog.ceo/api/breeds/image/random/1')
       .then(res => {
-        if (!res.ok) {
-          res.json().then(e => Promise.reject(e))
-        } else {
-          return res.json()
-        }
+        return HandleResponse(res);
       })
       .then(res => {
-        console.log(res)
-
         setPictures([...pictures, ...res.message])
-        console.log([...pictures, ...res.message].length)
         setIsFetching(false);
       })
+      .catch(console.log);
   }
 
   return (
