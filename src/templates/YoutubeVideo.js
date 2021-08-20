@@ -11,6 +11,7 @@ const YoutubeVideo = ({src}) => {
         width: `81vw`,
       }}
       src={src}
+      title="Relationships Thailand"
       frameBorder="0"
       allowFullScreen
     />
