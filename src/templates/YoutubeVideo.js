@@ -9,6 +9,7 @@ const YoutubeVideo = ({src, title}) => {
         marginRight: `auto`,
         height: `49vw`,
         width: `81vw`,
+        outline: `0.3rem solid #EEEBEB`,
       }}
       src={src}
       title={title}

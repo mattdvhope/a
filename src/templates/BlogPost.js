@@ -4,6 +4,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
 import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
+import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
+import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
@@ -17,35 +19,36 @@ const BlogPost = ({ data }) => {
 
   // 2. Set initial videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove] = SetInitialVideosAbove(data);
-  const [initialVideosBelow, setInitialVideosBelow] = SetInitialVideosBelow(data); // below
+  const [initialVideosBelow, setInitialVideosBelow] = SetInitialVideosBelow(data);
 
   // 3. Set infinite scrolling functionality
-  const [pictures, setPictures] = useState([]);
+  // const [pictures, setPictures] = useState([]);
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
-
+  const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
+  const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
+  
+  const [moreVidsAbv, setMoreVidsAbv] = useState(null);
+  const [moreVidsBlw, setMoreVidsBlw] = useState(null);
+  
   function elementsFromScrolling() {
-    fetch('https://dog.ceo/api/breeds/image/random/1')
-      .then(res => {
-        return HandleResponse(res);
-      })
-      .then(res => {
-        setPictures([...pictures, ...res.message])
-        setIsFetching(false);
-      })
-      .catch(console.log);
+    setMoreVidsAbv(moreVideosAbove)
+    setMoreVidsBlw(moreVideosBelow)
+    setIsFetching(false);
+
+    // fetch('https://dog.ceo/api/breeds/image/random/1')
+    //   .then(res => {
+    //     return HandleResponse(res);
+    //   })
+    //   .then(res => {
+    //     setPictures([...pictures, ...res.message])
+    //     setIsFetching(false);
+    //   })
+    //   .catch(console.log);
   }
 
   return (
     <Layout>
-
-      <ul id='list'>
-        { 
-          pictures.map((img, i) => {
-            return (<li key={i} style={{backgroundImage: `url(${img})`, height: `290px`, width: `290px`}}/>)
-          })
-        }
-      </ul>
-
+      {moreVidsAbv}
       {initialVideosAbove}
       <hr/>
       <div className="container" ref={firstVideoRef}>
@@ -55,16 +58,7 @@ const BlogPost = ({ data }) => {
       </div>
       <hr/>
       {initialVideosBelow}
-
-      <ul id='list'>
-        { 
-          pictures.map((img, i) => {
-            return (<li key={i} style={{backgroundImage: `url(${img})`, height: `290px`, width: `290px`}}/>)
-          })
-        }
-      </ul>
-
-
+      {moreVidsBlw}
     </Layout>
   )
 }
