@@ -22,7 +22,6 @@ const BlogPost = ({ data }) => {
   const [initialVideosBelow, setInitialVideosBelow] = SetInitialVideosBelow(data);
 
   // 3. Set infinite scrolling functionality
-  // const [pictures, setPictures] = useState([]);
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
@@ -38,7 +37,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      {moreVideosAbove}
+      {moreVidsAbv}
       {initialVideosAbove}
       <hr/>
       <div className="container" ref={firstVideoRef}>
@@ -48,7 +47,7 @@ const BlogPost = ({ data }) => {
       </div>
       <hr/>
       {initialVideosBelow}
-      {moreVideosBelow}
+      {moreVidsBlw}
     </Layout>
   )
 }
