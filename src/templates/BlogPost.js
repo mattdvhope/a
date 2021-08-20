@@ -30,13 +30,18 @@ const BlogPost = ({ data }) => {
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
   
   function elementsFromScrolling() {
-    setMoreVidsAbv(moreVideosAbove)
-    setMoreVidsBlw(moreVideosBelow)
-    setIsFetching(false);
+    let myPromise = new Promise(function(resolve, reject) {
+      resolve(setMoreVidsBlw(moreVideosBelow))
+    });
+
+    myPromise
+    .then(res => {setMoreVidsAbv(moreVideosAbove)})
+    .then(res => {setIsFetching(false)})
   }
 
   return (
     <Layout>
+      {moreVidsAbv}
       {initialVideosAbove}
       <hr/>
       <div className="container" ref={firstVideoRef}>
