@@ -34,21 +34,11 @@ const BlogPost = ({ data }) => {
     setMoreVidsAbv(moreVideosAbove)
     setMoreVidsBlw(moreVideosBelow)
     setIsFetching(false);
-
-    // fetch('https://dog.ceo/api/breeds/image/random/1')
-    //   .then(res => {
-    //     return HandleResponse(res);
-    //   })
-    //   .then(res => {
-    //     setPictures([...pictures, ...res.message])
-    //     setIsFetching(false);
-    //   })
-    //   .catch(console.log);
   }
 
   return (
     <Layout>
-      {moreVidsAbv}
+      {moreVideosAbove}
       {initialVideosAbove}
       <hr/>
       <div className="container" ref={firstVideoRef}>
@@ -58,7 +48,7 @@ const BlogPost = ({ data }) => {
       </div>
       <hr/>
       {initialVideosBelow}
-      {moreVidsBlw}
+      {moreVideosBelow}
     </Layout>
   )
 }
