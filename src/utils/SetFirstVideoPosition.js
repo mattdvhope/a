@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { ScrollToSmoothly } from "./ScrollToSmoothly"
 
-  // To set the first video's position AFTER the DOM loaded...////
+// To set the first video's position AFTER the DOM loaded...////
 const SetFirstVideoPosition = (firstVideoRef) => {
 
   const [firstVideoPosition, setFirstVideoPosition] = useState(null);
@@ -11,33 +12,11 @@ const SetFirstVideoPosition = (firstVideoRef) => {
     });
 
     myPromise.then(
-      function(value) { scrollToSmoothly(firstVideoPosition, null) },
+      function(value) { ScrollToSmoothly(firstVideoPosition, 1900) },
       function(error) { console.log("error") }
     );
   }, [firstVideoPosition]);
  
-  const scrollToSmoothly = (pos, time) => {
-    var currentPos = window.pageYOffset;
-    var start = null;
-    if(time == null) time = 1900;
-    var pos = +pos
-    var time = +time;
-    window.requestAnimationFrame(function step(currentTime) {
-      start = !start ? currentTime : start;
-      var progress = currentTime - start;
-      if (currentPos < pos) {
-          window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
-      } else {
-          window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time));
-      }
-      if (progress < time) {
-          window.requestAnimationFrame(step);
-      } else {
-          window.scrollTo(0, pos);
-      }
-    });
-  }
-
 };
 
 export default SetFirstVideoPosition;
