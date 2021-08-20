@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import SetAdditionalVideos from "../components/SetAdditionalVideos";
-import SetEvenMoreVideos from "../components/SetEvenMoreVideos";
+import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
+import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
@@ -11,35 +11,18 @@ import { HandleResponse } from "../utils/HandleResponse";
 
 const BlogPost = ({ data }) => {
 
-  // Set infinite scrolling
-  const [pictures, setPictures] = useState([]);
-  const [isFetching, setIsFetching] = useInfiniteScroll(initialElements, elementsFromScrolling);
-console.log("rendering a lot!!!!!");
-  // Set position of first video, which is arrived at via the URL suffix
+  // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null)
   SetFirstVideoPosition(firstVideoRef);
 
-  // Videos above and below the first video
-  const [additionalVideos, setAdditionalVideos] = SetAdditionalVideos(data); // above
-  const [evenMoreVideos, setEvenMoreVideos] = SetEvenMoreVideos(data); // below
+  // 2. Set initial videos above and below the first video
+  const [initialVideosAbove, setInitialVideosAbove] = SetInitialVideosAbove(data);
+  const [initialVideosBelow, setInitialVideosBelow] = SetInitialVideosBelow(data); // below
 
+  // 3. Set infinite scrolling functionality
+  const [pictures, setPictures] = useState([]);
+  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
 
-  function initialElements() {
-    fetch('https://dog.ceo/api/breeds/image/random/3')
-      // post request:
-      //   userid: localStorage.getItem("userid");
-      // response from python: userid
-      //   userid: localStorage.getItem("userid");
-
-      .then(res => {
-        return HandleResponse(res);
-      })
-      .then(res => {
-        setPictures([...res.message])
-      })
-      .catch(console.log);
-  }
-  
   function elementsFromScrolling() {
     fetch('https://dog.ceo/api/breeds/image/random/1')
       .then(res => {
@@ -54,7 +37,7 @@ console.log("rendering a lot!!!!!");
 
   return (
     <Layout>
-      {additionalVideos}
+      {initialVideosAbove}
       <hr/>
       <div className="container" ref={firstVideoRef}>
         <div className="site-container blog-post">
@@ -62,7 +45,7 @@ console.log("rendering a lot!!!!!");
         </div>
       </div>
       <hr/>
-      {evenMoreVideos}
+      {initialVideosBelow}
 
     <ul id='list'>
       { 

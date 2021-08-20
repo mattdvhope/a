@@ -2,15 +2,15 @@ import React, { useState, useLayoutEffect } from "react";
 import YoutubeHolder from "../templates/YoutubeHolder"
 
 //   // To set the first video's position AFTER the DOM loaded...////
-const SetAdditionalVideos = (data) => {
+const SetInitialVideosBelow = (data) => {
   const slug = data.contentfulBlogs.slug;
-  const [additionalVideos, setAdditionalVideos] = useState(null);
+  const [evenMoreVideos, setInitialVideosBelow] = useState(null);
 
   useLayoutEffect(() => {
-    setAdditionalVideos(() => 
+    setInitialVideosBelow(() =>
       <div className="site-container blog-post">
         {data.allContentfulBlogs.edges
-          .filter(edge => edge.node.slug === "i-am")
+          .filter(edge => edge.node.slug === "doubting-thomas")
           .map(({ node }, i) => (
             <div key={i} className="container">
               <YoutubeHolder data={node} />
@@ -24,8 +24,8 @@ const SetAdditionalVideos = (data) => {
     )
   }, []);
 
-  return [additionalVideos, setAdditionalVideos];
+  return [evenMoreVideos, setInitialVideosBelow];
 
 };
 
-export default SetAdditionalVideos;
+export default SetInitialVideosBelow;
