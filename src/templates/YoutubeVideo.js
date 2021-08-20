@@ -1,6 +1,6 @@
 import React from "react"
 
-const YoutubeVideo = ({src}) => {
+const YoutubeVideo = ({src, title}) => {
 	return (
 		<iframe // Youtube video 
       id="FrameHolder"
@@ -11,7 +11,7 @@ const YoutubeVideo = ({src}) => {
         width: `81vw`,
       }}
       src={src}
-      title="Relationships Thailand"
+      title={title}
       frameBorder="0"
       allowFullScreen
     />

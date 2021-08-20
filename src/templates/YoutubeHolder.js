@@ -58,7 +58,7 @@ const YoutubeHolder = ({data}) => {
   return (
     <div className="container-fluid">
       <div>
-        <YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} />
+        <YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} title={data.title} />
         <div
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.promptContent
