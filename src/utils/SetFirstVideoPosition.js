@@ -11,15 +11,15 @@ const SetFirstVideoPosition = (firstVideoRef) => {
     });
 
     myPromise.then(
-      function(value) { scrollToFirstVideo(firstVideoPosition, null) },
+      function(value) { scrollToSmoothly(firstVideoPosition, null) },
       function(error) { console.log("error") }
     );
   }, [firstVideoPosition]);
  
-  const scrollToFirstVideo = (pos, time) => {
+  const scrollToSmoothly = (pos, time) => {
     var currentPos = window.pageYOffset;
     var start = null;
-    if(time == null) time = 1400;
+    if(time == null) time = 1900;
     var pos = +pos
     var time = +time;
     window.requestAnimationFrame(function step(currentTime) {
