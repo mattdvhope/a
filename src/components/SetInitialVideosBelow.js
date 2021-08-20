@@ -1,23 +1,22 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import YoutubeHolder from "../templates/YoutubeHolder"
-import SetVideos from "./SetVideos"
 
 const SetInitialVideosBelow = (data) => {
-
-
-
-  const slug = data.contentfulBlogs.slug;
+  const orderOfInitialVideo = data.contentfulBlogs.order;
   const [initialVideosBelow, setInitialVideosBelow] = useState(null);
 
-  useLayoutEffect(() => {
+  const edgesArray = data.allContentfulBlogs.edges;
+  const edgesBelow = edgesArray.filter(obj => obj.node.order > orderOfInitialVideo);
+  const edAbvSorted = edgesBelow.sort((a,b) => a.node.order - b.node.order)
+  const twoBelow = edAbvSorted.slice(-2);
+
+  useEffect(() => {
     setInitialVideosBelow(() =>
       <div className="site-container blog-post">
-        {data.allContentfulBlogs.edges
-          .filter(obj => obj.node.slug === "doubting-thomas")
+        {twoBelow
           .map(({ node }, i) => (
             <div key={i} className="container">
               <YoutubeHolder data={node} />
-              <br/>
               <hr/>
               <hr/>
             </div>

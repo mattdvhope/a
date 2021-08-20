@@ -22,7 +22,7 @@ const BlogPost = ({ data }) => {
   // 3. Set infinite scrolling functionality
   const [pictures, setPictures] = useState([]);
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
-  
+
   function elementsFromScrolling() {
     fetch('https://dog.ceo/api/breeds/image/random/1')
       .then(res => {
@@ -75,8 +75,9 @@ export const pageQuery = graphql`
   query BlogPostQuery($slug: String!) {
     contentfulBlogs(slug: {eq: $slug}) {
       id
-      slug
       title
+      slug
+      order
       ctaFirst
       youtubeUrl
       description {
@@ -104,8 +105,9 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          slug
           title
+          slug
+          order
           ctaFirst
           youtubeUrl
           description {
