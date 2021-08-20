@@ -13,7 +13,7 @@ const BlogPost = ({ data }) => {
 
   // Set infinite scrolling
   const [pictures, setPictures] = useState([]);
-  const [isFetching, setIsFetching] = useInfiniteScroll(videosLoadedAbove, videosLoadedBelow);
+  const [isFetching, setIsFetching] = useInfiniteScroll(initialElements, elementsFromScrolling);
 console.log("rendering a lot!!!!!");
   // Set position of first video, which is arrived at via the URL suffix
   const firstVideoRef = useRef(null)
@@ -24,7 +24,7 @@ console.log("rendering a lot!!!!!");
   const [evenMoreVideos, setEvenMoreVideos] = SetEvenMoreVideos(data); // below
 
 
-  function videosLoadedAbove() {
+  function initialElements() {
     fetch('https://dog.ceo/api/breeds/image/random/3')
       // post request:
       //   userid: localStorage.getItem("userid");
@@ -40,7 +40,7 @@ console.log("rendering a lot!!!!!");
       .catch(console.log);
   }
   
-  function videosLoadedBelow() {
+  function elementsFromScrolling() {
     fetch('https://dog.ceo/api/breeds/image/random/1')
       .then(res => {
         return HandleResponse(res);

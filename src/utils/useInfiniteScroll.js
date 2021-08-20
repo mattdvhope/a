@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 // custom Hook
-const useInfiniteScroll = (callback, callback2) => {
+const useInfiniteScroll = (initialElements, elementsFromScrolling) => {
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
-    callback(() => {
+    initialElements(() => {
       console.log('called back');
     });
 
@@ -21,7 +21,7 @@ const useInfiniteScroll = (callback, callback2) => {
 
   useEffect(() => {
     if (!isFetching) return;
-    callback2();
+    elementsFromScrolling();
   }, [isFetching]);
 
   return [isFetching, setIsFetching];
