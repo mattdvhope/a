@@ -11,7 +11,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
 
 console.log(scrollTop);
 
-      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight) return;
+      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight - 60) return;
       setIsFetching(true);
     }
 
