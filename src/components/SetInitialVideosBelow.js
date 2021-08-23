@@ -8,19 +8,23 @@ const SetInitialVideosBelow = (data) => {
   const [initialVideosBelow, setInitialVideosBelow] = useState(null);
 
   const edgesArray = data.allContentfulBlogs.edges;
-  const edgesBelow = edgesArray.filter(obj => obj.node.order > orderOfInitialVideo);
-  const edAbvSorted = edgesBelow.sort((a,b) => a.node.order - b.node.order)
-  const oneBelow = edAbvSorted.slice(0, 1);
+  // const edgesBelow = edgesArray.filter(obj => obj.node.order > orderOfInitialVideo);
+  const edgesSorted = edgesArray.sort((a,b) => a.node.order - b.node.order)
+  // const oneBelow = edAbvSorted.slice(0, 1);
 
 // console.log(initVidBlwRef.current); 
 
   useLayoutEffect(() => {
     setInitialVideosBelow(() =>
       <div className="site-container blog-post">
-        {oneBelow
+        {edgesSorted
           .map(({ node }, i) => (
             <div key={i} className="container this-eol" ref={initVidBlwRef}>
               <YoutubeHolder data={node} />
+              <br/>
+              <hr/>
+              <hr/>
+              <br/>
             </div>
           )
         )}
