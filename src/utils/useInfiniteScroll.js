@@ -8,10 +8,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
-
-console.log(scrollTop);
-
-      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight - 60) return;
+      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight) return;
       setIsFetching(true);
     }
 
