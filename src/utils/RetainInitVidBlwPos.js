@@ -1,3 +1,5 @@
+// import { ElementAppendedViaScrolling } from "../utils/ElementAppendedViaScrolling";
+
 const RetainInitVidBlwPos = (initVidBlwRef) => {
 
   const myPromise = new Promise((resolve, reject) => {
@@ -6,11 +8,11 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
 
   myPromise
   .then(res => initVidBlwRef.current)
-  .then(res => scrollElementIntoView(res, 'instant'))
+  .then(res => ElementAppendedViaScrolling(res, 'instant'))
   .catch(err => console.log("error: ", err));
 
   // Replacement for the now unusable JS method, 'ScrollIntoView()'
-  const scrollElementIntoView = (element, behavior) => {
+  const ElementAppendedViaScrolling = (element, behavior) => {
 
     let scrollTop = window.pageYOffset || element.scrollTop
 
@@ -18,7 +20,8 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
      // you need to factor in its dimensions when calculating the position to scroll to
      const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
 
-    const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - 150;
+    // const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - 150;
+    const finalOffset = document.documentElement.scrollTop;
 
     window.parent.scrollTo({
       top: finalOffset,

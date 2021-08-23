@@ -32,7 +32,6 @@ const BlogPost = ({ data }) => {
   const [moreVidsAbv, setMoreVidsAbv] = useState(null);
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
-
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
       resolve('foo');
@@ -44,8 +43,8 @@ const BlogPost = ({ data }) => {
     .then(res => setIsFetching(false))
     .then(res => RetainInitVidBlwPos(initVidBlwRef))
     .catch(err => console.log("error: ", err));
-
   }
+
 
   return (
     <Layout>
