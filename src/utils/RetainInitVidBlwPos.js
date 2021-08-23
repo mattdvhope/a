@@ -20,8 +20,8 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
     // you need to factor in its dimensions when calculating the position to scroll to
     const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
 
-    // const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - 150;
-    const finalOffset = document.documentElement.scrollTop;
+    // const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe;
+    const finalOffset = element.getBoundingClientRect().top + scrollTop;
 
     window.parent.scrollTo({
       top: finalOffset,
