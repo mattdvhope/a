@@ -14,7 +14,7 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
 
   // Replacement for the now unusable JS method, 'ScrollIntoView()'
   const ScrollElementIntoView = (element, behavior) => {
-
+console.log(element);
     let scrollTop = window.pageYOffset || element.scrollTop
 
     // Furthermore, if you have for example a 'container' outside the element 
