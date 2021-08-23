@@ -23,11 +23,6 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
 
     const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - element.offsetHeight;
 
-console.log(element.getBoundingClientRect().top)
-console.log(scrollTop)
-console.log(headerOutsideIframe)
-console.log(document.documentElement.offsetHeight)
-
     window.parent.scrollTo({
       top: finalOffset,
       behavior: behavior || 'instant'
