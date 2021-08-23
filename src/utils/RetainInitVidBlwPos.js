@@ -1,4 +1,5 @@
 // import { ScrollElementIntoView } from "../utils/ScrollElementIntoView";
+import { ScrollToSmoothly } from "./ScrollToSmoothly"
 
 const RetainInitVidBlwPos = (initVidBlwRef) => {
 
@@ -14,14 +15,13 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
   // Replacement for the now unusable JS method, 'ScrollIntoView()'
   const ScrollElementIntoView = (element, behavior) => {
 
-    // let scrollTop = window.pageYOffset || element.scrollTop
-    let scrollTop = window.pageYOffset
+    let scrollTop = window.pageYOffset || element.scrollTop
 
     // Furthermore, if you have for example a 'container' outside the element 
     // you need to factor in its dimensions when calculating the position to scroll to
     const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
 
-    const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe;
+    const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - element.offsetHeight;
 
 console.log(element.getBoundingClientRect().top)
 console.log(scrollTop)
