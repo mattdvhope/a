@@ -8,7 +8,9 @@ const useInfiniteScroll = (elementsFromScrolling, firstVideoRef, initVidAbvRef, 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
-      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight) return;
+      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight) {
+        return;
+      } 
       setIsFetching(true);
     };
 
