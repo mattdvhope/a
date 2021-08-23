@@ -22,7 +22,7 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
     const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
 
     // const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe;
-    const finalOffset = element.getBoundingClientRect().top;
+    const finalOffset = headerOutsideIframe;
 
 console.log(element.getBoundingClientRect().top)
 console.log(scrollTop)
