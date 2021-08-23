@@ -10,7 +10,6 @@ import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainInitVidBlwPos from "../utils/RetainInitVidBlwPos";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
-import { HandleResponse } from "../utils/HandleResponse";
 
 const BlogPost = ({ data }) => {
 
@@ -25,7 +24,7 @@ const BlogPost = ({ data }) => {
 // console.log(initVidAbvRef);
 
   // 3. Set infinite scrolling functionality & add more videos above & below
-  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, initVidAbvRef);
+  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, firstVideoRef, initVidAbvRef, initVidBlwRef);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
   
