@@ -14,19 +14,27 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
 
   // Replacement for the now unusable JS method, 'ScrollIntoView()'
   const ScrollElementIntoView = (element, behavior) => {
-console.log(element);
-    let scrollTop = window.pageYOffset || element.scrollTop
 
-    // Furthermore, if you have for example a 'container' outside the element 
-    // you need to factor in its dimensions when calculating the position to scroll to
-    const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+      })
+    } else {
+      let scrollTop = window.pageYOffset || element.scrollTop
 
-    const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - element.offsetHeight;
+      // Furthermore, if you have for example a 'container' outside the element 
+      // you need to factor in its dimensions when calculating the position to scroll to
+      const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
 
-    window.parent.scrollTo({
-      top: finalOffset,
-      behavior: behavior || 'instant'
-    })
+      const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe - element.offsetHeight;
+
+      window.parent.scrollTo({
+        top: finalOffset,
+        behavior: behavior || 'instant'
+      })
+    }
+
   }
  
 };
