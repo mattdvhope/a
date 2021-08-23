@@ -1,28 +1,30 @@
 const RetainInitVidBlwPos = (initVidBlwRef) => {
 
+  const myPromise = new Promise((resolve, reject) => {
+    resolve('foo');
+  });
 
-  initVidBlwRef.current.scrollIntoView();
+  myPromise
+  .then(res => initVidBlwRef.current)
+  .then(res => scrollElementIntoView(res, 'instant'))
 
-  console.log(initVidBlwRef.current)
+  .catch(err => console.log("error: ", err));
 
-  // window.addEventListener("scroll", handleScroll);
+  const scrollElementIntoView = (element, behavior) => {
 
-  // const blogElement = initVidBlwRef.current;
+    let scrollTop = window.pageYOffset || element.scrollTop
 
-  // eventFire(blogElement, 'click');
+     // Furthermore, if you have for example a header outside the iframe 
+     // you need to factor in its dimensions when calculating the position to scroll to
+     const headerOutsideIframe = window.parent.document.getElementsByClassName('container')[0].clientHeight
 
-  // function eventFire(el, etype){
+    const finalOffset = element.getBoundingClientRect().top + scrollTop + headerOutsideIframe
 
-  //   console.log(el);
-
-  //   if (el.fireEvent) {
-  //     el.fireEvent('on' + etype);
-  //   } else {
-  //     var evObj = document.createEvent('Events');
-  //     evObj.initEvent(etype, true, false);
-  //     el.dispatchEvent(evObj);
-  //   }
-  // }
+    window.parent.scrollTo({
+      top: finalOffset,
+      behavior: behavior || 'instant'
+    })
+  }
 
 
  

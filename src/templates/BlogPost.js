@@ -35,17 +35,16 @@ const BlogPost = ({ data }) => {
 
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('foo');
-      }, 300);
+      resolve('foo');
     });
 
     myPromise
     .then(res => setMoreVidsAbv(moreVideosAbove))
     .then(res => setMoreVidsBlw(moreVideosBelow))
-    .then(res => RetainInitVidBlwPos(firstVideoRef))
+    .then(res => console.log("ONTO NEXT STEP"))
     .then(res => setIsFetching(false))
-    .catch(err => console.log(err));
+    .then(res => RetainInitVidBlwPos(initVidAbvRef))
+    .catch(err => console.log("error: ", err));
 
   }
 
