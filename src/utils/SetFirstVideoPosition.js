@@ -8,18 +8,15 @@ const SetFirstVideoPosition = (firstVideoRef) => {
 
   useEffect(() => {
 
-console.log(firstVideoRef.current.getBoundingClientRect().top);
-
-    let myPromise = new Promise(function(resolve, reject) {
-      resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
+    const myPromise = new Promise((resolve, reject) => {
+      resolve('foo');
     });
 
     myPromise
-    .then(res => {console.log(firstVideoPosition)})
-    .then(
-      function(value) { ScrollToSmoothly(firstVideoPosition, 1400) },
-      function(error) { console.log("error") }
-    );
+    .then(res => setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
+    .then(res => ScrollToSmoothly(firstVideoPosition, 1400))
+    .catch(err => console.log("error: ", err));
+
   }, [firstVideoPosition]);
  
 };

@@ -18,8 +18,6 @@ const SetMoreVideosBelow = (data) => {
             .map(({ node }, i) => (
               <div key={i} className="container">
                 <YoutubeHolder data={node} />
-                <hr/>
-                <hr/>
               </div>
             )
           )}

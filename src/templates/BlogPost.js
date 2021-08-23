@@ -51,11 +51,9 @@ const BlogPost = ({ data }) => {
       <div className="container">
         {moreVidsAbv}
         {initialVideosAbove}
-        <hr/>
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
         </div>
-        <hr/>
         {initialVideosBelow}
         {moreVidsBlw}
       </div>

@@ -19,10 +19,8 @@ const SetInitialVideosBelow = (data) => {
       <div className="site-container blog-post">
         {oneBelow
           .map(({ node }, i) => (
-            <div key={i} className="container" ref={initVidBlwRef}>
+            <div key={i} className="container this-eol" ref={initVidBlwRef}>
               <YoutubeHolder data={node} />
-              <br/>
-              <hr/>
             </div>
           )
         )}

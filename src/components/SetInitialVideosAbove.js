@@ -21,8 +21,6 @@ const SetInitialVideosAbove = (data) => {
           .map(({ node }, i) => (
             <div key={i} className="container" ref={initVidAbvRef}>
               <YoutubeHolder data={node} />
-              <br/>
-              <hr/>
             </div>
           )
         )}
