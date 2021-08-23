@@ -44,7 +44,6 @@ const BlogPost = ({ data }) => {
     .catch(err => console.log("error: ", err));
   }
 
-
   return (
     <Layout>
       <div className="container">
