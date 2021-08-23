@@ -7,28 +7,35 @@ const useInfiniteScroll = (elementsFromScrolling, firstVideoRef, initVidAbvRef, 
   // Add elements above & below when window Y-ends reached
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = document.documentElement.scrollTop;
 
-      console.log(window.innerHeight)
+      console.log(document.documentElement.scrollTop);
 
-      if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight) return;
-
-
-      setIsFetching(true);
-    }
+      if (document.documentElement.scrollTop === 0) {
+        window.scrollTo({
+          top: document.body.scrollHeight - 10,
+          behavior: 'instant'
+        });
+      } else {
+        const scrollTop = document.documentElement.scrollTop;
+        if (window.innerHeight + scrollTop !== document.documentElement.offsetHeight) return;
+        if (firstVideoRef.current.offsetHeight + initVidAbvRef.current.offsetHeight + initVidBlwRef.current.offsetHeight < document.documentElement.offsetHeight - 1000) {
+          window.scrollTo({
+            top: 0,
+            behavior: 'instant'
+          });
+        } else {
+          setIsFetching(true);
+        }
+      } // if - else
+    }; // handleScroll
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-
-  }, []);
+  }, []); // useEffect
 
   useEffect(() => {
     if (!isFetching) return;
-
-    if (firstVideoRef.current.offsetHeight + initVidAbvRef.current.offsetHeight + initVidBlwRef.current.offsetHeight > document.documentElement.offsetHeight - 1000) {
-      elementsFromScrolling();
-    }
-
+    elementsFromScrolling();
   }, [isFetching]);
 
   return [isFetching, setIsFetching];

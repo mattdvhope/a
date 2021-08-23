@@ -19,7 +19,7 @@ const SetInitialVideosAbove = (data) => {
       <div className="site-container blog-post">
         {oneAbove
           .map(({ node }, i) => (
-            <div key={i} className="container" ref={initVidAbvRef}>
+            <div key={i} className="container" style={{ marginTop: `-3em` }} ref={initVidAbvRef}>
               <YoutubeHolder data={node} />
             </div>
           )
