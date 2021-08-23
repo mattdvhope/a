@@ -9,7 +9,7 @@ import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainInitVidBlwPos from "../utils/RetainInitVidBlwPos";
-// import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
+import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 
 const BlogPost = ({ data }) => {
 
@@ -24,34 +24,37 @@ const BlogPost = ({ data }) => {
 // console.log(initVidAbvRef);
 
   // 3. Set infinite scrolling functionality & add more videos above & below
-  // const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, firstVideoRef, initVidAbvRef, initVidBlwRef);
+  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, firstVideoRef, initVidAbvRef, initVidBlwRef);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
   
   const [moreVidsAbv, setMoreVidsAbv] = useState(null);
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
-  // function elementsFromScrolling() {
-  //   const myPromise = new Promise((resolve, reject) => {
-  //     resolve('foo');
-  //   });
+  function elementsFromScrolling() {
+    const myPromise = new Promise((resolve, reject) => {
+      resolve('foo');
+    });
 
-  //   myPromise
-  //   .then(res => setMoreVidsAbv(moreVideosAbove))
-  //   .then(res => setMoreVidsBlw(moreVideosBelow))
-  //   .then(res => setIsFetching(false))
-  //   .then(res => RetainInitVidBlwPos(initVidBlwRef))
-  //   .catch(err => console.log("error: ", err));
-  // }
+    myPromise
+    .then(res => setMoreVidsAbv(moreVideosAbove))
+    .then(res => setMoreVidsBlw(moreVideosBelow))
+    .then(res => setIsFetching(false))
+    .then(res => RetainInitVidBlwPos(initVidBlwRef))
+    .catch(err => console.log("error: ", err));
+  }
 
 
   return (
     <Layout>
       <div className="container">
+        {moreVidsAbv}
+        {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
         </div>
         {initialVideosBelow}
+        {moreVidsBlw}
       </div>
     </Layout>
   )
