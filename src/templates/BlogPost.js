@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
 import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
-import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
 import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
+import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
@@ -18,25 +18,28 @@ const BlogPost = ({ data }) => {
   SetFirstVideoPosition(firstVideoRef);
 
   // 2. Set initial videos above and below the first video
-  const [initialVideosAbove, setInitialVideosAbove] = SetInitialVideosAbove(data);
+  const [initialVideosAbove, setInitialVideosAbove, initVidAbvRefCurrent] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow] = SetInitialVideosBelow(data);
 
+// console.log(initVidAbvRefCurrent);
+
   // 3. Set infinite scrolling functionality & add more videos above & below
-  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
-  const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
+  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, initVidAbvRefCurrent);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
+  const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   
   const [moreVidsAbv, setMoreVidsAbv] = useState(null);
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
+
+
+  console.log(initVidAbvRefCurrent)
+
+
   
   function elementsFromScrolling() {
-    let myPromise = new Promise(function(resolve, reject) {
-      resolve(setMoreVidsBlw(moreVideosBelow))
-    });
-
-    myPromise
-    .then(res => {setMoreVidsAbv(moreVideosAbove)})
-    .then(res => {setIsFetching(false)})
+    setMoreVidsBlw(moreVideosBelow)
+    setMoreVidsAbv(moreVideosAbove)
+    setIsFetching(false)
   }
 
   return (
