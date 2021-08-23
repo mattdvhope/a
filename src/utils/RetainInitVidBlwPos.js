@@ -15,7 +15,7 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
   const ScrollElementIntoView = (element, behavior) => {
 
     // let scrollTop = window.pageYOffset || element.scrollTop
-    let scrollTop = element.scrollTop
+    let scrollTop = window.pageYOffset
 
     // Furthermore, if you have for example a 'container' outside the element 
     // you need to factor in its dimensions when calculating the position to scroll to
