@@ -41,7 +41,6 @@ const BlogPost = ({ data }) => {
     myPromise
     .then(res => setMoreVidsAbv(moreVideosAbove))
     .then(res => setMoreVidsBlw(moreVideosBelow))
-    .then(res => console.log("ONTO NEXT STEP"))
     .then(res => setIsFetching(false))
     .then(res => RetainInitVidBlwPos(initVidBlwRef))
     .catch(err => console.log("error: ", err));
