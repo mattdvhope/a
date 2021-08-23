@@ -7,6 +7,9 @@ const SetFirstVideoPosition = (firstVideoRef) => {
   const [firstVideoPosition, setFirstVideoPosition] = useState(null);
 
   useEffect(() => {
+
+console.log(firstVideoRef.current.getBoundingClientRect().top);
+
     let myPromise = new Promise(function(resolve, reject) {
       resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
     });

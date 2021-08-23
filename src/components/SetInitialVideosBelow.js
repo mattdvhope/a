@@ -30,7 +30,7 @@ const SetInitialVideosBelow = (data) => {
     )
   }, []);
 
-  return [initialVideosBelow, setInitialVideosBelow];
+  return [initialVideosBelow, setInitialVideosBelow, initVidBlwRef];
 
 };
 

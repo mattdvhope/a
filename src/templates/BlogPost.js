@@ -4,10 +4,11 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
 import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
-import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
 import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
+import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
+import RetainInitVidBlwPos from "../utils/RetainInitVidBlwPos";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 import { HandleResponse } from "../utils/HandleResponse";
 
@@ -18,43 +19,49 @@ const BlogPost = ({ data }) => {
   SetFirstVideoPosition(firstVideoRef);
 
   // 2. Set initial videos above and below the first video
-  const [initialVideosAbove, setInitialVideosAbove, initVidAbvRefCurrent] = SetInitialVideosAbove(data);
-  const [initialVideosBelow, setInitialVideosBelow] = SetInitialVideosBelow(data);
+  const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
+  const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
-// console.log(initVidAbvRefCurrent);
+// console.log(initVidAbvRef);
 
   // 3. Set infinite scrolling functionality & add more videos above & below
-  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, initVidAbvRefCurrent);
-  const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
+  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, initVidAbvRef);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
+  const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
   
   const [moreVidsAbv, setMoreVidsAbv] = useState(null);
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
 
-  console.log(initVidAbvRefCurrent)
-
-
-  
   function elementsFromScrolling() {
-    setMoreVidsBlw(moreVideosBelow)
-    setMoreVidsAbv(moreVideosAbove)
-    setIsFetching(false)
+    const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('foo');
+      }, 300);
+    });
+
+    myPromise
+    .then(res => setMoreVidsAbv(moreVideosAbove))
+    .then(res => setMoreVidsBlw(moreVideosBelow))
+    .then(res => RetainInitVidBlwPos(firstVideoRef))
+    .then(res => setIsFetching(false))
+    .catch(err => console.log(err));
+
   }
 
   return (
     <Layout>
-      {moreVidsAbv}
-      {initialVideosAbove}
-      <hr/>
-      <div className="container" ref={firstVideoRef}>
-        <div className="site-container blog-post">
+      <div className="container">
+        {moreVidsAbv}
+        {initialVideosAbove}
+        <hr/>
+        <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
         </div>
+        <hr/>
+        {initialVideosBelow}
+        {moreVidsBlw}
       </div>
-      <hr/>
-      {initialVideosBelow}
-      {moreVidsBlw}
     </Layout>
   )
 }
