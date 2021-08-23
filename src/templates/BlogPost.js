@@ -43,7 +43,7 @@ const BlogPost = ({ data }) => {
     .then(res => setMoreVidsBlw(moreVideosBelow))
     .then(res => console.log("ONTO NEXT STEP"))
     .then(res => setIsFetching(false))
-    .then(res => RetainInitVidBlwPos(initVidAbvRef))
+    .then(res => RetainInitVidBlwPos(initVidBlwRef))
     .catch(err => console.log("error: ", err));
 
   }
