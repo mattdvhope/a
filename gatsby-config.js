@@ -9,7 +9,7 @@ module.exports = {
     title: `Relationships Thailand`,
     description: `A whole new beginning....`,
     author: `Bangkok Media Team`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://relationshipsthailand.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
