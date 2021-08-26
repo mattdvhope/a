@@ -32,9 +32,9 @@ const Header = ({ data, header }) => {
                   setMenu(false)
                 }}
               >
-                <li>
+                {/*<li>
                   <Link to="/#home">Home</Link>
-                </li>
+                </li>*/}
                 {data.menus
                   .filter(item => item === "About")
                   .map(t => {
