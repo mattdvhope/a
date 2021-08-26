@@ -45,7 +45,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/fev-birds.png`, // This is the favicon.
+        icon: `src/images/favicon-birds.png`, // This is the favicon.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
