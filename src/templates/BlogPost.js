@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -15,7 +15,7 @@ const BlogPost = ({ data }) => {
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null)
-  SetFirstVideoPosition(firstVideoRef);
+  SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
   // 2. Set initial videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
@@ -45,7 +45,7 @@ const BlogPost = ({ data }) => {
   }
 
   return (
-    <Layout>
+    <Layout header="feed">
       <div className="container">
         {moreVidsAbv}
         {initialVideosAbove}

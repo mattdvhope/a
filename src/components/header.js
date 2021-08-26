@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 
 const Header = ({ data, header }) => {
   const [menu, setMenu] = useState(false);
+
   return (
     <header className={`site-header ${menu ? "active" : ""}`}>
       <div className="container">
@@ -25,31 +26,20 @@ const Header = ({ data, header }) => {
           >
             <span></span>
           </div>
-          {header === "home" ? (
+          {header === "feed" ? (
             <div className="menu">
               <ul
                 onClick={() => {
                   setMenu(false)
                 }}
               >
-                {/*<li>
-                  <Link to="/#home">Home</Link>
-                </li>*/}
+
                 {data.menus
                   .filter(item => item === "About")
                   .map(t => {
                     return (
                       <li key={t} >
-                        <Link to={`/#About`}>About</Link>
-                      </li>
-                    );
-                  })}
-                {data.menus
-                  .filter(item => item === "Blogs")
-                  .map(t => {
-                    return (
-                      <li key={t} >
-                        <Link to={`/#Blogs`}>วิดีโอ</Link>
+                        <Link to={`/about`}>About</Link>
                       </li>
                     );
                   })}
@@ -59,10 +49,11 @@ const Header = ({ data, header }) => {
                   .map(t => {
                     return (
                       <li key={t} >
-                        <Link to={`/#Contact`}>Contact Us</Link>
+                        <Link to={`/contact`}>Contact Us</Link>
                       </li>
                     );
                   })}
+
               </ul>
             </div>
           ) : (
@@ -72,27 +63,37 @@ const Header = ({ data, header }) => {
                   setMenu(false)
                 }}
               >
-                <li>
-                  <Link to="/#home">หน้าแรก</Link>
-                </li>
+
                 {data.menus
-                  .filter(item => item === "Blogs")
-                  .map(t => {
-                    return (
-                      <li key={t}>
-                        <Link to="/videos">วิดีโอ</Link>
-                      </li>
-                    );
-                  })}
+                .filter(item => item === "About")
+                .map(t => {
+                  return (
+                    <li key={t} >
+                      <Link to={`/about`}>About</Link>
+                    </li>
+                  );
+                })}
+
                 {data.menus
-                  .filter(item => item === "Photos")
-                  .map(t => {
-                    return (
-                      <li key={t}>
-                        <Link to="/photos">Photos</Link>
-                      </li>
-                    );
-                  })}
+                .filter(item => item === "Contact")
+                .map(t => {
+                  return (
+                    <li key={t} >
+                      <Link to={`/contact`}>Contact Us</Link>
+                    </li>
+                  );
+                })}
+
+                {data.menus
+                .filter(item => item === "Blogs")
+                .map(t => {
+                  return (
+                    <li key={t}>
+                      <Link to={`/${window.sessionStorage.getItem('slug')}`}>วิดีโอ</Link> {/*change this link suffix*/}
+                    </li>
+                  );
+                })}
+
               </ul>
             </div>
           )}
