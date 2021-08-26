@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ data, header }) => {
   const [menu, setMenu] = useState(false);
+  const [slug, setSlug] = useState('');
+
+  useEffect(() => {
+    setSlug(window.sessionStorage.getItem('slug'));
+  }, []);
 
   return (
     <header className={`site-header ${menu ? "active" : ""}`}>
@@ -47,6 +52,7 @@ const Header = ({ data, header }) => {
                 {data.menus
                   .filter(item => item === "Contact")
                   .map(t => {
+                    console.log(t);
                     return (
                       <li key={t} >
                         <Link to={`/contact`}>Contact Us</Link>
@@ -89,7 +95,7 @@ const Header = ({ data, header }) => {
                 .map(t => {
                   return (
                     <li key={t}>
-                      <Link to={`/${window.sessionStorage.getItem('slug')}`}>วิดีโอ</Link> {/*change this link suffix*/}
+                      <Link to={`/${slug}`}>วิดีโอ</Link>
                     </li>
                   );
                 })}
