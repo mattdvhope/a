@@ -21,8 +21,6 @@ const BlogPost = ({ data }) => {
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
-// console.log(initVidAbvRef);
-
   // 3. Set infinite scrolling functionality & add more videos above & below
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling, firstVideoRef, initVidAbvRef, initVidBlwRef);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);

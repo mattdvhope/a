@@ -12,8 +12,6 @@ const SetInitialVideosAbove = (data) => {
   const edAbvSorted = edgesAbove.sort((a,b) => a.node.order - b.node.order)
   const oneAbove = edAbvSorted.slice(-1);
 
-// console.log(initVidAbvRef.current); 
-
   useLayoutEffect(() => {
     setInitialVideosAbove(() => 
       <div className="site-container blog-post">
