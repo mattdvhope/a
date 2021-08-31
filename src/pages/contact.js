@@ -11,25 +11,25 @@ import Seo from "../components/seo"
 
 const Contact = () => {
 
-  const [instance, setInstance] = useState(null);
-  const [params, setParams] = useState(null);
-
   useEffect(() => {
-    setInstance(
-      axios.create({
-        baseURL: 'https://e2doix.herokuapp.com',
-        timeout: 1000,
-        headers: {'X-CSRFToken': csrftoken} // 'X-CSRFToken': csrftoken
-      })
-    );
-
     const csrftoken = Cookies.get('csrftoken');
 
-    console.log(csrftoken);
+    let _data = {
+      userid: "user-7j2kgE5H8LGYpRdT8KmGbtUSC"
+    }
 
-    const p = new URLSearchParams();
-    p.append('userid', 'user-7j2kgE5H8LGYpRdT8KmGbtUSC');
-    setParams(p)
+    const request = new Request(
+      'https://e2doix.herokuapp.com/feed',
+      {headers: {'X-CSRFToken': csrftoken}}
+    );
+    fetch(request, {
+      method: 'POST',
+      body: JSON.stringify(_data)
+    }).then(function(response) {
+      console.log(response);
+    }).catch(function(error) {
+      console.log(error);
+    });
 
   }, []);
 
@@ -38,18 +38,8 @@ const Contact = () => {
       <Seo title="Contact us" />
       <br/>
       <br/>
-      <br/>
       <h1>Contact Us!</h1>
       <br/>
-      <br/>
-      <h1>
-        <button
-          onClick={() => {
-            console.log(instance);
-            instance.post('/feed', params);
-          }}
-        >Click here to go to Django</button>
-      </h1>
       <br/>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
