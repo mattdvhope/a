@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from 'axios';
 
@@ -11,17 +11,26 @@ import Seo from "../components/seo"
 
 const Contact = () => {
 
-  useEffect(() => {
-    const instance = axios.create({
-      baseURL: 'https://e2doix.herokuapp.com/feed/',
-      timeout: 1000,
-      headers: {'X-CSRFToken': csrftoken} // 'X-CSRFToken': csrftoken
-    });
+  const [instance, setInstance] = useState(null);
+  const [params, setParams] = useState(null);
 
-    // const csrftoken = getCookie('csrftoken');
+  useEffect(() => {
+    setInstance(
+      axios.create({
+        baseURL: 'https://e2doix.herokuapp.com',
+        timeout: 1000,
+        headers: {'X-CSRFToken': csrftoken} // 'X-CSRFToken': csrftoken
+      })
+    );
+
     const csrftoken = Cookies.get('csrftoken');
 
     console.log(csrftoken);
+
+    const p = new URLSearchParams();
+    p.append('userid', 'user-7j2kgE5H8LGYpRdT8KmGbtUSC');
+    setParams(p)
+
   }, []);
 
   return (
@@ -35,9 +44,9 @@ const Contact = () => {
       <br/>
       <h1>
         <button
-
           onClick={() => {
-            // invoke functions here
+            console.log(instance);
+            instance.post('/feed', params);
           }}
         >Click here to go to Django</button>
       </h1>
