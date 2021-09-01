@@ -22,8 +22,7 @@ const Contact = () => {
     );
     fetch(request, {
       method: 'POST',
-      // body: JSON.stringify(_data)
-      body: _data
+      body: JSON.stringify(_data)
     }).then(function(response) {
       console.log(response);
       console.log(csrftoken);
