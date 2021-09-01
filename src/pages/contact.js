@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import axios from 'axios';
-
 import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
 import { Link } from "gatsby"
