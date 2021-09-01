@@ -3,12 +3,13 @@ import { ScrollToSmoothly } from "./ScrollToSmoothly"
 
 const RetainInitVidBlwPos = (initVidBlwRef) => {
 
+console.log(initVidBlwRef.current);
+
   const myPromise = new Promise((resolve, reject) => {
-    resolve('foo');
+    resolve(initVidBlwRef.current);
   });
 
   myPromise
-  .then(res => initVidBlwRef.current)
   .then(res => ScrollElementIntoView(res, 'instant'))
   .catch(err => console.log("error: ", err));
 
