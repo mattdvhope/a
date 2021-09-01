@@ -27,6 +27,7 @@ const Contact = () => {
       body: JSON.stringify(_data)
     }).then(function(response) {
       console.log(response);
+      console.log(csrftoken);
     }).catch(function(error) {
       console.log(error);
     });
