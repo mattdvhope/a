@@ -1,15 +1,19 @@
 import React, { useState, useRef } from "react";
+import loadable from '@loadable/component'
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+
 import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
 import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
 import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
 import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
-import YoutubeHolder from "./YoutubeHolder"
+
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainInitVidBlwPos from "../utils/RetainInitVidBlwPos";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
+
+const SEO = loadable(() => import('../components/seo'));
+const YoutubeHolder = loadable(() => import('./YoutubeHolder'));
 
 const BlogPost = ({ data }) => {
 
@@ -44,6 +48,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout header="feed">
+      <SEO title="วีดีโอ" />
       <div className="container">
         {moreVidsAbv}
         {initialVideosAbove}

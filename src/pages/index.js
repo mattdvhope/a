@@ -1,11 +1,13 @@
 import * as React from "react"
+import loadable from '@loadable/component'
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+
+const SEO = loadable(() => import('../components/seo'));
 
 const IndexPage = () => (
   <Layout header="home">
-    <Seo title="Home" />
+    <SEO title="Home" />
   </Layout>
 )
 

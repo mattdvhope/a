@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import loadable from '@loadable/component'
 
 import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
 
+const SEO = loadable(() => import('../components/seo'));
 
 const Contact = () => {
 
@@ -34,7 +35,8 @@ const Contact = () => {
 
   return (
     <Layout header="Contact Us">
-      <Seo title="Contact us" />
+      <SEO title="Contact us" />
+      <br/>
       <br/>
       <br/>
       <h1>Contact Us!</h1>

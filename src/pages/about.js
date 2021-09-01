@@ -1,12 +1,13 @@
 import * as React from "react"
+import loadable from '@loadable/component'
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+
+const SEO = loadable(() => import('../components/seo'));
 
 const About = () => (
   <Layout header="About us">
-    <Seo title="About us" />
+    <SEO title="About us" />
     <br/>
     <br/>
     <br/>
