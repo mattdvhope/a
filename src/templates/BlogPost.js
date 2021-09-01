@@ -44,6 +44,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout header="feed">
+      <SEO title="วีดีโอ" />
       <div className="container">
         {moreVidsAbv}
         {initialVideosAbove}
