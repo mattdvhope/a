@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
 import YoutubeHolder from "../templates/YoutubeHolder"
+import UnderLastVideo from "./UnderLastVideo"
 
 const SetInitialVideosBelow = (data) => {
   const initVidBlwRef = useRef(null);
@@ -9,21 +10,32 @@ const SetInitialVideosBelow = (data) => {
 
   const edgesArray = data.allContentfulBlogs.edges;
   const edgesBelow = edgesArray.filter(obj => obj.node.order > orderOfInitialVideo);
-  const edAbvSorted = edgesBelow.sort((a,b) => a.node.order - b.node.order)
-  const oneBelow = edAbvSorted.slice(0, 1);
+  const edBlwSorted = edgesBelow.sort((a,b) => a.node.order - b.node.order)
+  const oneBelow = edBlwSorted.slice(0, 1);
 
   useLayoutEffect(() => {
     setInitialVideosBelow(() =>
       <div className="site-container blog-post">
         {oneBelow
-          .map(({ node }, i) => (
-            <div key={i} className="container this-eol" ref={initVidBlwRef}>
-              <YoutubeHolder data={node} />
-            </div>
-          )
+          .map(({ node }, i) => {
+            if (edgesBelow.length !== 1) {
+              return (
+                <div key={i} className="container this-eol" ref={initVidBlwRef}>
+                  <YoutubeHolder data={node} />
+                </div>
+              )
+            } else {
+              return (
+                <div key={i} className="container this-eol" ref={initVidBlwRef}>
+                  <YoutubeHolder data={node} />
+                  {UnderLastVideo()}
+                </div>
+              )
+            }
+          } // map
         )}
       </div>
-    )
+    ) // setInitialVideosBelow
   }, []);
 
   return [initialVideosBelow, setInitialVideosBelow, initVidBlwRef];
