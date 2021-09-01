@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import loadable from '@loadable/component'
 
 import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
-const SEO = loadable(() => import('../components/seo'));
 
 const Contact = () => {
 
@@ -18,8 +17,8 @@ const Contact = () => {
     }
 
     const request = new Request(
-      'https://e2doix.herokuapp.com/feed',
-      {headers: {'X-CSRFToken': csrftoken}}
+      'https://e2doix.herokuapp.com/feed' //,
+      // {headers: {'X-CSRFToken': csrftoken}}
     );
     fetch(request, {
       method: 'POST',
@@ -35,8 +34,7 @@ const Contact = () => {
 
   return (
     <Layout header="Contact Us">
-      <SEO title="Contact us" />
-      <br/>
+      <Seo title="Contact us" />
       <br/>
       <br/>
       <h1>Contact Us!</h1>
