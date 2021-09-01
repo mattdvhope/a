@@ -3,8 +3,6 @@ import { ScrollToSmoothly } from "./ScrollToSmoothly"
 
 const RetainInitVidBlwPos = (initVidBlwRef) => {
 
-console.log(initVidBlwRef.current);
-
   const myPromise = new Promise((resolve, reject) => {
     resolve(initVidBlwRef.current);
   });
