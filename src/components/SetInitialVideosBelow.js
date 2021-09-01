@@ -24,7 +24,7 @@ const SetInitialVideosBelow = (data) => {
                   <YoutubeHolder data={node} />
                 </div>
               )
-            } else {
+            } else { // Providing scrolling warning user last video
               return (
                 <div key={i} className="container this-eol" ref={initVidBlwRef}>
                   <YoutubeHolder data={node} />
