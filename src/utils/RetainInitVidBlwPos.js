@@ -11,7 +11,6 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
   .then(res => ScrollElementIntoView(res, 'instant'))
   .catch(err => console.log("error: ", err));
 
-  // Replacement for the now unusable JS method, 'ScrollIntoView()'
   const ScrollElementIntoView = (element, behavior) => {
 
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
