@@ -95,7 +95,7 @@ const Header = ({ data, header }) => {
                 .map(t => {
                   return (
                     <li key={t}>
-                      <Link to={`/${slug}`}>วิดีโอ</Link>
+                      <Link to={`/${slug ? slug : "eating-the-fruit"}`}>วิดีโอ</Link>
                     </li>
                   );
                 })}
