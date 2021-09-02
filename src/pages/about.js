@@ -1,19 +1,12 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import PageTemplate from "../components/PageTemplate"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+const About = () => 
 
-const About = () => (
-  <Layout header="About us">
-    <Seo title="เกี่ยวกับเรา" />
-    <br/>
-    <br/>
-    <br/>
-    <h1>เกี่ยวกับเรา</h1>
-    <br/>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+  <PageTemplate
+    header="About us"
+    title="เกี่ยวกับเรา"
+    content="We are seeking to build a pace on the web for people who want learn more about Jesus"
+  />
 
 export default About
