@@ -1,5 +1,8 @@
 const RetainPosOrJumpToTop = (initVidBlwRef, videosBelowNumber) => {
 
+// REFACTOR INTO TWO FILES!!!!!!
+// TAKE OUT (MAYBE) window.innerHeight + scrollTop >= document.documentElement.offsetHeight
+
   const myPromise = new Promise((resolve, reject) => {
     resolve(initVidBlwRef.current);
   });
