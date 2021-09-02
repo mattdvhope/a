@@ -34,7 +34,7 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
       })
     }
 
-  }
+  } // ScrollElementIntoView
  
 };
 
