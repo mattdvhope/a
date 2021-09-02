@@ -1,5 +1,3 @@
-import { ScrollToSmoothly } from "./ScrollToSmoothly"
-
 const RetainInitVidBlwPos = (initVidBlwRef) => {
 
   const myPromise = new Promise((resolve, reject) => {
@@ -39,6 +37,3 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
 };
 
 export default RetainInitVidBlwPos;
-
-
-
