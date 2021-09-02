@@ -6,6 +6,7 @@ import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
 import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
 import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
 import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
+import UnderLastVideo from "../components/UnderLastVideo"
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
@@ -17,20 +18,25 @@ const BlogPost = ({ data }) => {
   const firstVideoRef = useRef(null)
   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
-  // 2. Set initial videos above and below the first video
+  // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
-  // 3. Set infinite scrolling functionality & add more videos above & below
+  // 3a. Set infinite scrolling functionality & then create 'more' video components for above & below
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
   
+  // 3b. Actually attach these new components to the DOM
   const [moreVidsAbv, setMoreVidsAbv] = useState(null);
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
+  // 4. Obtain number of videos below to know when to jump to the top AND whether to add UnderLastVideo() elements.
+  const numberOfInitVidsBelow = initialVideosBelow ? initialVideosBelow.props.children.length : null
+  const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
+  const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
+
   function elementsFromScrolling() {
-    const videosBelowNumber = initialVideosBelow.props.children.length + moreVideosBelow.props.children.length;
     const myPromise = new Promise((resolve, reject) => {
       resolve();
     });
@@ -38,7 +44,7 @@ const BlogPost = ({ data }) => {
     .then(res => setIsFetching(false))
     .then(res => setMoreVidsAbv(moreVideosAbove))
     .then(res => setMoreVidsBlw(moreVideosBelow))
-    .then(res => RetainPosOrJumpToTop(initVidBlwRef, videosBelowNumber))
+    .then(res => RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow))
     .catch(err => console.log("error: ", err));
   }
 
@@ -50,6 +56,7 @@ const BlogPost = ({ data }) => {
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
+          {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
         {moreVidsBlw}
