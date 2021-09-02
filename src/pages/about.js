@@ -6,7 +6,7 @@ const About = () =>
   <PageTemplate
     header="About us"
     title="เกี่ยวกับเรา"
-    content="We are seeking to build a pace on the web for people who want learn more about Jesus"
+    content="เรากำลังพยายามสร้างพื้นที่บนเว็บสำหรับผู้ที่ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับพระเยซูคริสต์"
   />
 
 export default About

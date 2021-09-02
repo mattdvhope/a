@@ -34,7 +34,7 @@ const Contact = () => {
     <PageTemplate
       header="Contact us"
       title="ติดต่อเรา"
-      content="You can contact us by clicking on the Messenger Icon on the bottom of this page.  We will write back to you soon!"
+      content="คุณสามารถติดต่อเราได้โดยคลิกที่ไอคอน Messenger ของเฟซบุ๊กที่ด้านล่างของเพจนี้ เราจะติดต่อกลับหาคุณในไม่ช้าค่ะ!"
     />
   )
 }
