@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // custom Hook
-const useInfiniteScroll = (elementsFromScrolling, firstVideoRef, initVidAbvRef, initVidBlwRef) => {
+const useInfiniteScroll = (elementsFromScrolling) => {
   const [isFetching, setIsFetching] = useState(false);
 
   // Add elements above & below when window Y-ends reached
