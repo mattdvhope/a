@@ -8,7 +8,7 @@ import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
 import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
 import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
-import RetainInitVidBlwPos from "../utils/RetainInitVidBlwPos";
+import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 
 const BlogPost = ({ data }) => {
@@ -30,15 +30,17 @@ const BlogPost = ({ data }) => {
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
   function elementsFromScrolling() {
+
+    const videosBelowNumber = initialVideosBelow.props.children.length + moreVideosBelow.props.children.length;
+
     const myPromise = new Promise((resolve, reject) => {
       resolve('foo');
     });
-
     myPromise
+    .then(res => setIsFetching(false))
     .then(res => setMoreVidsAbv(moreVideosAbove))
     .then(res => setMoreVidsBlw(moreVideosBelow))
-    .then(res => RetainInitVidBlwPos(initVidBlwRef))
-    .then(res => setIsFetching(false))
+    .then(res => RetainPosOrJumpToTop(initVidBlwRef, videosBelowNumber))
     .catch(err => console.log("error: ", err));
   }
 

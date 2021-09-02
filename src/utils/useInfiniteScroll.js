@@ -25,7 +25,6 @@ const useInfiniteScroll = (elementsFromScrolling) => {
 
   return [isFetching, setIsFetching];
 
-
 };
 
 export default useInfiniteScroll;
