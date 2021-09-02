@@ -30,11 +30,9 @@ const BlogPost = ({ data }) => {
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
   function elementsFromScrolling() {
-
     const videosBelowNumber = initialVideosBelow.props.children.length + moreVideosBelow.props.children.length;
-
     const myPromise = new Promise((resolve, reject) => {
-      resolve('foo');
+      resolve();
     });
     myPromise
     .then(res => setIsFetching(false))
