@@ -44,7 +44,7 @@ const Header = ({ data, header }) => {
                   .map(t => {
                     return (
                       <li key={t} >
-                        <Link to={`/about`}>About</Link>
+                        <Link to={`/about`}>เกี่ยวกับเรา</Link>
                       </li>
                     );
                   })}
@@ -55,7 +55,7 @@ const Header = ({ data, header }) => {
                     {/*console.log(t);*/}
                     return (
                       <li key={t} >
-                        <Link to={`/contact`}>Contact Us</Link>
+                        <Link to={`/contact`}>ติดต่อเรา</Link>
                       </li>
                     );
                   })}
@@ -75,7 +75,7 @@ const Header = ({ data, header }) => {
                 .map(t => {
                   return (
                     <li key={t} >
-                      <Link to={`/about`}>About</Link>
+                      <Link to={`/about`}>เกี่ยวกับเรา</Link>
                     </li>
                   );
                 })}
@@ -85,7 +85,7 @@ const Header = ({ data, header }) => {
                 .map(t => {
                   return (
                     <li key={t} >
-                      <Link to={`/contact`}>Contact Us</Link>
+                      <Link to={`/contact`}>ติดต่อเรา</Link>
                     </li>
                   );
                 })}
