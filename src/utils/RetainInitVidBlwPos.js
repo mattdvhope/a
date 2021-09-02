@@ -1,4 +1,3 @@
-// import { ScrollElementIntoView } from "../utils/ScrollElementIntoView";
 import { ScrollToSmoothly } from "./ScrollToSmoothly"
 
 const RetainInitVidBlwPos = (initVidBlwRef) => {
@@ -14,11 +13,13 @@ const RetainInitVidBlwPos = (initVidBlwRef) => {
   const ScrollElementIntoView = (element, behavior) => {
 
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      console.log("in if");
       window.scrollTo({
         top: 0,
         behavior: 'instant'
       })
     } else {
+      console.log("in else");
       let scrollTop = window.pageYOffset || element.scrollTop
 
       // Furthermore, if you have for example a 'container' outside the element 
