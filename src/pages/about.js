@@ -6,11 +6,11 @@ import Seo from "../components/seo"
 
 const About = () => (
   <Layout header="About us">
-    <Seo title="About us" />
+    <Seo title="เกี่ยวกับเรา" />
     <br/>
     <br/>
     <br/>
-    <h1>About Us!</h1>
+    <h1>เกี่ยวกับเรา</h1>
     <br/>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
