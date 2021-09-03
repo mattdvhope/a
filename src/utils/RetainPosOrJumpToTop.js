@@ -22,12 +22,12 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
       })
     } else { // Retain window screen Position when 'more' above/below videos are appended
       const browser = detect();
-      if (browser.name === "facebook") {
+      // if (browser.name === "facebook") {
         window.parent.scrollTo({
           top: initVidBlwRef.current.offsetTop,
           behavior: behavior || 'instant'
         })
-      }
+      // }
     }
   } // ScrollElementIntoView
  
