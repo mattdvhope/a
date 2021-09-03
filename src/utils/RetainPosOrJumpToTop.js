@@ -1,3 +1,5 @@
+import { detect } from 'detect-browser';
+
 const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
 
   const myPromise = new Promise((resolve, reject) => {
@@ -19,16 +21,14 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
         behavior: 'instant'
       })
     } else { // Retain window screen Position when 'more' above/below videos are appended
-      const containerElementHeight = window.parent.document.getElementsByClassName('container')[0].clientHeight
-
-      console.log(heightOfDocument)
-      console.log(containerElementHeight)
-
-      const finalOffset = element.getBoundingClientRect().top + heightAboveWindowScreen + containerElementHeight - element.offsetHeight;
-      window.parent.scrollTo({
-        top: finalOffset,
-        behavior: behavior || 'instant'
-      })
+      const browser = detect();
+// alert(browser.name);
+      if (browser.name !== "chrome") {
+        window.parent.scrollTo({
+          top: initVidBlwRef.current.offsetTop,
+          behavior: behavior || 'instant'
+        })
+      }
     }
   } // ScrollElementIntoView
  
