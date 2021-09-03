@@ -22,7 +22,6 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
       })
     } else { // Retain window screen Position when 'more' above/below videos are appended
       const browser = detect();
-alert(browser.name);
       if (browser.name !== "chrome") {
         window.parent.scrollTo({
           top: initVidBlwRef.current.offsetTop,
