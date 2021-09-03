@@ -22,17 +22,12 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
       })
     } else { // Retain window screen Position when 'more' above/below videos are appended
       const browser = detect();
-      // if (browser.name === "facebook") {
-
-        console.log(initVidBlwRef.current.getBoundingClientRect().top)
-
-        const rectTop = Math.floor(initVidBlwRef.current.getBoundingClientRect().top)
-
+      if (browser.name === "safari" || browser.name === "node" || browser.name === "facebook") {
         window.parent.scrollTo({
-          top: initVidBlwRef.current.offsetTop + rectTop,
+          top: initVidBlwRef.current.offsetTop - 220,
           behavior: behavior || 'instant'
         })
-      // }
+      } // if
     }
   } // ScrollElementIntoView
  
