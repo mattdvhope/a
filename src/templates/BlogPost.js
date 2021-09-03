@@ -22,7 +22,7 @@ const BlogPost = ({ data }) => {
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
-  // 3a. Set infinite scrolling functionality & then create 'more' video components for above & below
+  // 3a. Set infinite scrolling. Scrolling wkll create 'more' videos (from BlogPost.js) above & below
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
