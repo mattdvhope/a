@@ -1,7 +1,4 @@
 import React, { useState, useRef } from "react";
-
-import { detect } from 'detect-browser';
-
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -39,10 +36,6 @@ const BlogPost = ({ data }) => {
   const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
   const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
 
-
-const browser = detect();
-
-
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
       resolve();
@@ -63,8 +56,6 @@ const browser = detect();
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
-
-          <h1>{browser.name}</h1>
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
