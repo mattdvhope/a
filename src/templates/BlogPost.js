@@ -44,7 +44,7 @@ const BlogPost = ({ data }) => {
     .then(res => setIsFetching(false))
     .then(res => setMoreVidsAbv(moreVideosAbove))
     .then(res => setMoreVidsBlw(moreVideosBelow))
-    // .then(res => RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow))
+    .then(res => RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow))
     .catch(err => console.log("error: ", err));
   }
 
