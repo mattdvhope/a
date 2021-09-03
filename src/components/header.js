@@ -40,22 +40,22 @@ const Header = ({ data, header }) => {
               >
 
                 {data.menus
-                  .filter(item => item === "About")
-                  .map(t => {
-                    return (
-                      <li key={t} >
-                        <Link to={`/about`}>เกี่ยวกับเรา</Link>
-                      </li>
-                    );
-                  })}
-
-                {data.menus
                   .filter(item => item === "Contact")
                   .map(t => {
                     {/*console.log(t);*/}
                     return (
                       <li key={t} >
                         <Link to={`/contact`}>ติดต่อเรา</Link>
+                      </li>
+                    );
+                  })}
+
+                {data.menus
+                  .filter(item => item === "About")
+                  .map(t => {
+                    return (
+                      <li key={t} >
+                        <Link to={`/about`}>เกี่ยวกับเรา</Link>
                       </li>
                     );
                   })}
@@ -71,11 +71,11 @@ const Header = ({ data, header }) => {
               >
 
                 {data.menus
-                .filter(item => item === "About")
+                .filter(item => item === "Blogs")
                 .map(t => {
                   return (
-                    <li key={t} >
-                      <Link to={`/about`}>เกี่ยวกับเรา</Link>
+                    <li key={t}>
+                      <Link to={`/${slug ? slug : "eating-the-fruit"}`}>วิดีโอ</Link>
                     </li>
                   );
                 })}
@@ -91,11 +91,11 @@ const Header = ({ data, header }) => {
                 })}
 
                 {data.menus
-                .filter(item => item === "Blogs")
+                .filter(item => item === "About")
                 .map(t => {
                   return (
-                    <li key={t}>
-                      <Link to={`/${slug ? slug : "eating-the-fruit"}`}>วิดีโอ</Link>
+                    <li key={t} >
+                      <Link to={`/about`}>เกี่ยวกับเรา</Link>
                     </li>
                   );
                 })}
