@@ -61,11 +61,10 @@ const browser = detect();
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
-          {/*<h3>{JSON.stringify(browser)}</h3>*/}
+          <h3>{JSON.stringify(browser)}</h3>
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
-        <h2>{isFetching.toString()}</h2>
         {moreVidsBlw}
       </div>
     </Layout>

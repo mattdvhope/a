@@ -11,9 +11,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
       const scrollTop = Math.ceil(document.documentElement.scrollTop);
       const docHt = Math.ceil(document.documentElement.offsetHeight);
 
-      // console.log(Array(7).fill(winHt + scrollTop).map((x, y) => x + y).includes(docHt))
-
-      // if (winHt + scrollTop !== docHt) {
+      // Is winHt + scrollTop w/in range (+3 or -3) of docHt...?
       if (!(Array(7).fill(winHt + scrollTop).map((x, y) => x + y).includes(docHt))) {
         return;
       } 
