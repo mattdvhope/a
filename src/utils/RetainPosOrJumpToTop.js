@@ -1,4 +1,4 @@
-import { detect } from 'detect-browser';
+import InRangeOfDocHeight from './InRangeOfDocHeight'
 
 const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
 
@@ -15,23 +15,19 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
     const heightOfDocument = document.documentElement.offsetHeight;
 
     // Jump to top after scrolling below either of the last two (firstVid) videos OR when the full feed hits bottom...
-    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || heightAboveWindowScreen + windowScreenHeight >= heightOfDocument) {
+    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument)) {
       window.scrollTo({
         top: 0,
         behavior: 'instant'
       })
     } else { // Retain window screen Position when 'more' above/below videos are appended
-      const browser = detect();
       const initVidBlwHeight = initVidBlwRef.current.offsetHeight;
       const diff = windowScreenHeight - initVidBlwHeight;
-
-      if (browser.name === "node" || browser.name === "facebook" || browser.name === "safari" || browser.name === "ios" || browser.name === "chromium-webview") {
-        const gap = diff >= 0 ? diff : 0;
-        window.parent.scrollTo({
-          top: initVidBlwRef.current.offsetTop - gap,
-          behavior: behavior || 'instant'
-        })
-      } 
+      const gap = diff >= 0 ? diff : 0;
+      window.parent.scrollTo({
+        top: initVidBlwRef.current.offsetTop - gap,
+        behavior: behavior || 'instant'
+      })
     }
   } // ScrollElementIntoView
  

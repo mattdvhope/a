@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import InRangeOfDocHeight from './InRangeOfDocHeight'
 
 // custom Hook
 const useInfiniteScroll = (elementsFromScrolling) => {
@@ -7,14 +8,11 @@ const useInfiniteScroll = (elementsFromScrolling) => {
   // Add elements above & below when window Y-ends reached
   useEffect(() => {
     const handleScroll = () => {
-      const winHt = Math.ceil(window.innerHeight);
       const scrollTop = Math.ceil(document.documentElement.scrollTop);
+      const winHt = Math.ceil(window.innerHeight);
       const docHt = Math.ceil(document.documentElement.offsetHeight);
 
-      // Is winHt + scrollTop w/in range (+3 or -3) of docHt...?
-      if (!(Array(7).fill(winHt + scrollTop).map((x, y) => x + y).includes(docHt))) {
-        return;
-      } 
+      if (!InRangeOfDocHeight(scrollTop, winHt, docHt)) return;
       setIsFetching(true);
     };
 
