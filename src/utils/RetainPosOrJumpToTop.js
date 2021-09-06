@@ -25,7 +25,7 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
       const initVidBlwHeight = initVidBlwRef.current.offsetHeight;
       const diff = windowScreenHeight - initVidBlwHeight;
 
-      if (browser.name === "safari" || browser.name === "node" || browser.name === "facebook") {
+      if (browser.name === "node" || browser.name === "facebook" || browser.name === "safari" || browser.name === "ios") {
         const gap = diff >= 0 ? diff : 0;
 
         window.parent.scrollTo({
