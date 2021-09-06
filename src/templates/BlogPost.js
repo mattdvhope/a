@@ -41,7 +41,7 @@ const BlogPost = ({ data }) => {
 
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
-      resolve();
+      resolve(alert("in elementsFromScrolling"));
     });
     myPromise
     .then(res => setIsFetching(false))
