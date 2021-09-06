@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import YoutubeHolder from "../templates/YoutubeHolder"
 
 const SetMoreVideosAbove = (data) => {
@@ -10,7 +10,7 @@ const SetMoreVideosAbove = (data) => {
   const edAbvSorted = edgesAbove.sort((a,b) => a.node.order - b.node.order)
   edAbvSorted.pop();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (edAbvSorted) { // in case there are no more videos above
       setMoreVideosAbove(() => 
         <div className="site-container blog-post">
