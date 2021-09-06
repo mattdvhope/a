@@ -11,7 +11,7 @@ const YoutubeVideo = ({src, title}) => {
         width: `81vw`,
         outline: `0.3rem solid #EEEBEB`,
       }}
-      // src={src}
+      src={src}
       title={title}
       frameBorder="0"
       allowFullScreen
