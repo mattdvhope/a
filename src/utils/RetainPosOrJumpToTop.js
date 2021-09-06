@@ -25,14 +25,18 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
       const initVidBlwHeight = initVidBlwRef.current.offsetHeight;
       const diff = windowScreenHeight - initVidBlwHeight;
 
-      if (browser.name === "node" || browser.name === "facebook" || browser.name === "safari" || browser.name === "ios" || browser.name === "chromium-webview") {
+      if (browser.name === "node" || browser.name === "facebook" || browser.name === "safari" || browser.name === "ios") {
         const gap = diff >= 0 ? diff : 0;
-
         window.parent.scrollTo({
           top: initVidBlwRef.current.offsetTop - gap,
           behavior: behavior || 'instant'
         })
-      } // if
+      } else if (browser.name === "chromium-webview") {
+        window.scrollTo({
+          top: 0,
+          behavior: 'instant'
+        })
+      }
     }
   } // ScrollElementIntoView
  

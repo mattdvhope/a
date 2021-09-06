@@ -57,15 +57,15 @@ const browser = detect();
     <Layout header="feed">
       <SEO title="วีดีโอ" />
       <div className="container">
-        {moreVidsAbv}
-        {initialVideosAbove}
+        {/*{moreVidsAbv}*/}
+        {/*{initialVideosAbove}*/}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
           <h1>{JSON.stringify(browser)}</h1>
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
-        {initialVideosBelow}
-        {moreVidsBlw}
+        {/*{initialVideosBelow}*/}
+        {/*{moreVidsBlw}*/}
       </div>
     </Layout>
   )
