@@ -41,13 +41,13 @@ const BlogPost = ({ data }) => {
 
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
-      resolve(alert("in elementsFromScrolling"));
+      resolve();
     });
     myPromise
-    .then(res => setIsFetching(false))
     .then(res => setMoreVidsAbv(moreVideosAbove))
     .then(res => setMoreVidsBlw(moreVideosBelow))
     .then(res => RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow))
+    .then(res => setIsFetching(false))
     .catch(err => console.log("error: ", err));
   }
 
@@ -57,7 +57,8 @@ const browser = detect();
     <Layout header="feed">
       <SEO title="วีดีโอ" />
       <div className="container">
-        {moreVidsAbv}
+        {moreVideosAbove}
+        {/*{moreVidsAbv}*/}
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
@@ -65,7 +66,8 @@ const browser = detect();
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
-        {moreVidsBlw}
+        {moreVideosBelow}
+        {/*{moreVidsBlw}*/}
       </div>
     </Layout>
   )
