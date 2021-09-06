@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import YoutubeHolder from "../templates/YoutubeHolder"
 import UnderLastVideo from "./UnderLastVideo"
 
@@ -11,7 +11,7 @@ const SetMoreVideosBelow = (data) => {
   edBlwSorted.shift(1);
   const lastVideoPost = edBlwSorted[edBlwSorted.length - 1];
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (edBlwSorted) { // in case there are no more videos below
       setMoreVideosBelow(() => 
         <div className="site-container blog-post">
