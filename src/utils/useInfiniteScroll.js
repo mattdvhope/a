@@ -19,7 +19,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
   }, []); // useEffect
 
   useEffect(() => {
-    if (!isFetching) return;
+    // if (!isFetching) return;
     elementsFromScrolling();
   }, [isFetching]);
 
