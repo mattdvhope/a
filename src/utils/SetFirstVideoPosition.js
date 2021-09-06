@@ -15,11 +15,16 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
     });
 
     const browser = detect();
-    const scrollSpeed = browser.name === "chromium-webview" ? 3000 : 1400;
 
     myPromise
     .then(res => setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
-    .then(res => ScrollToSmoothly(firstVideoPosition, scrollSpeed))
+    .then(res => {
+      if (browser.name === "chromium-webview") {
+        firstVideoRef.current.scrollIntoView({behavior: "smooth"});
+      } else {
+        ScrollToSmoothly(firstVideoPosition, 1400);
+      }
+    })
     .catch(err => console.log("error: ", err));
 
     window.sessionStorage.setItem('slug', slug);
