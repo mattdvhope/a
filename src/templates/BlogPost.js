@@ -57,17 +57,16 @@ const browser = detect();
     <Layout header="feed">
       <SEO title="วีดีโอ" />
       <div className="container">
-        {moreVideosAbove}
-        {/*{moreVidsAbv}*/}
+        {moreVidsAbv}
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
-          <h1>{JSON.stringify(browser)}</h1>
+          <h3>{JSON.stringify(browser)}</h3>
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
-        {moreVideosBelow}
-        {/*{moreVidsBlw}*/}
+        <h2>{isFetching.toString()}</h2>
+        {moreVidsBlw}
       </div>
     </Layout>
   )
