@@ -10,7 +10,7 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
   .catch(err => console.log("error: ", err));
 
   const ScrollElementIntoView = (element, behavior) => {
-    const windowScreenHeight = window.innerHeight
+    const windowScreenHeight = window.innerHeight;
     const initVidBlwHeight = initVidBlwRef.current.offsetHeight;
 
     // Jump to top of document when bottom reached
