@@ -12,6 +12,7 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
   const ScrollElementIntoView = (element, behavior) => {
     const windowScreenHeight = window.innerHeight
 
+    // Jump to top of document when bottom reached
     if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedButtomOfDoc()) {
       window.scrollTo({
         top: 0,
