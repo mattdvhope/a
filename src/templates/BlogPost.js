@@ -36,9 +36,6 @@ const BlogPost = ({ data }) => {
   const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
   const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
 
-console.log(!moreVidsAbv)
-console.log(!moreVidsBlw)
-
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
       resolve();
