@@ -36,13 +36,16 @@ const BlogPost = ({ data }) => {
   const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
   const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
 
+console.log(!moreVidsAbv)
+console.log(!moreVidsBlw)
+
   function elementsFromScrolling() {
     const myPromise = new Promise((resolve, reject) => {
       resolve();
     });
     myPromise
-    .then(res => setMoreVidsAbv(moreVideosAbove))
-    .then(res => setMoreVidsBlw(moreVideosBelow))
+    .then(res => !moreVidsAbv ? setMoreVidsAbv(moreVideosAbove) : null)
+    .then(res => !moreVidsBlw ? setMoreVidsBlw(moreVideosBelow) : null)
     .then(res => RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow))
     .then(res => setIsFetching(false))
     .catch(err => console.log("error: ", err));
