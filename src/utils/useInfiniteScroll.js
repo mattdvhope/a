@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { detect } from "detect-browser";
 import InRangeOfDocHeight from './InRangeOfDocHeight'
 
 // custom Hook
@@ -12,7 +13,13 @@ const useInfiniteScroll = (elementsFromScrolling) => {
       const winHt = Math.ceil(window.innerHeight);
       const docHt = Math.ceil(document.documentElement.offsetHeight);
 
-      if (!InRangeOfDocHeight(scrollTop, winHt, docHt)) return;
+      const browser = detect();
+
+      if (browser.name === "chromium-webview") {
+        if (!InRangeOfDocHeight(scrollTop, winHt, docHt)) return;
+      } else {
+        if (scrollTop + winHt !== docHt) return;
+      }
       setIsFetching(true);
     };
 
@@ -30,3 +37,10 @@ const useInfiniteScroll = (elementsFromScrolling) => {
 };
 
 export default useInfiniteScroll;
+
+// Various browsers:
+// browser.name === "node"
+// browser.name === "facebook"
+// browser.name === "safari"
+// browser.name === "ios"
+// browser.name === "chromium-webview")

@@ -1,4 +1,5 @@
 import InRangeOfDocHeight from './InRangeOfDocHeight'
+import { detect } from "detect-browser";
 
 const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
 
@@ -14,8 +15,11 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
     const windowScreenHeight = window.innerHeight
     const heightOfDocument = document.documentElement.offsetHeight;
 
+    const browser = detect();
+    const reachedBottom = browser.name === "chromium-webview" ? InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument) : heightAboveWindowScreen + windowScreenHeight >= heightOfDocument;
+
     // Jump to top after scrolling below either of the last two (firstVid) videos OR when the full feed hits bottom...
-    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument)) {
+    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || reachedBottom) {
       window.scrollTo({
         top: 0,
         behavior: 'instant'
