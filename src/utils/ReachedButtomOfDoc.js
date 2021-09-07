@@ -11,8 +11,6 @@ const ReachedButtomOfDoc = () => {
 
   const browser = detect();
 
-console.log("InRangeOfDocHeight...", InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument));
-
   if (browser.name === "chromium-webview") {
 		return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument); 	
   } else {
