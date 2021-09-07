@@ -4,9 +4,10 @@ import InRangeOfDocHeight from './InRangeOfDocHeight'
 
 const ReachedButtomOfDoc = () => {
 
-  const heightAboveWindowScreen = Math.ceil(document.documentElement.scrollTop);
-  const windowScreenHeight = Math.ceil(window.innerHeight);
-  const heightOfDocument = Math.ceil(document.documentElement.offsetHeight);
+	// maybe use Math.ceil??? if Android doesn't work????
+  const heightAboveWindowScreen = document.documentElement.scrollTop;
+  const windowScreenHeight = window.innerHeight;
+  const heightOfDocument = document.documentElement.offsetHeight;
 
   const browser = detect();
 
