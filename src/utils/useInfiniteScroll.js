@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ReachedButtomOfDoc from './ReachedButtomOfDoc'
+import ReachedBottomOfDoc from './ReachedBottomOfDoc'
 
 // custom Hook
 const useInfiniteScroll = (elementsFromScrolling) => {
@@ -8,7 +8,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
   // Add elements above & below when window Y-ends reached
   useEffect(() => {
     const handleScroll = () => {
-      if (!ReachedButtomOfDoc()) return;
+      if (!ReachedBottomOfDoc()) return;
       setIsFetching(true);
     };
 

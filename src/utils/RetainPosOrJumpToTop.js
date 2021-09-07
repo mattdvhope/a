@@ -1,4 +1,4 @@
-import ReachedButtomOfDoc from './ReachedButtomOfDoc'
+import ReachedBottomOfDoc from './ReachedBottomOfDoc'
 
 const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
 
@@ -14,7 +14,7 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
     const windowScreenHeight = window.innerHeight;
 
     // Jump to top of document when bottom reached
-    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedButtomOfDoc()) {
+    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedBottomOfDoc()) {
       window.scrollTo({
         top: 0,
         behavior: 'instant'

@@ -2,7 +2,7 @@ import { detect } from "detect-browser";
 import InRangeOfDocHeight from './InRangeOfDocHeight'
 
 
-const ReachedButtomOfDoc = () => {
+const ReachedBottomOfDoc = () => {
 
 	// Must use Math.ceil for Android/chromium-webview to work.
   const heightAboveWindowScreen = Math.ceil(document.documentElement.scrollTop);
@@ -11,7 +11,7 @@ const ReachedButtomOfDoc = () => {
 
   const browser = detect();
 
-  if (browser.name === "chromium-webview" || browser.name === "facebook") {
+  if (browser.name === "chromium-webview" || browser.name === "node" || browser.name === "facebook") {
 		return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument); 	
   } else {
   	return heightAboveWindowScreen + windowScreenHeight >= heightOfDocument;
@@ -20,7 +20,7 @@ const ReachedButtomOfDoc = () => {
 }
 
 
-export default ReachedButtomOfDoc;
+export default ReachedBottomOfDoc;
 
 // Various browsers:
 // browser.name === "node"
