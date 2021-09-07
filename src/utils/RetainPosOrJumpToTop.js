@@ -6,7 +6,7 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
     resolve();
   });
 
-console.log(ReachedButtomOfDoc());
+console.log("ReachedButtomOfDoc??...", ReachedButtomOfDoc());
 
   myPromise
   .then(res => ScrollElementIntoView())
