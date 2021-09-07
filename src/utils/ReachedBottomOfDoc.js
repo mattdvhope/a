@@ -11,7 +11,7 @@ const ReachedBottomOfDoc = () => {
 
   const browser = detect();
 
-  if (browser.name === "chromium-webview" || browser.name === "node" || browser.name === "facebook") {
+  if (browser.name === "chromium-webview") {
 		return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument); 	
   } else {
   	return heightAboveWindowScreen + windowScreenHeight >= heightOfDocument;
