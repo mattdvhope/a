@@ -3,10 +3,11 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import MenuApp from "../components/Menu/MenuApp";
+// import LandingApp from "../components/Landing/LandingApp";
+
 const IndexPage = () => (
-  <Layout header="home">
-    <Seo title="Home" />
-  </Layout>
+  <MenuApp/>
 )
 
 export default IndexPage

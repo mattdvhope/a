@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
 import PageTemplate from "../components/PageTemplate"
+import Menu from "../components/Menu/MenuApp";
+import ContactApp from "../components/Contact/ContactApp";
 
 
 const Contact = () => {
@@ -31,12 +33,16 @@ const Contact = () => {
   }, []);
 
   return (
-    <PageTemplate
-      header="Contact us"
-      title="ติดต่อเรา"
-      content="คุณสามารถติดต่อเราได้โดยคลิกที่ไอคอน Messenger ของเฟซบุ๊กที่ด้านล่างของเพจนี้ เราจะติดต่อกลับหาคุณในไม่ช้าค่ะ!"
-    />
+    <ContactApp/>
   )
+
+  // return (
+  //   <PageTemplate
+  //     header="Contact us"
+  //     title="ติดต่อเรา"
+  //     content="คุณสามารถติดต่อเราได้โดยคลิกที่ไอคอน Messenger ของเฟซบุ๊กที่ด้านล่างของเพจนี้ เราจะติดต่อกลับหาคุณในไม่ช้าค่ะ!"
+  //   />
+  // )
 }
 
 export default Contact
