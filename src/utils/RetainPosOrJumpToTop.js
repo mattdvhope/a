@@ -14,7 +14,7 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow, totalMoreVids)
     const windowScreenHeight = window.innerHeight;
 
     // Jump to top of document when bottom reached
-    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedBottomOfDoc() || totalMoreVids > 0 || totalMoreVids !== null) {
+    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedBottomOfDoc() || totalMoreVids > 0) {
       window.scrollTo({
         top: 0,
         behavior: 'instant'
