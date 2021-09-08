@@ -43,7 +43,12 @@ const BlogPost = ({ data }) => {
     myPromise
     .then(res => !moreVidsAbv ? setMoreVidsAbv(moreVideosAbove) : null)
     .then(res => !moreVidsBlw ? setMoreVidsBlw(moreVideosBelow) : null)
-    .then(res => RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow))
+    .then(res => {
+      const numMoreVidsAbv = moreVidsAbv ? moreVidsAbv.props.children.length : null;
+      const numMoreVidsBlw = moreVidsBlw ? moreVidsBlw.props.children.length : null;
+      const totalMoreVids = numMoreVidsAbv + numMoreVidsBlw;
+      RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow, totalMoreVids);
+    })
     .then(res => setIsFetching(false))
     .catch(err => console.log("error: ", err));
   }

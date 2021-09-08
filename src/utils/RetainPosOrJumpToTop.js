@@ -1,6 +1,6 @@
 import ReachedBottomOfDoc from './ReachedBottomOfDoc'
 
-const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
+const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow, totalMoreVids) => {
 
   const myPromise = new Promise((resolve, reject) => {
     resolve();
@@ -13,8 +13,10 @@ const RetainPosOrJumpToTop = (initVidBlwRef, numberOfVideosBelow) => {
   const ScrollElementIntoView = () => {
     const windowScreenHeight = window.innerHeight;
 
+console.log(totalMoreVids)
+
     // Jump to top of document when bottom reached
-    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedBottomOfDoc()) {
+    if (numberOfVideosBelow === 1 || numberOfVideosBelow === 0 || ReachedBottomOfDoc() || totalMoreVids > 0) {
       window.scrollTo({
         top: 0,
         behavior: 'instant'
