@@ -1,11 +1,9 @@
 :root { 
   --caribbean-green: #00c185;
-  --midnight: #0e1a36;
   --white: #ffffff;
  
-  --font-size-l2: 14px;
-  --font-size-m2: 12px;
-  --font-size-xl: 26px;
+  --font-size-xl: 22px;
+  --font-size-xl2: 26px;
  
   --font-family-noto_sans: "Noto Sans", Helvetica;
 }
