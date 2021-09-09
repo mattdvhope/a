@@ -148,12 +148,12 @@ pre{margin-bottom:0}
 .blogs-list .item:nth-child(5n+2) .gatsby-image-wrapper{height:300px}
 .photos-list{margin-bottom:20px}
 .photos-list .slick-dots{bottom:-20px;margin:0}
-.responsive-menu{width:27px;height:33px;display:none;justify-content:center;align-items:center}
-.responsive-menu span{background:#00C185;display:block;height:5px;position:relative;transition:background .2s ease-out;width:38px;border-radius:19%;}
+.responsive-menu{width:13px;height:33px;display:none;justify-content:center;align-items:center}
+.responsive-menu span{margin-left:-20px;background:#00C185;display:block;height:5px;position:relative;transition:background .2s ease-out;width:38px;border-radius:19%;}
 .responsive-menu span:after{top:-13px}
 .responsive-menu span:before{top:13px}
 .responsive-menu span:before,
-.responsive-menu span:after{margin-left:-7px;background:#00C185;content:'';display:block;height:100%;border-radius:19%;position:absolute;transition:all .2s ease-out;width:130%}
+.responsive-menu span:after{margin-left:-10px;background:#00C185;content:'';display:block;height:100%;border-radius:19%;position:absolute;transition:all .2s ease-out;width:130%}
 .rg-popup{position:fixed;top:0;bottom:0;left:0;right:0;z-index:99999;display:flex;align-items:center;justify-content:center}
 .rg-popup .popup-inner{width:900px;position:relative;max-height:90%;max-width:90%;background:#fff;-webkit-animation-name:zoomIn;animation-name:zoomIn;-webkit-animation-duration:0.5s;animation-duration:0.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 .rg-popup .popup-layer{position:fixed;top:0;bottom:0;left:0;right:0;height:100%;width:100%;background:#000000c9;cursor:pointer}
