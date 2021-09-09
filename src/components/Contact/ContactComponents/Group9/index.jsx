@@ -14,29 +14,29 @@ function Group9() {
 
 const Group91 = styled.div`
   position: absolute;
-  width: 132px;
-  top: 107px;
-  left: 172px;
+  width: 145px;
+  top: 119px;
+  left: 190px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 41px;
+  min-height: 45px;
 `;
 
 const LoremIpsumBlah = styled.div`
   ${NotosansBoldMidnight14px}
-  min-height: 19px;
+  width: 143px;
+  min-height: 21px;
   margin-right: 2px;
-  min-width: 130px;
   letter-spacing: 0;
 `;
 
 const SubtitleHere = styled.div`
   ${NotosansNormalMidnight12px}
-  min-height: 16px;
-  margin-top: 6px;
-  margin-left: 2px;
-  min-width: 74px;
+  width: 81px;
+  min-height: 18px;
+  margin-top: 7px;
+  margin-left: 2.42px;
   letter-spacing: 0;
 `;
 

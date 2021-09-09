@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
+import styled from "styled-components";
+import Layout from "../components/layout"
+import ContactApp from "../components/Contact/ContactApp"
+
 import PageTemplate from "../components/PageTemplate"
-import Menu from "../components/Menu/MenuApp";
-import ContactApp from "../components/Contact/ContactApp";
 
 
 const Contact = () => {
@@ -33,7 +35,11 @@ const Contact = () => {
   }, []);
 
   return (
-    <ContactApp/>
+    <Layout>
+      <ContactBackground>
+        <ContactApp/>
+      </ContactBackground>
+    </Layout>
   )
 
   // return (
@@ -44,5 +50,11 @@ const Contact = () => {
   //   />
   // )
 }
+
+const ContactBackground = styled.div`
+  margin-top: 80px;
+  margin-bottom: 80px;
+`;
+
 
 export default Contact

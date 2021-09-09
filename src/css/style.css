@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans:300,400,400i,600,700,700i&display=swap');
 *{font-family:'Maitree',sans-serif; font-size: 100%;}
 img{max-width:100%}
-.site-header{background:#0E1A36;position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0}
+.site-header{background:#0E1A36;position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0;height:auto;}
 .site-header *{color:#fff}
 a{color:#ef5826}
 h2{font-size:28px;line-height:34px;color:#363636}
@@ -27,7 +27,7 @@ body{margin:0;background:#fafafe}
 .banner .banner-details .social li a:after{content:"";background:#ef5826;position:absolute;top:-100%;left:0;-webkit-transition:0.3s all;transition:0.3s all;height:100%;width:100%}
 .banner .banner-details .social li a:before{position:relative;z-index:1}
 .banner .banner-details .social li a:hover:after{top:0}
-.site-header .header-main{display:flex;justify-content:center;align-items:center}
+.site-header .header-main{display:flex;justify-content:center;align-items:center;}
 .site-header .header-main .logo{width:10%}
 .site-header .header-main .menu{width:90%;display:flex;align-items:center;justify-content:flex-end}
 .site-header .header-main .menu ul{padding:0;display:flex;margin:0;justify-content:flex-end;list-style:none}
