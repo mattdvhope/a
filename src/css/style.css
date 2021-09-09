@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans:300,400,400i,600,700,700i&display=swap');
 *{font-family:'Maitree',sans-serif; font-size: 100%;}
 img{max-width:100%}
-.site-header{background:#333333b8;position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0}
+.site-header{background:#0E1A36;position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0}
 .site-header *{color:#fff}
 a{color:#ef5826}
 h2{font-size:28px;line-height:34px;color:#363636}
@@ -32,7 +32,7 @@ body{margin:0;background:#fafafe}
 .site-header .header-main .menu{width:90%;display:flex;align-items:center;justify-content:flex-end}
 .site-header .header-main .menu ul{padding:0;display:flex;margin:0;justify-content:flex-end;list-style:none}
 .site-header .header-main .menu ul li{margin:0 10px}
-.site-header .header-main .menu ul li a{position:relative;color:#fff;overflow:hidden;text-decoration:none}
+.site-header .header-main .menu ul li a{position:relative;color:#00C185;overflow:hidden;text-decoration:none}
 .site-header .header-main .menu ul li a:after{content:"";width:0;height:1px;position:absolute;bottom:-3px;left:0;background:#fff;transition:0.5s all}
 .site-header .header-main .menu ul li a:hover:after{width:100%;transition:0.5s all}
 .section{padding:50px 0}
@@ -148,12 +148,12 @@ pre{margin-bottom:0}
 .blogs-list .item:nth-child(5n+2) .gatsby-image-wrapper{height:300px}
 .photos-list{margin-bottom:20px}
 .photos-list .slick-dots{bottom:-20px;margin:0}
-.responsive-menu{width:30px;height:25px;display:none;justify-content:center;align-items:center}
-.responsive-menu span{background:#fff;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}
-.responsive-menu span:after{top:-5px}
-.responsive-menu span:before{top:5px}
+.responsive-menu{width:27px;height:33px;display:none;justify-content:center;align-items:center}
+.responsive-menu span{background:#00C185;display:block;height:5px;position:relative;transition:background .2s ease-out;width:38px;border-radius:19%;}
+.responsive-menu span:after{top:-13px}
+.responsive-menu span:before{top:13px}
 .responsive-menu span:before,
-.responsive-menu span:after{background:#fff;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}
+.responsive-menu span:after{margin-left:-7px;background:#00C185;content:'';display:block;height:100%;border-radius:19%;position:absolute;transition:all .2s ease-out;width:130%}
 .rg-popup{position:fixed;top:0;bottom:0;left:0;right:0;z-index:99999;display:flex;align-items:center;justify-content:center}
 .rg-popup .popup-inner{width:900px;position:relative;max-height:90%;max-width:90%;background:#fff;-webkit-animation-name:zoomIn;animation-name:zoomIn;-webkit-animation-duration:0.5s;animation-duration:0.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 .rg-popup .popup-layer{position:fixed;top:0;bottom:0;left:0;right:0;height:100%;width:100%;background:#000000c9;cursor:pointer}
@@ -191,21 +191,21 @@ code{background-color:#333;border-radius:3px;margin-bottom:30px;display:block;pa
 @media only screen and (max-width:767px){
     .site-header .header-main .logo{width:90%;width:calc(100% - 30px)}
     .site-header .header-main{flex-wrap:wrap;align-items:center;justify-content:flex-start}
-    .site-header .header-main .menu{position:fixed;top:0;right:-100%;bottom:0;width:100%;z-index:1;background:#000000c9;z-index:999;padding:80px 0 0 0;-webkit-transition:0.3s all;transition:0.3s all}
+    .site-header .header-main .menu{position:fixed;top:0;right:-100%;bottom:0;width:100%;z-index:1;background:rgba(14,26,54,0.86);z-index:999;padding:80px 0 0 0;-webkit-transition:0.3s all;transition:0.3s all}
     .site-header.active .logo{z-index:9999}
     .site-header.active .header-main .menu{right:0;-webkit-transition:0.3s all;transition:0.3s all}
     .site-header.active .responsive-menu{z-index:9999}
     .site-header.active .responsive-menu span{background:transparent}
     .site-header.active .responsive-menu span:before{transform:rotate(-45deg);top:0}
     .site-header.active .responsive-menu span:after{transform:rotate(45deg);top:0}
-    .site-header .header-main .menu ul{flex-wrap:wrap;flex-direction:column;width:100%;height:100%;justify-content:flex-start}
-    .site-header .header-main .menu ul li{margin:0}
+    .site-header .header-main .menu ul{flex-wrap:wrap;flex-direction:column;width:100%;height:90%;justify-content:flex-start}
+    .site-header .header-main .menu ul li{margin:0 auto;}
     .container{max-width:100%}
     h1,
     .h1{font-size:32px}
     h2{font-size:24px;line-height:30px}
     .responsive-menu{display:flex;float:right}
-    .site-header .header-main .menu ul li a{padding:6px 20px;display:inline-block;width:100%;border-bottom:1px solid #fff;box-sizing:border-box;font-size:14px}
+    .site-header .header-main .menu ul li a{margin-top:25px;padding:6px 20px;display:inline-block;width:100%;border-bottom:4px solid #00C185;box-sizing:border-box;font-size:30px}
 }
 @media only screen and (max-width:568px){
     .photos-page-list .item{width:100%}
