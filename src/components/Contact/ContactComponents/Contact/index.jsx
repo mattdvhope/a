@@ -10,7 +10,25 @@ function Contact(props) {
   const fbLink = mobileBrowser ? "fb://page/?id=106619367753772" : "https://web.facebook.com/relationshipsthailand";
   const msgLink = "http://m.me/relationshipsthailand";
 
-  const { group5, chat, text1, followUs, title, messenger, facebookCircularLogo } = props;
+  const { pageType, messengerLogo, facebookLogo } = props;
+
+console.log(pageType === "contact");
+  const title = pageType === "contact" ? "ติดต่อเรา" : "เกี่ยวกับเรา";
+  const text1 = pageType === "contact" ? "มาแชทกับเรา! เราต้องการได้ยินจากคุณ!" : "จุดประสงค์ของเว็บไซต์นี้คืออะไร?"
+
+  const GreenArea = () => 
+    pageType === "contact" ?
+      <>
+        <a href={msgLink}><MessengerLogo src={messengerLogo} /></a>
+        <a href={msgLink}><Chat>แชท</Chat></a>
+        <a href={fbLink}><FacebookLogo src={facebookLogo} /></a>
+        <a href={fbLink}><FollowUs>ติดตามเรา</FollowUs></a>
+      </>
+    : 
+      <>
+        <AboutText>เราได้สร้างพื้นที่เว็บสำหรับผู้ที่ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับพระเยซูคริสต์</AboutText>
+      </>;
+
   return (
     <div className="container-center-horizontal">
       <div className="contact screen">
@@ -31,14 +49,13 @@ function Contact(props) {
           <Rectangle43 src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-43@2x.svg" />
           <Rectangle41 src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-41@2x.svg" />
           <Rectangle51 src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-51@2x.svg" />
-          <Group5 src={group5} />
+          <Group5 src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/group-5@2x.png" />
           <GreenRectangle src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/green-rectangle@1x.svg" />
-          <a href={msgLink}><Chat>{chat}</Chat></a>
-          <Text1>{text1}</Text1>
-          <a href={fbLink}><FollowUs>{followUs}</FollowUs></a>
+          
           <Title>{title}</Title>
-          <a href={msgLink}><Messenger src={messenger} /></a>
-          <a href={fbLink}><FacebookCircularLogo src={facebookCircularLogo} /></a>
+          <Text1>{text1}</Text1>
+          
+          {GreenArea()}
         </OverlapGroup>
       </div>
     </div>
@@ -200,7 +217,7 @@ const GreenRectangle = styled.img`
 const Chat = styled.div`
   position: absolute;
   width: 79px;
-  top: 584px;
+  top: 594px;
   left: 240px;
   font-family: var(--font-family-noto_sans);
   font-weight: 700;
@@ -211,7 +228,7 @@ const Chat = styled.div`
 
 const Text1 = styled.div`
   position: absolute;
-  width: 294px;
+  width: 264px;
   top: 323px;
   left: 150px;
   font-family: var(--font-family-noto_sans);
@@ -242,20 +259,31 @@ const Title = styled.h1`
   letter-spacing: 0;
 `;
 
-const Messenger = styled.img`
+const MessengerLogo = styled.img`
   position: absolute;
   width: 65px;
   height: 62px;
-  top: 510px;
+  top: 530px;
   left: 247px;
 `;
 
-const FacebookCircularLogo = styled.img`
+const FacebookLogo = styled.img`
   position: absolute;
   width: 65px;
   height: 64px;
-  top: 672px;
+  top: 682px;
   left: 248px;
+`;
+
+const AboutText = styled.div`
+  position: absolute;
+  width: 315px;
+  height: 62px;
+  top: 540px;
+  left: 127px;
+  font-family: var(--font-family-noto_sans);
+  color: var(--white);
+  font-size: var(--font-size-xl2);
 `;
 
 export default Contact;

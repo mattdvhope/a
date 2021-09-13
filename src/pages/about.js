@@ -4,9 +4,9 @@ import PageTemplate from "../components/PageTemplate"
 const About = () => 
 
   <PageTemplate
-    header="About us"
+    header="เกี่ยวกับเรา"
     title="เกี่ยวกับเรา"
-    content="เรากำลังพยายามสร้างพื้นที่บนเว็บสำหรับผู้ที่ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับพระเยซูคริสต์"
+    pageType="about"
   />
 
 export default About

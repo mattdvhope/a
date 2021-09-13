@@ -4,8 +4,6 @@ import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
 import styled from "styled-components";
 import Layout from "../components/layout"
-import ContactApp from "../components/Contact/ContactApp"
-
 import PageTemplate from "../components/PageTemplate"
 
 
@@ -36,17 +34,14 @@ const Contact = () => {
 
   return (
     <Layout>
-      <ContactApp/>
+      <PageTemplate
+        header="ติดต่อเรา"
+        title="ติดต่อเรา"
+        pageType="contact"
+      />
     </Layout>
   )
 
-  // return (
-  //   <PageTemplate
-  //     header="Contact us"
-  //     title="ติดต่อเรา"
-  //     content="คุณสามารถติดต่อเราได้โดยคลิกที่ไอคอน Messenger ของเฟซบุ๊กที่ด้านล่างของเพจนี้ เราจะติดต่อกลับหาคุณในไม่ช้าค่ะ!"
-  //   />
-  // )
 }
 
 export default Contact
