@@ -36,9 +36,7 @@ const Contact = () => {
 
   return (
     <Layout>
-      <ContactBackground>
-        <ContactApp/>
-      </ContactBackground>
+      <ContactApp/>
     </Layout>
   )
 
@@ -50,11 +48,5 @@ const Contact = () => {
   //   />
   // )
 }
-
-const ContactBackground = styled.div`
-  margin-top: 80px;
-  margin-bottom: 80px;
-`;
-
 
 export default Contact

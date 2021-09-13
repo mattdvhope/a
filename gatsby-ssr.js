@@ -11,7 +11,7 @@ export const onRenderBody = (
       dangerouslySetInnerHTML={{ __html: `
         window.fbAsyncInit = function() {
           window.FB.init({
-            xfbml            : true,
+            xfbml            : ${true},
             version          : 'v10.0'
           });
         };
