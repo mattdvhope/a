@@ -28,12 +28,12 @@ function Contact(props) {
           <Rectangle51 src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-51@2x.svg" />
           <Group5 src={group5} />
           <GreenRectangle src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/green-rectangle@1x.svg" />
-          <Chat>{chat}</Chat>
+          <a href="http://m.me/relationshipsthailand"><Chat>{chat}</Chat></a>
           <Text1>{text1}</Text1>
-          <FollowUs>{followUs}</FollowUs>
+          <a href="fb://page/?id=106619367753772"><FollowUs>{followUs}</FollowUs></a>
           <Title>{title}</Title>
           <a href="http://m.me/relationshipsthailand"><Messenger src={messenger} /></a>
-          <FacebookCircularLogo src={facebookCircularLogo} />
+          <a href="fb://page/?id=106619367753772"><FacebookCircularLogo src={facebookCircularLogo} /></a>
         </OverlapGroup>
       </div>
     </div>
