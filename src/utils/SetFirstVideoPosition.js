@@ -9,6 +9,8 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
   useEffect(() => {
 
+ScrollToSmoothly(500, 1000);
+
     // const myPromise = new Promise((resolve, reject) => {
     //   resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
     // });
