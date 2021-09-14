@@ -2,19 +2,15 @@ import React from "react"
 
 // This is for the website FB Chat Messenger (on bottom-right of website)
 export const onRenderBody = (
-  { setHeadComponents },
+  { setPreBodyComponents },
   pluginOptions
 ) => {
-  setHeadComponents([
+  setPreBodyComponents([
     <script
       key="fun_javascript"
       dangerouslySetInnerHTML={{ __html: `
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "106619367753772");
-        chatbox.setAttribute("attribution", "biz_inbox");
-
         window.fbAsyncInit = function() {
-          FB.init({
+          window.FB.init({
             xfbml            : ${true},
             version          : 'v11.0'
           });
@@ -30,7 +26,9 @@ export const onRenderBody = (
       `,
       }}
     />,
-    <div id="fb-customer-chat" class="fb-customerchat">
+    <div class="fb-customerchat"
+      attribution="page_inbox"
+      page_id="106619367753772">
     </div>
   ])
 }
