@@ -22,11 +22,11 @@ const BlogPost = ({ data }) => {
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const browser = detect();
   const firstVideoRef = useRef(null);
-  if (/node/i.test(browser.name.toString()) || /facebook/i.test(browser.name.toString())) {
+  // if (/node/i.test(browser.name.toString()) || /facebook/i.test(browser.name.toString())) {
     SetFirstVidPosNode(firstVideoRef, data.contentfulBlogs.slug);
-  } else {
-    SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
-  }
+  // } else {
+  //   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
+  // }
   
   // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
