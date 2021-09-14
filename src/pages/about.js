@@ -9,4 +9,14 @@ const About = () =>
     pageType="about"
   />
 
+
+
+    // <Layout>;
+    //   <br/>
+    //   <br/>
+    //   <br/>
+    //   <br/>
+    //   <h1>Hello from ABOUT!!!!!</h1>
+    // </Layout>;
+
 export default About
