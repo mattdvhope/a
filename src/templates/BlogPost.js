@@ -23,7 +23,7 @@ const BlogPost = ({ data }) => {
   const browser = detect();
   const firstVideoRef = useRef(null);
   // if (/node/i.test(browser.name.toString()) || /facebook/i.test(browser.name.toString())) {
-  if (browser.type === browser.name && browser.type === node) {
+  if (browser.type === browser.name && browser.type === "node") {
     SetFirstVidPosNode(firstVideoRef, data.contentfulBlogs.slug);
   } else {
     SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
