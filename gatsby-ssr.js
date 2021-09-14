@@ -2,10 +2,10 @@ import React from "react"
 
 // This is for the website FB Chat Messenger (on bottom-right of website)
 export const onRenderBody = (
-  { setPreBodyComponents },
+  { setPostBodyComponents },
   pluginOptions
 ) => {
-  setPreBodyComponents([
+  setPostBodyComponents([
     <script
       key="fun_javascript"
       dangerouslySetInnerHTML={{ __html: `
