@@ -5,6 +5,11 @@ export const onRenderBody = (
   pluginOptions
 ) => {
   setPreBodyComponents([
+    <div id="fb-root"></div>,
+    <div class="fb-customerchat"
+      attribution="page_inbox"
+      page_id="106619367753772">
+    </div>,
     <script
       key="fun_javascript"
       dangerouslySetInnerHTML={{ __html: `
@@ -25,10 +30,6 @@ console.log("inside code");
         }(document, 'script', 'facebook-jssdk'));
       `,
       }}
-    />,
-    <div class="fb-customerchat"
-      attribution="page_inbox"
-      page_id="106619367753772">
-    </div>
+    />
   ])
 }
