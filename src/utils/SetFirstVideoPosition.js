@@ -9,25 +9,31 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
   useEffect(() => {
 
-ScrollToSmoothly(500, 1000);
+    const browser = detect();
 
-    // const myPromise = new Promise((resolve, reject) => {
-    //   resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
-    // });
+    if (browser.name === "node") {
+      ScrollToSmoothly(500, 1000);
+    } else {
 
-    // const browser = detect();
-    // const scrollSpeed = browser.name === "chromium-webview" ? 2400 : 1400;
+      const myPromise = new Promise((resolve, reject) => {
+        resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
+      });
 
-    // myPromise
-    // // .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
-    // .then(res => {
-    //   if (firstVideoPosition || firstVideoPosition === 0) {
-    //     ScrollToSmoothly(firstVideoPosition, scrollSpeed);
-    //     console.log("in then");
-    //   }
-    // })
-    // .catch(err => console.log("error: ", err));
+      const scrollSpeed = browser.name === "chromium-webview" ? 1400 : 700;
 
+      myPromise
+      // .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
+      .then(res => {
+        if (firstVideoPosition || firstVideoPosition === 0) {
+          ScrollToSmoothly(firstVideoPosition, scrollSpeed);
+          console.log("in then");
+        }
+      })
+      .catch(err => console.log("error: ", err));
+
+    } // if-else
+
+ 
     // To set default video post for the session
     window.sessionStorage.setItem('slug', slug);
 
