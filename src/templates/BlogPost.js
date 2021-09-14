@@ -72,8 +72,6 @@ const BlogPost = ({ data }) => {
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
-          {browser.type}
-          {browser.name}
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
