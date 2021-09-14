@@ -1,7 +1,4 @@
 export const ScrollToSmoothly = (pos, time) => {
-
-console.log(pos);
-
   var currentPos = window.pageYOffset;
   var start = null;
   if(time == null) time = 500;
