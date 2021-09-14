@@ -10,15 +10,20 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
   useEffect(() => {
 
     const myPromise = new Promise((resolve, reject) => {
-      resolve('foo');
+      resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
     });
 
     const browser = detect();
     const scrollSpeed = browser.name === "chromium-webview" ? 2400 : 1400;
 
     myPromise
-    .then(res => setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
-    .then(res => ScrollToSmoothly(firstVideoPosition, scrollSpeed))
+    // .then(res => setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
+    .then(res => {
+      if (firstVideoPosition || firstVideoPosition === 0) {
+        console.log(firstVideoPosition);
+        ScrollToSmoothly(firstVideoPosition, scrollSpeed)
+      }
+    })
     .catch(err => console.log("error: ", err));
 
     // To set default video post for the session
