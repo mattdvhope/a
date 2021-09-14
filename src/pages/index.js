@@ -7,9 +7,11 @@ import Seo from "../components/seo"
 
 
 const IndexPage = () => (
-  <Layout header="home">
-    <Seo title="Home" />
-  </Layout>
+  <PageTemplate
+    header="home"
+    title="Home"
+    pageType="home"
+  />
 )
 
 
