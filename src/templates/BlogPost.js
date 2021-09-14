@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import "./BlogPost.css";
 import SetInitialVideosAbove from "../components/SetInitialVideosAbove";
 import SetInitialVideosBelow from "../components/SetInitialVideosBelow";
 import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
@@ -56,7 +57,7 @@ const BlogPost = ({ data }) => {
   return (
     <Layout header="feed">
       <SEO title="วีดีโอ" />
-      <div className="container">
+      <div className="container graphics">
         {moreVidsAbv}
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
