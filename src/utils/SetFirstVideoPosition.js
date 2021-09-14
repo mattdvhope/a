@@ -18,12 +18,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     // myPromise
     // // .then(res => setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
-    // .then(res => {
-    //   if (firstVideoPosition || firstVideoPosition === 0) {
-    //     console.log(firstVideoPosition);
-    //     ScrollToSmoothly(firstVideoPosition, scrollSpeed)
-    //   }
-    // })
+    // .then(res => ScrollToSmoothly(firstVideoPosition, scrollSpeed))
     // .catch(err => console.log("error: ", err));
 
     // To set default video post for the session
