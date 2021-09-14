@@ -15,7 +15,7 @@ export const onRenderBody = (
 
         window.fbAsyncInit = function() {
           FB.init({
-            xfbml            : ${true},
+            xfbml            : true,
             version          : 'v11.0'
           });
         };
