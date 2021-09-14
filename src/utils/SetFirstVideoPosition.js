@@ -21,7 +21,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
     .catch(err => console.log("error: ", err));
 
     // To set default video post for the session
-    window.sessionStorage.setItem('slug', slug);
+    // window.sessionStorage.setItem('slug', slug);
 
   }, [firstVideoPosition]); // Need this dependency to have the scrolling
  
