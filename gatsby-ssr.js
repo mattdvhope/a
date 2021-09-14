@@ -1,5 +1,4 @@
 import React from "react"
-
 // This is for the website FB Chat Messenger (on bottom-right of website)
 export const onRenderBody = (
   { setHeadComponents },
@@ -16,6 +15,7 @@ export const onRenderBody = (
           });
         };
 
+console.log("inside code");
         (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
