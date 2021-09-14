@@ -27,7 +27,7 @@ const BlogPost = ({ data }) => {
   // } else {
   //   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
   // }
-  
+
   // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
@@ -71,6 +71,7 @@ const BlogPost = ({ data }) => {
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
+          {browser.type}
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
