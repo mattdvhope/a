@@ -2,7 +2,7 @@ import React from "react";
 import "./Contact.css";
 
 function Contact(props) {
-  const { group5, chat, text1, followUs, title, messenger, facebookCircularLogo } = props;
+  const { chat, text1, followUs, title, messengerLogo, facebookCircularLogo } = props;
 
   return (
     <div className="container-center-horizontal">
@@ -72,16 +72,16 @@ function Contact(props) {
             className="rectangle-51"
             src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-51@2x.svg"
           />
-          <img className="group-5" src={group5} />
+          <img className="group-5" src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/61392a07173bee6db2de22b4/img/group-5-1@2x.png" />
           <img
             className="green-rectangle"
             src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/green-rectangle@1x.svg"
           />
+          <img className="messenger" src={messengerLogo} />
           <div className="chat">{chat}</div>
           <div className="text-1">{text1}</div>
           <div className="follow-us">{followUs}</div>
           <h1 className="title notosans-bold-white-26px">{title}</h1>
-          <img className="messenger" src={messenger} />
           <img className="facebook-circular-logo" src={facebookCircularLogo} />
         </div>
       </div>
