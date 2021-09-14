@@ -22,11 +22,11 @@ const ReachedBottomOfDoc = () => {
 
   const browser = detect();
 
-  if (browser.name === "chromium-webview") {
-		return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument); 	
-  } else {
+  // if (browser.name === "chromium-webview") {
+		// return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument); 	
+  // } else {
   	return heightAboveWindowScreen + windowScreenHeight >= heightOfDocument;
-  }
+  // }
 
 }
 
@@ -38,4 +38,4 @@ export default ReachedBottomOfDoc;
 // browser.name === "facebook"
 // browser.name === "safari"
 // browser.name === "ios"
-// browser.name === "chromium-webview")
+// browser.name === "chromium-webview"

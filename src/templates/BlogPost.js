@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+
+import { detect } from "detect-browser";
+
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -56,6 +59,8 @@ console.log(data.contentfulBlogs.slug);
     .catch(err => console.log("error: ", err));
   }
 
+  const browser = detect();
+
   return (
     <Layout header="feed">
       <SEO title="วีดีโอ" />
@@ -64,6 +69,7 @@ console.log(data.contentfulBlogs.slug);
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
+          {JSON.stringify(browser)}
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
