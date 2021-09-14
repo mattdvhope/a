@@ -10,7 +10,6 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
   useEffect(() => {
 
     const myPromise = new Promise((resolve, reject) => {
-      resolve();
       resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
     });
 
