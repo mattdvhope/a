@@ -8,9 +8,9 @@ import Seo from "../components/seo"
 
 const IndexPage = () => (
   <PageTemplate
-    header="home"
-    title="Home"
-    pageType="home"
+    header="about"
+    title="about"
+    pageType="about"
   />
 )
 
