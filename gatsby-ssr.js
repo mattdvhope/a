@@ -6,9 +6,9 @@ export const onRenderBody = (
 ) => {
   setPreBodyComponents([
     <div id="fb-root"></div>,
-    <div class="fb-customerchat"
-      attribution="page_inbox"
-      page_id="106619367753772">
+    <div className="fb-customerchat"
+      page_id="106619367753772"
+      attribution="biz_inbox">
     </div>,
     <script
       key="fun_javascript"
