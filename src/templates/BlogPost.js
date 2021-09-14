@@ -19,53 +19,53 @@ const BlogPost = ({ data }) => {
   const firstVideoRef = useRef(null)
   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
-  // // 2. Set 'initial' videos above and below the first video
-  // const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
-  // const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
+  // 2. Set 'initial' videos above and below the first video
+  const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
+  const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
-  // // 3a. Set infinite scrolling. Scrolling wkll create 'more' videos (from BlogPost.js) above & below
-  // const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
-  // const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
-  // const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
+  // 3a. Set infinite scrolling. Scrolling wkll create 'more' videos (from BlogPost.js) above & below
+  const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
+  const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
+  const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
   
-  // // 3b. Actually attach these new components to the DOM
-  // const [moreVidsAbv, setMoreVidsAbv] = useState(null);
-  // const [moreVidsBlw, setMoreVidsBlw] = useState(null);
+  // 3b. Actually attach these new components to the DOM
+  const [moreVidsAbv, setMoreVidsAbv] = useState(null);
+  const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
-  // // 4. Obtain number of videos below to know when to jump to the top AND whether to add UnderLastVideo() elements.
-  // const numberOfInitVidsBelow = initialVideosBelow ? initialVideosBelow.props.children.length : null
-  // const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
-  // const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
+  // 4. Obtain number of videos below to know when to jump to the top AND whether to add UnderLastVideo() elements.
+  const numberOfInitVidsBelow = initialVideosBelow ? initialVideosBelow.props.children.length : null
+  const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
+  const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
 
-  // function elementsFromScrolling() {
-  //   const myPromise = new Promise((resolve, reject) => {
-  //     resolve();
-  //   });
-  //   myPromise
-  //   .then(res => !moreVidsAbv ? setMoreVidsAbv(moreVideosAbove) : null)
-  //   .then(res => !moreVidsBlw ? setMoreVidsBlw(moreVideosBelow) : null)
-  //   .then(res => {
-  //     const numMoreVidsAbv = moreVidsAbv ? moreVidsAbv.props.children.length : null;
-  //     const numMoreVidsBlw = moreVidsBlw ? moreVidsBlw.props.children.length : null;
-  //     const totalMoreVids = numMoreVidsAbv + numMoreVidsBlw;
-  //     RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow, totalMoreVids);
-  //   })
-  //   .then(res => setIsFetching(false))
-  //   .catch(err => console.log("error: ", err));
-  // }
+  function elementsFromScrolling() {
+    const myPromise = new Promise((resolve, reject) => {
+      resolve();
+    });
+    myPromise
+    .then(res => !moreVidsAbv ? setMoreVidsAbv(moreVideosAbove) : null)
+    .then(res => !moreVidsBlw ? setMoreVidsBlw(moreVideosBelow) : null)
+    .then(res => {
+      const numMoreVidsAbv = moreVidsAbv ? moreVidsAbv.props.children.length : null;
+      const numMoreVidsBlw = moreVidsBlw ? moreVidsBlw.props.children.length : null;
+      const totalMoreVids = numMoreVidsAbv + numMoreVidsBlw;
+      RetainPosOrJumpToTop(initVidBlwRef, numberOfVideosBelow, totalMoreVids);
+    })
+    .then(res => setIsFetching(false))
+    .catch(err => console.log("error: ", err));
+  }
 
   return (
     <Layout header="feed">
       <SEO title="วีดีโอ" />
       <div className="container graphics">
-        {/*{moreVidsAbv}*/}
-        {/*{initialVideosAbove}*/}
+        {moreVidsAbv}
+        {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
-          {/*{numberOfVideosBelow === 0 ? UnderLastVideo() : null}*/}
+          {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
-        {/*{initialVideosBelow}*/}
-        {/*{moreVidsBlw}*/}
+        {initialVideosBelow}
+        {moreVidsBlw}
       </div>
     </Layout>
   )
