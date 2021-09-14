@@ -6,8 +6,8 @@ import PageTemplate from "../components/PageTemplate";
 
 const IndexPage = () => (
   <PageTemplate
-    header="about"
-    title="about"
+    header="home"
+    title="home"
     pageType="about"
   />
 )
