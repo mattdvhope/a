@@ -47,35 +47,6 @@ const Layout = ({ children, header }) => {
           <div>
             <main id="home">{children}</main>
           </div>
-      {/* <Footer siteName={data.contentfulHomePage.siteName} />  */}
-
-    <script
-      key="fun_javascript"
-      dangerouslySetInnerHTML={{ __html: `
-        window.fbAsyncInit = function() {
-          window.FB.init({
-            xfbml            : ${true},
-            version          : 'v11.0'
-          });
-        };
-
-console.log("inside code");
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      `,
-      }}
-    />,
-    <div class="fb-customerchat"
-      attribution="page_inbox"
-      page_id="106619367753772">
-    </div>
-
-
         </>
       )}
     />
