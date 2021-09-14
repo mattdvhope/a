@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReachedBottomOfDoc from './ReachedBottomOfDoc'
 
 // custom Hook
@@ -6,7 +6,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
   const [isFetching, setIsFetching] = useState(false);
 
   // Add elements above & below when window Y-ends reached
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (!ReachedBottomOfDoc()) return;
       setIsFetching(true);
@@ -14,9 +14,9 @@ const useInfiniteScroll = (elementsFromScrolling) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // useLayoutEffect
+  }, []); // useEffect
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!isFetching) return;
     elementsFromScrolling();
   }, [isFetching]);
