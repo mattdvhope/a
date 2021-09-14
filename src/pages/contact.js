@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
+// import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
 
 import styled from "styled-components";
-import Layout from "../components/layout"
 import PageTemplate from "../components/PageTemplate"
 
 
