@@ -23,11 +23,11 @@ const BlogPost = ({ data }) => {
   const browser = detect();
   const firstVideoRef = useRef(null);
   // if (/node/i.test(browser.name.toString()) || /facebook/i.test(browser.name.toString())) {
-  // if (browser.type === node) {
+  if (browser.type === browser.name && browser.type === node) {
     SetFirstVidPosNode(firstVideoRef, data.contentfulBlogs.slug);
-  // } else {
-  //   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
-  // }
+  } else {
+    SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
+  }
 
   // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
