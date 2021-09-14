@@ -5,11 +5,9 @@ import Seo from "../components/seo"
 import PageTemplate from "../components/PageTemplate";
 
 const IndexPage = () => (
-  <PageTemplate
-    header="home"
-    title="home"
-    pageType="about"
-  />
+  <Layout header="Home">
+    <Seo title="Home" />
+  </Layout>
 )
 
 export default IndexPage;
