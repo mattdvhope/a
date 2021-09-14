@@ -13,7 +13,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
     const node = /node/i;
     const fb = /facebook/i;
 
-    if (JSON.stringify(node.test(browser.name.toString())) || JSON.stringify(fb.test(browser.name.toString()))) {
+    if (node.test(browser.name.toString()) || fb.test(browser.name.toString())) {
       ScrollToSmoothly(500, 1000);
     } else {
       const myPromise = new Promise((resolve, reject) => {
