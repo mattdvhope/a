@@ -15,8 +15,6 @@ import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 
 const BlogPost = ({ data }) => {
 
-alert("hello from blog post");
-
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null)
   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);

@@ -9,6 +9,8 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
   useEffect(() => {
 
+alert(slug);
+
     const myPromise = new Promise((resolve, reject) => {
       resolve('foo');
     });
