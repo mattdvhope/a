@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+
+import { detect } from "detect-browser";
+
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -9,6 +12,7 @@ import SetMoreVideosAbove from "../components/SetMoreVideosAbove";
 import SetMoreVideosBelow from "../components/SetMoreVideosBelow";
 import UnderLastVideo from "../components/UnderLastVideo"
 import YoutubeHolder from "./YoutubeHolder"
+import SetFirstVidPosNode from "../utils/SetFirstVidPosNode";
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
@@ -16,9 +20,14 @@ import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 const BlogPost = ({ data }) => {
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
-  const firstVideoRef = useRef(null)
-  SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
-
+  const browser = detect();
+  const firstVideoRef = useRef(null);
+  if (/node/i.test(browser.name.toString()) || /facebook/i.test(browser.name.toString())) {
+    SetFirstVidPosNode(firstVideoRef, data.contentfulBlogs.slug);
+  } else {
+    SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
+  }
+  
   // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
