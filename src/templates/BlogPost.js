@@ -69,7 +69,7 @@ console.log(data.contentfulBlogs.slug);
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
-          {JSON.stringify(browser)}
+          {browser.name}
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
