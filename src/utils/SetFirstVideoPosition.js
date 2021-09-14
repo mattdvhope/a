@@ -11,7 +11,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     const myPromise = new Promise((resolve, reject) => {
       resolve();
-      // resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
+      resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
     });
 
     const browser = detect();
