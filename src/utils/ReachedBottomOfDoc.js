@@ -10,11 +10,11 @@ const ReachedBottomOfDoc = () => {
 
   const browser = detect();
 
-  if (browser.name === "chromium-webview") { 
-    return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument);
-  } else {
+  // if (browser.name === "chromium-webview") { 
+  //   return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument);
+  // } else {
     return heightAboveWindowScreen + windowScreenHeight >= heightOfDocument;
-  }
+  // }
 }
 
 export default ReachedBottomOfDoc;
