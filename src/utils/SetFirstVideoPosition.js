@@ -11,7 +11,9 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     const browser = detect();
 
-    if (browser.name === "node") {
+    /node/.test(browser.name.toString())
+
+    if (/node/.test(browser.name.toString()) || /facebook/.test(browser.name.toString())) {
       ScrollToSmoothly(500, 1000);
     } else {
 
