@@ -11,21 +11,21 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     const browser = detect();
 
-    if (browser.name === "ios") {
+    // if (browser.name === "safari") {
 
-      const myPromise = new Promise((resolve, reject) => {
-        resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
-      });
+    //   const myPromise = new Promise((resolve, reject) => {
+    //     resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
+    //   });
 
-      const scrollSpeed = browser.name === "chromium-webview" ? 1800 : 1200;
+    //   const scrollSpeed = browser.name === "chromium-webview" ? 1800 : 1200;
 
-      myPromise
-      .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
-      .catch(err => console.log("error: ", err));
+    //   myPromise
+    //   .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
+    //   .catch(err => console.log("error: ", err));
 
-    } else {
+    // } else {
       ScrollToSmoothly(500, 1000);
-    } // if-else
+    // } // if-else
 
  
     // To set default video post for the session
@@ -38,4 +38,10 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 export default SetFirstVideoPosition;
 
 
+// Various browsers:
+// browser.name === "node"
+// browser.name === "facebook"
+// browser.name === "safari"
+// browser.name === "ios"
+// browser.name === "chromium-webview"
 

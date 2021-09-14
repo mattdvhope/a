@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+
+import { detect } from "detect-browser";
+
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,6 +17,8 @@ import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 
 const BlogPost = ({ data }) => {
+
+console.log(data.contentfulBlogs.slug);
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null)
@@ -54,6 +59,8 @@ const BlogPost = ({ data }) => {
     .catch(err => console.log("error: ", err));
   }
 
+  const browser = detect();
+
   return (
     <Layout header="feed">
       <SEO title="วีดีโอ" />
@@ -62,6 +69,7 @@ const BlogPost = ({ data }) => {
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
+          {JSON.stringify(/node/.test(browser.name.toString()))}
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
