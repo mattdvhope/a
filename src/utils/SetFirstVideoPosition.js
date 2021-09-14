@@ -11,28 +11,20 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     const browser = detect();
 
-    /node/.test(browser.name.toString())
-
-    if (/node/.test(browser.name.toString()) || /facebook/.test(browser.name.toString())) {
-      ScrollToSmoothly(500, 1000);
-    } else {
+    if (browser.name === "ios") {
 
       const myPromise = new Promise((resolve, reject) => {
         resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
       });
 
-      const scrollSpeed = browser.name === "chromium-webview" ? 1400 : 700;
+      const scrollSpeed = browser.name === "chromium-webview" ? 1800 : 1200;
 
       myPromise
-      // .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
-      .then(res => {
-        if (firstVideoPosition || firstVideoPosition === 0) {
-          ScrollToSmoothly(firstVideoPosition, scrollSpeed);
-          console.log("in then");
-        }
-      })
+      .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
       .catch(err => console.log("error: ", err));
 
+    } else {
+      ScrollToSmoothly(500, 1000);
     } // if-else
 
  
