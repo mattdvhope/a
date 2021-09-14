@@ -18,16 +18,13 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     myPromise
     .then(res => setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top))
-    .then(res => {
-      console.log(firstVideoPosition);
-      ScrollToSmoothly(firstVideoPosition, scrollSpeed)
-    })
+    .then(res => ScrollToSmoothly(firstVideoPosition, scrollSpeed))
     .catch(err => console.log("error: ", err));
 
     // To set default video post for the session
     window.sessionStorage.setItem('slug', slug);
 
-  }, []);
+  }, [firstVideoPosition]); // Need this dependency to have the scrolling
  
 };
 
