@@ -37,7 +37,6 @@ const Layout = ({ children, header }) => {
               nonce="PFVZXkQp"
             />
             <meta name="facebook-domain-verification" content="k80kka3b227qj11jguub5d6jzk3ycm" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           </Helmet>
 
           <Header
