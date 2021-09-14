@@ -23,6 +23,7 @@ const BlogPost = ({ data }) => {
   const browser = detect();
   const firstVideoRef = useRef(null);
   // if (/node/i.test(browser.name.toString()) || /facebook/i.test(browser.name.toString())) {
+  // if (browser.type === node) {
     SetFirstVidPosNode(firstVideoRef, data.contentfulBlogs.slug);
   // } else {
   //   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
@@ -72,6 +73,7 @@ const BlogPost = ({ data }) => {
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
           {browser.type}
+          {browser.name}
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
