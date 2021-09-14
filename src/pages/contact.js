@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 // import Cookies from 'js-cookie' // REMOVE THIS PACKAGE SOON!!!!!!!
+import Layout from "../components/layout" // REMOVE THIS SOON!!!!!!!
+
+
 
 import styled from "styled-components";
 import PageTemplate from "../components/PageTemplate"
@@ -31,13 +34,27 @@ const Contact = () => {
 
   // }, []);
 
+
   return (
-    <PageTemplate
-      header="ติดต่อเรา"
-      title="ติดต่อเรา"
-      pageType="contact"
-    />
+    <Layout>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h1>Hello from CONTACT!!!!!</h1>
+    </Layout>
   )
+
+
+
+
+  // return (
+  //   <PageTemplate
+  //     header="ติดต่อเรา"
+  //     title="ติดต่อเรา"
+  //     pageType="contact"
+  //   />
+  // )
 
 }
 
