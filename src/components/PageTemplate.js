@@ -5,19 +5,12 @@ import Seo from "./seo"
 import ContactApp from "./Contact/ContactApp"
 
 const PageTemplate = ({ header, title, pageType }) => {
-  const [slug, setSlug] = useState('');
-
-  useEffect(() => {
-    setSlug(window.sessionStorage.getItem('slug'));
-  }, []);
-
   return (
   <Layout header={header}>
     <Seo title={title} />
     <ContactApp pageType={pageType} />
   </Layout>
   )
-
 }
 
 export default PageTemplate
