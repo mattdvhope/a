@@ -7,8 +7,7 @@ const Header = ({ data, header }) => {
   const [slug, setSlug] = useState('');
 
   useEffect(() => {
-    // setSlug(window.sessionStorage.getItem('slug'));
-    setSlug("eating-the-fruit");
+    setSlug(window.sessionStorage.getItem('slug'));
   }, []);
 
   return (
