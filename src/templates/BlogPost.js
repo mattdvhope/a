@@ -23,6 +23,8 @@ const BlogPost = ({ data }) => {
   const firstVideoRef = useRef(null);
   SetFirstVidPosNode(firstVideoRef, data.contentfulBlogs.slug);
 
+console.log("under SetFirstVidPosNode");
+
   // // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);

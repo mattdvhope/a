@@ -12,11 +12,13 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
     const myPromise = new Promise((resolve, reject) => {
       resolve(setFirstVideoPosition(firstVideoRef.current.getBoundingClientRect().top));
+      reject(console.log("REJECTED!!!!!!"));
+      // reject(ScrollToSmoothly(500, 1000));
     });
     const browser = detect();
     const scrollSpeed = browser.name === "chromium-webview" ? 1800 : 1200;
     myPromise
-    .then(res => firstVideoPosition || firstVideoPosition === 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
+    .then(res => firstVideoPosition && firstVideoPosition > 0 ? ScrollToSmoothly(firstVideoPosition, scrollSpeed) : null)
     .catch(err => console.log("error: ", err));
 
  
