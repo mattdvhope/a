@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -20,7 +20,7 @@ const BlogPost = ({ data }) => {
   const firstVideoRef = useRef(null);
   const [firstVidIsInPosition, setFirstVidIsInPosition] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.sessionStorage.setItem('slug', data.contentfulBlogs.slug);
     const aPromise = new Promise((resolve, reject) => {
       // resolve(alert("in Promise"))
@@ -28,6 +28,7 @@ const BlogPost = ({ data }) => {
     });
     aPromise
     .then(res => {
+      firstVideoRef.current.scrollIntoView(true);
       SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
       setFirstVidIsInPosition(true);
     })
