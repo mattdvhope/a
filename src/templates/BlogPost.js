@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -20,16 +20,17 @@ const BlogPost = ({ data }) => {
   const firstVideoRef = useRef(null);
   const [firstVidIsInPosition, setFirstVidIsInPosition] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    window.sessionStorage.setItem('slug', data.contentfulBlogs.slug);
     const aPromise = new Promise((resolve, reject) => {
-      resolve()
+      // resolve(alert("in Promise"))
+      resolve();
     });
     aPromise
     .then(res => {
       SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
       setFirstVidIsInPosition(true);
     })
-    window.sessionStorage.setItem('slug', data.contentfulBlogs.slug);
   }, []);
 
 
