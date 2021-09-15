@@ -30,9 +30,8 @@ const BlogPost = ({ data }) => {
     aPromise
     .then(res => {
       const topOfFirstVid = firstVideoRef.current.getBoundingClientRect().top;
-      ScrollToSmoothly(topOfFirstVid, 3500);
-      // firstVideoRef.current.scrollIntoView(true); // for FB app on ios ('node' browser)
-      SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
+      ScrollToSmoothly(topOfFirstVid, 1500);
+      // SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
       setFirstVidIsInPosition(true);
     })
   }, []);
