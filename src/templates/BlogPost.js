@@ -12,6 +12,7 @@ import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
+import { ScrollToSmoothly } from "../utils/ScrollToSmoothly";
 
 const BlogPost = ({ data }) => {
 
@@ -28,7 +29,9 @@ const BlogPost = ({ data }) => {
     });
     aPromise
     .then(res => {
-      firstVideoRef.current.scrollIntoView(true); // for FB app on ios ('node' browser)
+      const topOfFirstVid = firstVideoRef.current.getBoundingClientRect().top;
+      ScrollToSmoothly(topOfFirstVid, 3500);
+      // firstVideoRef.current.scrollIntoView(true); // for FB app on ios ('node' browser)
       SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
       setFirstVidIsInPosition(true);
     })
