@@ -3,7 +3,7 @@ import { ScrollToSmoothly } from "./ScrollToSmoothly";
 
 // To set the first video's position AFTER the DOM loaded...////
 const SetFirstVideoPosition = (firstVideoRef, slug) => { // MAYBE TEST 'async' & 'await' here......
-  const [firstVidIsInPosition, setFirstVidIsInPosition] = useState(false);
+  const [firstVidIsInPosition, setFirstVidIsInPosition] = useState(false); // this may not be necessary, but is there for good measure
   useEffect(() => {
     // To set default video post for the session
     window.sessionStorage.setItem('slug', slug);
@@ -17,7 +17,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => { // MAYBE TEST 'async' &
       if (firstVidIsInPosition) return; // this may not be necessary, but is there for good measure
       const topOfFirstVid = firstVideoRef.current.getBoundingClientRect().top;
       ScrollToSmoothly(topOfFirstVid, 1200);
-      setFirstVidIsInPosition(true);
+      setFirstVidIsInPosition(true); // this may not be necessary, but is there for good measure
     })
   }, []);
 };
