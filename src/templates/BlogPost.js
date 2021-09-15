@@ -18,26 +18,7 @@ const BlogPost = ({ data }) => {
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null);
-
   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
-  // const [firstVidIsInPosition, setFirstVidIsInPosition] = useState(false);
-  // useEffect(() => {
-  //   // To set default video post for the session
-  //   window.sessionStorage.setItem('slug', data.contentfulBlogs.slug);
-
-  //   // To scroll to first video's position (after initialVideosAbove & initialVideosBelow render)
-  //   const aPromise = new Promise((resolve, reject) => {
-  //     resolve();
-  //   });
-  //   aPromise
-  //   .then(res => {
-  //     if (firstVidIsInPosition) return; // this may not be necessary, but is there for good measure
-  //     const topOfFirstVid = firstVideoRef.current.getBoundingClientRect().top;
-  //     ScrollToSmoothly(topOfFirstVid, 1200);
-  //     setFirstVidIsInPosition(true);
-  //   })
-  // }, []);
-
 
   // // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
