@@ -28,7 +28,7 @@ const BlogPost = ({ data }) => {
     });
     aPromise
     .then(res => {
-      firstVideoRef.current.scrollIntoView(true);
+      firstVideoRef.current.scrollIntoView(true); // for FB app on ios ('node' browser)
       SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
       setFirstVidIsInPosition(true);
     })
