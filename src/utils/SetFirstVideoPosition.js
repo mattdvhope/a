@@ -9,6 +9,8 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => {
 
   useEffect(() => {
 
+    // ScrollToSmoothly(500, 1000);
+
     const browser = detect();
 
     const myPromise = new Promise((resolve, reject) => {
