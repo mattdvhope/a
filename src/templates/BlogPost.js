@@ -16,22 +16,22 @@ import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 const BlogPost = ({ data }) => {
 
   // To set default video post for the session
-  useEffect(() => {
-    window.sessionStorage.setItem('slug', data.contentfulBlogs.slug);
-  }, []);
-
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null);
   const [firstVidIsInPosition, setFirstVidIsInPosition] = useState(false);
 
-  const aPromise = new Promise((resolve, reject) => {
-    resolve()
-  });
-  aPromise
-  .then(res => {
-    SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
-    setFirstVidIsInPosition(true);
-  })
+  useEffect(() => {
+    const aPromise = new Promise((resolve, reject) => {
+      resolve()
+    });
+    aPromise
+    .then(res => {
+      SetFirstVideoPosition(firstVideoRef, firstVidIsInPosition);
+      setFirstVidIsInPosition(true);
+    })
+    window.sessionStorage.setItem('slug', data.contentfulBlogs.slug);
+  }, []);
+
 
   // // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
