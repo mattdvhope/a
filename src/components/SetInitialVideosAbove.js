@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import YoutubeHolder from "../templates/YoutubeHolder"
 
 const SetInitialVideosAbove = (data) => {
@@ -12,7 +12,7 @@ const SetInitialVideosAbove = (data) => {
   const edAbvSorted = edgesAbove.sort((a,b) => a.node.order - b.node.order)
   const oneAbove = edAbvSorted.slice(-1);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setInitialVideosAbove(() => 
       <div className="site-container blog-post">
         {oneAbove
