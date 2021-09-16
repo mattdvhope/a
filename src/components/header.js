@@ -4,13 +4,11 @@ import { Link } from "gatsby"
 
 const Header = ({ data, header }) => {
   const [menu, setMenu] = useState(false);
-  // const [slug, setSlug] = useState('');
+  const [slug, setSlug] = useState('');
 
-  // useEffect(() => {
-  //   setSlug(window.sessionStorage.getItem('slug'));
-  // }, []);
-
-  const slug = "i-am";
+  useEffect(() => {
+    setSlug(window.sessionStorage.getItem('slug'));
+  }, []);
 
   return (
     <header className={`site-header ${menu ? "active" : ""}`}>
