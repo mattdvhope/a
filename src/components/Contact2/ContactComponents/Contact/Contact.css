@@ -183,7 +183,7 @@
 }
 
 .title {
-  left: 195px;
+  left: 175px;
   letter-spacing: 0;
   position: absolute;
   top: 264px;
@@ -195,11 +195,11 @@
   font-family: var(--font-family-noto_sans);
   font-size: var(--font-size-xl);
   font-weight: 700;
-  left: 150px;
+  left: 142px;
   letter-spacing: 0;
   position: absolute;
   top: 323px;
-  width: 273px;
+  width: 263px;
 }
 
 .messengerLogo {
@@ -215,7 +215,7 @@
   font-family: var(--font-family-noto_sans);
   font-size: var(--font-size-xl);
   font-weight: 700;
-  left: 240px;
+  left: 220px;
   letter-spacing: 0;
   position: absolute;
   top: 630px;
@@ -226,7 +226,7 @@
   height: 64px;
   left: 248px;
   position: absolute;
-  top: 700px;
+  top: 710px;
   width: 65px;
 }
 
@@ -237,7 +237,18 @@
   left: 219px;
   letter-spacing: 0;
   position: absolute;
-  top: 770px;
+  top: 780px;
   width: 134px;
+}
+
+.about-text {
+  position: absolute;
+  width: 255px;
+  height: 62px;
+  top: 540px;
+  left: 147px;
+  font-family: var(--font-family-noto_sans);
+  color: var(--white);
+  font-size: var(--font-size-xl2);
 }
 
