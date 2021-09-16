@@ -1,13 +1,10 @@
 import React from "react";
-import { detect } from "detect-browser";
 import "./Contact.css";
 import "../../../Contact2/globals.css";
 import "../../../Contact2/styleguide.css";
 
 function Contact(props) {
   const { pageType, title, text1, messengerLogo, chat, facebookCircularLogo, followUs } = props;
-  const browser = detect();
-  const mobileBrowser = browser.name === "chromium-webview" || browser.name === "node" || browser.name === "facebook" || browser.name === "ios" ? true : false;
   
   return (
     <div className="container-center-horizontal">
