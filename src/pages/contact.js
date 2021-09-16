@@ -31,12 +31,24 @@ const Contact = () => {
 
 
   return (
-    <PageTemplate
-      header="ติดต่อเรา"
-      title="ติดต่อเรา"
-      pageType="contact"
-    />
+    <>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h1>Hello from Contact</h1>
+    </>
   )
+
+  // return (
+  //   <PageTemplate
+  //     header="ติดต่อเรา"
+  //     title="ติดต่อเรา"
+  //     pageType="contact"
+  //   />
+  // )
 
 }
 
