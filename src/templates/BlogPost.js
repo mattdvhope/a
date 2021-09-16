@@ -17,7 +17,7 @@ import { ScrollToSmoothly } from "../utils/ScrollToSmoothly";
 const BlogPost = ({ data }) => {
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
-  const firstVideoRef = useRef(null);
+  // const firstVideoRef = useRef(null);
   // SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
   // // 2. Set 'initial' videos above and below the first video
@@ -61,8 +61,9 @@ const BlogPost = ({ data }) => {
       <div className="container graphics">
         {/*{moreVidsAbv}*/}
         {/*{initialVideosAbove}*/}
-        <div className="site-container blog-post" ref={firstVideoRef}>
-          <YoutubeHolder data={data.contentfulBlogs}/>
+        {/*<div className="site-container blog-post" ref={firstVideoRef}>*/}
+        <div className="site-container blog-post">
+          {/*<YoutubeHolder data={data.contentfulBlogs}/>*/}
           <br/>
           <br/>
           <br/>
