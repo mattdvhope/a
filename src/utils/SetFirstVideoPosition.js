@@ -19,7 +19,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => { // MAYBE TEST 'async' &
       ScrollToSmoothly(topOfFirstVid, 1200);
       setFirstVidIsInPosition(true); // this may not be necessary, but is there for good measure
     })
-  }, []);
+  }, []); // useEffect
 };
 
 export default SetFirstVideoPosition;
