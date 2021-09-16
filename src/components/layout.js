@@ -38,11 +38,6 @@ const Layout = ({ children, header }) => {
             <meta name="facebook-domain-verification" content="k80kka3b227qj11jguub5d6jzk3ycm" />
           </Helmet>
 
-          <Header
-            data={data.contentfulHomePage}
-            siteTitle={data.contentfulHomePage.siteName}
-            header={header}
-          />
           <div>
             <main id="home">{children}</main>
           </div>
