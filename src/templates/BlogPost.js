@@ -16,7 +16,7 @@ import { ScrollToSmoothly } from "../utils/ScrollToSmoothly";
 
 const BlogPost = ({ data }) => {
 
-  // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
+  // // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   // const firstVideoRef = useRef(null);
   // SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
