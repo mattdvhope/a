@@ -1,8 +1,10 @@
 import React from "react";
 import "./Contact.css";
+import "../../../Contact2/globals.css";
+import "../../../Contact2/styleguide.css";
 
 function Contact(props) {
-  const { chat, text1, followUs, title, messengerLogo, facebookCircularLogo } = props;
+  const { pageType, title, text1, messengerLogo, chat, facebookCircularLogo, followUs } = props;
 
   return (
     <div className="container-center-horizontal">
@@ -13,7 +15,7 @@ function Contact(props) {
             src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/vector@1x.svg"
           />
           <img
-            className="rectangle-1"
+            className="big-dark-rectangle"
             src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-1@1x.svg"
           />
           <img
@@ -77,11 +79,11 @@ function Contact(props) {
             className="green-rectangle"
             src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/green-rectangle@1x.svg"
           />
-          <img className="messenger" src={messengerLogo} />
-          <div className="chat">{chat}</div>
-          <div className="text-1">{text1}</div>
-          <div className="follow-us">{followUs}</div>
           <h1 className="title notosans-bold-white-26px">{title}</h1>
+          <div className="text-1">{text1}</div>
+          <img className="messengerLogo" src={messengerLogo} />
+          <div className="chat">{chat}</div>
+          <div className="follow-us">{followUs}</div>
           <img className="facebook-circular-logo" src={facebookCircularLogo} />
         </div>
       </div>

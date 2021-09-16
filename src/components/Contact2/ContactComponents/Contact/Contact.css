@@ -1,17 +1,41 @@
 .contact {
   align-items: flex-start;
   display: flex;
-  height: 855px;
+  height: 835px;
   overflow: hidden;
-  width: 445px;
+  width: 110%;
+  text-align: center;
 }
 
 .overlap-group {
   height: 1030px;
-  margin-left: -58px;
-  margin-top: -112.45px;
+  margin-top: -130px;
   position: relative;
-  width: 554px;
+  width: 600px;
+}
+
+@media screen and (max-width: 545px) {
+  .overlap-group {
+    margin-left: -3%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .overlap-group {
+    margin-left: -17%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .overlap-group {
+    margin-left: -26%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .overlap-group {
+    margin-left: -36%;
+  }
 }
 
 .vector {
@@ -22,12 +46,20 @@
   width: 445px;
 }
 
-.rectangle-1 {
+.big-dark-rectangle {
   height: 1005px;
-  left: 18px;
+  left: 19px;
   position: absolute;
   top: 0;
-  width: 516px;
+  width: 527px;
+}
+
+.green-rectangle {
+  height: 546px;
+  left: 19px;
+  position: absolute;
+  top: 476px;
+  width: 527px;
 }
 
 .rectangle-37 {
@@ -63,7 +95,7 @@
 }
 
 .rectangle-46 {
-  height: 112px;
+  height: 122px;
   left: 57px;
   position: absolute;
   top: 767px;
@@ -103,7 +135,7 @@
 }
 
 .rectangle-44 {
-  height: 123px;
+  height: 122px;
   left: 0;
   position: absolute;
   top: 444px;
@@ -111,7 +143,7 @@
 }
 
 .rectangle-40 {
-  height: 123px;
+  height: 122px;
   left: 225px;
   position: absolute;
   top: 354px;
@@ -127,7 +159,7 @@
 }
 
 .rectangle-41 {
-  height: 123px;
+  height: 122px;
   left: 389px;
   position: absolute;
   top: 642px;
@@ -150,24 +182,12 @@
   width: 1px;
 }
 
-.green-rectangle {
-  height: 546px;
-  left: 19px;
-  position: absolute;
-  top: 476px;
-  width: 527px;
-}
-
-.chat {
-  color: var(--white);
-  font-family: var(--font-family-noto_sans);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  left: 240px;
+.title {
+  left: 195px;
   letter-spacing: 0;
   position: absolute;
-  top: 584px;
-  width: 117px;
+  top: 264px;
+  width: 201px;
 }
 
 .text-1 {
@@ -178,9 +198,36 @@
   left: 150px;
   letter-spacing: 0;
   position: absolute;
-  text-align: center;
   top: 323px;
   width: 273px;
+}
+
+.messengerLogo {
+  height: 62px;
+  left: 247px;
+  position: absolute;
+  top: 560px;
+  width: 65px;
+}
+
+.chat {
+  color: var(--white);
+  font-family: var(--font-family-noto_sans);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  left: 240px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 630px;
+  width: 117px;
+}
+
+.facebook-circular-logo {
+  height: 64px;
+  left: 248px;
+  position: absolute;
+  top: 700px;
+  width: 65px;
 }
 
 .follow-us {
@@ -190,31 +237,7 @@
   left: 219px;
   letter-spacing: 0;
   position: absolute;
-  top: 749px;
+  top: 770px;
   width: 134px;
-}
-
-.title {
-  left: 195px;
-  letter-spacing: 0;
-  position: absolute;
-  top: 264px;
-  width: 201px;
-}
-
-.messenger {
-  height: 62px;
-  left: 247px;
-  position: absolute;
-  top: 510px;
-  width: 65px;
-}
-
-.facebook-circular-logo {
-  height: 64px;
-  left: 248px;
-  position: absolute;
-  top: 672px;
-  width: 65px;
 }
 
