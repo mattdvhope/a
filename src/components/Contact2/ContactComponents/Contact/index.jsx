@@ -6,6 +6,8 @@ import "../../../Contact2/styleguide.css";
 function Contact(props) {
   const { pageType, title, text1, messengerLogo, chat, facebookCircularLogo, followUs } = props;
   
+  // Add "https://web.facebook.com/relationshipsthailand" for desktops!!!!
+
   return (
     <div className="container-center-horizontal">
       <div className="contact screen">
