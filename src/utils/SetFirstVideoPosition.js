@@ -23,11 +23,3 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => { // MAYBE TEST 'async' &
 };
 
 export default SetFirstVideoPosition;
-
-
-// Various browsers:
-// browser.name === "node"
-// browser.name === "facebook"
-// browser.name === "safari"
-// browser.name === "ios"
-// browser.name === "chromium-webview"
