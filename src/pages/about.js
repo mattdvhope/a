@@ -13,7 +13,7 @@ const About = () =>
 
 
 
-  // <PageTemplate
+  // <PageTemplate 
   //   header="เกี่ยวกับเรา"
   //   title="เกี่ยวกับเรา"
   //   pageType="about"
