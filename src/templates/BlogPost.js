@@ -63,7 +63,7 @@ const BlogPost = ({ data }) => {
         {/*{initialVideosAbove}*/}
         {/*<div className="site-container blog-post" ref={firstVideoRef}>*/}
         <div className="site-container blog-post">
-          {/*<YoutubeHolder data={data.contentfulBlogs}/>*/}
+          <YoutubeHolder data={data.contentfulBlogs}/>
           <br/>
           <br/>
           <br/>
