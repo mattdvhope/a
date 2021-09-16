@@ -18,11 +18,11 @@ const BlogPost = ({ data }) => {
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null);
-  // SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
+  SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
   // // 2. Set 'initial' videos above and below the first video
-  const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
-  const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
+  // const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
+  // const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
   // // 3a. Set infinite scrolling. Scrolling wkll create 'more' videos (from BlogPost.js) above & below
   // const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
@@ -60,12 +60,27 @@ const BlogPost = ({ data }) => {
       <SEO title="วีดีโอ" />
       <div className="container graphics">
         {/*{moreVidsAbv}*/}
-        {initialVideosAbove}
+        {/*{initialVideosAbove}*/}
         <div className="site-container blog-post" ref={firstVideoRef}>
           <YoutubeHolder data={data.contentfulBlogs}/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           {/*{numberOfVideosBelow === 0 ? UnderLastVideo() : null}*/}
         </div>
-        {initialVideosBelow}
+        {/*{initialVideosBelow}*/}
         {/*{moreVidsBlw}*/}
       </div>
     </Layout>
