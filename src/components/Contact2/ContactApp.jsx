@@ -5,12 +5,12 @@ function ContactApp({ pageType }) {
   return (
     <Contact
       pageType={pageType}
-      title="Contact Us"
-      text1="Let's chat! We care about your feedback and questions."
+      title={pageType === "contact" ? "ติดต่อเรา" : "เกี่ยวกับเรา"}
+      text1={pageType === "contact" ? "มาแชทกับเรา! เราต้องการได้ยินจากคุณ!" : "จุดประสงค์ของเว็บไซต์นี้คืออะไร?"}
       messengerLogo="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/messenger@2x.png"
-      chat="Chat"
+      chat="แชท"
       facebookCircularLogo="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/614084fc8a97c95820323a78/img/facebook-circular-logo@2x.png"
-      followUs="Follow us"
+      followUs="ติดตามเรา"
     />
   );
 }
