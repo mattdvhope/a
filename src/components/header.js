@@ -15,7 +15,7 @@ const Header = ({ data, header }) => {
       <div className="container">
         <div className="header-main">
           <div className="logo">
-            <Link to="/">
+            <Link to={`/${slug ? slug : "eating-the-fruit"}`}>
               {data.logo.file.url ? (
                 <img src="https://anima-uploads.s3.amazonaws.com/projects/61396280e87edf415321009d/releases/61396958bfe3e5336623d201/img/birds-no-bkgd@2x.svg" alt="logo" height="55vh" style={{ position: `absolute`, top: `7px` }}/>
               ) : (
