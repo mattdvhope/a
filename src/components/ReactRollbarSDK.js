@@ -7,8 +7,9 @@ import React from "react"
 // Type the following and press enter:
 // window.onerror("TestError: Hello world", window.location.href)
 
-export default () => 
-  <script
+
+export const ReactRollbarSDK = () => 
+  <script async defer
     dangerouslySetInnerHTML={{ __html: `
       var _rollbarConfig = {
         accessToken: '645bb55e94a747059b2d57cbdcffaf02',
@@ -252,7 +253,7 @@ export default () =>
                 } catch (r) {
                   t = "[unhandledrejection] error getting 'detail' from event"
                 }
-                o || (o = "[unhandledrejection] error getting "reason" from event"),
+                o || (o = "[unhandledrejection] error getting 'reason' from event"),
                   e &&
                     e.handleUnhandledRejection &&
                     e.handleUnhandledRejection(o, n)
