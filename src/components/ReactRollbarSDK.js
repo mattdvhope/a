@@ -1,42 +1,13 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import "bootstrap/dist/css/bootstrap.css";
-import Helmet from "react-helmet";
-import ReactRollbarSDK from "./ReactRollbarSDK";
+import React from "react"
 
-import Header from "./header"
-import Footer from "./footer";
-import "./layout.css"
-import "../css/style.css";
+// from... https://app.rollbar.com/onboarding/install/react-default
 
-const Layout = ({ children, header }) => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          contentfulHomePage {
-            siteName
-            siteDescription
-            logo {
-              file {
-                url
-              }
-            }
-            menus
-          }
-        }
-      `}
-      
-      render={data => (  
-        <> {/* Note: FB Pixel is a plugin at 'gatsby-config.js' */}
-          <Helmet> {/* 1. FB SDK for app (login, etc) -- VERIFY VERSION!!!!!, 2. FB domain verification */}
+// Navigate your browser to a page that has this code installed
+// Open the javascript console (in Chrome: right-click, Inspect Element, Console tab)
+// Type the following and press enter:
+// window.onerror("TestError: Hello world", window.location.href)
 
-
-
-
-
-
+export default () => 
   <script
     dangerouslySetInnerHTML={{ __html: `
       var _rollbarConfig = {
@@ -402,37 +373,3 @@ const Layout = ({ children, header }) => {
     `,
     }}
   />
-
-
-
-
-
-
-
-            <script async defer
-              crossorigin="anonymous"
-              src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v10.0&appId=611958516129057&autoLogAppEvents=1"
-              nonce="PFVZXkQp"
-            />
-            <meta name="facebook-domain-verification" content="mixactgwu5xh59m0q0ueqlj6zuanrj" />
-          </Helmet>
-
-          <Header
-            data={data.contentfulHomePage}
-            siteTitle={data.contentfulHomePage.siteName}
-            header={header}
-          />
-          <div>
-            <main id="home">{children}</main>
-          </div>
-        </>
-      )}
-    />
-  )
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
