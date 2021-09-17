@@ -35,7 +35,7 @@ const Layout = ({ children, header }) => {
               src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v10.0&appId=611958516129057&autoLogAppEvents=1"
               nonce="PFVZXkQp"
             />
-            <meta name="facebook-domain-verification" content="k80kka3b227qj11jguub5d6jzk3ycm" />
+            <meta name="facebook-domain-verification" content="mixactgwu5xh59m0q0ueqlj6zuanrj" />
           </Helmet>
 
           <Header
