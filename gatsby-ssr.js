@@ -32,5 +32,3 @@ export const onRenderBody = (
     />
   ])
 }
-
-export const fubar = () => {console.log("fubar")}
