@@ -10,7 +10,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => { // MAYBE TEST 'async' &
     window.sessionStorage.setItem('slug', slug);
 
     setTimeout(function () {
-      firstVideoRef.current.scrollIntoView();
+      firstVideoRef.current.scrollIntoView({ behavior: 'smooth' });
     }, 1000);
 
     // // To scroll to first video's position (after initialVideosAbove & initialVideosBelow render)
