@@ -13,8 +13,14 @@ import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
 import { ScrollToSmoothly } from "../utils/ScrollToSmoothly";
+import { RemoveCookies } from "../utils/RemoveCookies";
 
 const BlogPost = ({ data }) => {
+
+  // 0. Remove all cookies, etc
+  useEffect(() => {
+    RemoveCookies()
+  }, []); // useEffect
 
   // 1. Set position of first video, which is arrived at via the URL suffix & auto-scrolled to from the top of 'initialVideosAbove'
   const firstVideoRef = useRef(null);
