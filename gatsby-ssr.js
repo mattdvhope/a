@@ -4,7 +4,7 @@ import MessengerChat from "./src/components/MessengerChat";
 
 export const wrapPageElement = ({ element }) => (
   <>
-    {element}
+    {/*{element}*/}
     <MessengerChat />
   </>
 );
