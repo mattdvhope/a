@@ -7,7 +7,7 @@ const { spaceId, accessToken } = process.env;
 module.exports = {
   siteMetadata: {
     title: `Relationships Thailand`,
-    description: `A whole new beginning....`,
+    description: `เราได้สร้างพื้นที่เว็บสำหรับผู้ที่ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับพระเยซูคริสต์`,
     author: `Bangkok Media Team`,
     siteUrl: `https://relationshipsthailand.netlify.app/`,
   },
