@@ -87,8 +87,8 @@ function Contact(props) {
 
           <a href="http://m.me/relationshipsthailand"><img className="messengerLogo" src={messengerLogo} /></a>
           <a href="http://m.me/relationshipsthailand"><div className="chat">{chat}</div></a>
-          <a href={"fb://page/?id=106619367753772"}><img className="facebook-circular-logo" src={facebookCircularLogo} /></a>
-          <a href={"fb://page/?id=106619367753772"}><div className="follow-us">{followUs}</div></a>
+          <a href={"fb://profile/?id=106619367753772"}><img className="facebook-circular-logo" src={facebookCircularLogo} /></a>
+          <a href={"fb://profile/?id=106619367753772"}><div className="follow-us">{followUs}</div></a>
 
         </div>
       </div>
