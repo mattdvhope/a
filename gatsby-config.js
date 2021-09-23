@@ -9,7 +9,7 @@ module.exports = {
     title: `Relationships Thailand`,
     description: `เราได้สร้างพื้นที่เว็บสำหรับผู้ที่ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับพระเยซูคริสต์`,
     author: `Bangkok Media Team`,
-    siteUrl: `https://relationshipsthailand.netlify.app/`,
+    siteUrl: `https://relationshipsthailand.org/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
