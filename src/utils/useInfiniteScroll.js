@@ -7,6 +7,7 @@ const useInfiniteScroll = (elementsFromScrolling) => {
 
   // Add elements above & below when window Y-ends reached
   useEffect(() => {
+
     const handleScroll = () => {
       if (!ReachedBottomOfDoc()) return;
       setIsFetching(true);

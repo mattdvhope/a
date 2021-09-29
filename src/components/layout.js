@@ -3,10 +3,9 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css";
 import Helmet from "react-helmet";
-import { ReactRollbarSDK } from "./ReactRollbarSDK";
 
 import Header from "./header"
-import Footer from "./footer";
+// import Footer from "./footer";
 import "./layout.css"
 import "../css/style.css";
 
@@ -34,7 +33,6 @@ const Layout = ({ children, header }) => {
       render={data => (  
         <>
           <Helmet>
-            {ReactRollbarSDK()}
             <script async defer
               crossorigin="anonymous"
               src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v10.0&appId=611958516129057&autoLogAppEvents=1"

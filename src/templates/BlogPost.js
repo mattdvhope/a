@@ -12,7 +12,6 @@ import YoutubeHolder from "./YoutubeHolder"
 import SetFirstVideoPosition from "../utils/SetFirstVideoPosition";
 import RetainPosOrJumpToTop from "../utils/RetainPosOrJumpToTop";
 import useInfiniteScroll from "../utils/useInfiniteScroll"; // custom Hook
-import { ScrollToSmoothly } from "../utils/ScrollToSmoothly";
 import { RemoveCookies } from "../utils/RemoveCookies";
 
 const BlogPost = ({ data }) => {
@@ -26,20 +25,20 @@ const BlogPost = ({ data }) => {
   const firstVideoRef = useRef(null);
   SetFirstVideoPosition(firstVideoRef, data.contentfulBlogs.slug);
 
-  // 2. Set 'initial' videos above and below the first video
+  // // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
   const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
 
-  // 3a. Set infinite scrolling. Scrolling wkll create 'more' videos (from BlogPost.js) above & below
+  // // 3a. Set infinite scrolling. Scrolling will create 'more' videos (from BlogPost.js) above & below
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
   const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data);
   
-  // 3b. Actually attach these new components to the DOM
+  // // 3b. Actually attach these new components to the DOM
   const [moreVidsAbv, setMoreVidsAbv] = useState(null);
   const [moreVidsBlw, setMoreVidsBlw] = useState(null);
 
-  // 4. Obtain number of videos below to know when to jump to the top AND whether to add UnderLastVideo() elements.
+  // // 4. Obtain number of videos below to know when to jump to the top AND whether to add UnderLastVideo() elements.
   const numberOfInitVidsBelow = initialVideosBelow ? initialVideosBelow.props.children.length : null
   const numberOfMoreVidsBelow = moreVideosBelow ? moreVideosBelow.props.children.length : null
   const numberOfVideosBelow = numberOfInitVidsBelow + numberOfMoreVidsBelow;
@@ -73,6 +72,14 @@ const BlogPost = ({ data }) => {
         </div>
         {initialVideosBelow}
         {moreVidsBlw}
+
+        <div style={{ position: `fixed`, bottom: `0px`, width: `60px`, right: `1.2em` }}>
+          <a href="http://m.me/relationshipsthailand">
+            <img src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/messenger@2x.png"/>
+          </a>
+        </div>
+
+
       </div>
     </Layout>
   )
