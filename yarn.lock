@@ -5213,13 +5213,13 @@ gatsby-page-utils@^1.14.0:
     lodash "^4.17.21"
     micromatch "^4.0.4"
 
-gatsby-plugin-google-gtag@^3.14.0:
+gatsby-plugin-google-tagmanager@^3.14.0:
   version "3.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.14.0.tgz#1efba174eb70dd7623d96494d2b1588af630c1ba"
-  integrity sha512-EbEMzUTvVyKV5b7+wMdceJYVmxqivxE2FA9PgVnBBETY/v8zvPfjjijmFIGjYYIdLpIN7YYDZgd9zAlOY7heIg==
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-3.14.0.tgz#c3094272aeeccda4c88b87b0f6749c8f8b1fe564"
+  integrity sha512-rASL5Y9HRXMxcNg3oJRbbfqJLO8CyrYPjQRleiAsE7iBK51uiPGMUVcj6HNqHtniqM9q7YkzX6E42fGUA8GDLQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    minimatch "^3.0.4"
+    web-vitals "^1.1.2"
 
 gatsby-plugin-image@^1.13.0:
   version "1.14.0"
@@ -10998,6 +10998,11 @@ watchpack@^2.2.0:
   dependencies:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
+
+web-vitals@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
+  integrity sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

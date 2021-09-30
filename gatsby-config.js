@@ -28,20 +28,30 @@ module.exports = {
         accessToken
       }
     },
+
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-KDJH1FJ4VY", // Google Analytics / GA
-        ],
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-        },
-      },
+        id: "GTM-5DZX7FW",
+        includeInDevelopment: false,
+      }
     },
+
+
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
+    //     trackingIds: [
+    //       "G-KDJH1FJ4VY", // Google Analytics / GA
+    //     ],
+    //     // This object is used for configuration specific to this plugin
+    //     pluginConfig: {
+    //       // Puts tracking script in the head instead of the body
+    //       head: true,
+    //     },
+    //   },
+    // },
     {
       resolve: `@hutsoninc/gatsby-plugin-facebook-pixel`,
       options: {
