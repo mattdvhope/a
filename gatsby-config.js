@@ -34,6 +34,7 @@ module.exports = {
       options: {
         id: "GTM-5DZX7FW",
         includeInDevelopment: false,
+        enableWebVitalsTracking: true,
       }
     },
 
