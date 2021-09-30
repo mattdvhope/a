@@ -6,10 +6,10 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Relationships Thailand`,
+    description: `เราได้สร้างพื้นที่เว็บสำหรับผู้ที่ต้องการเรียนรู้เพิ่มเติมเกี่ยวกับพระเยซูคริสต์`,
+    author: `Bangkok Media Team`,
+    siteUrl: `https://relationshipsthailand.org/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
