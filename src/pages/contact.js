@@ -14,9 +14,12 @@ const Contact = () => {
       'https://e2doix.herokuapp.com/feed' //,
       // {headers: {'X-CSRFToken': csrftoken}}
     );
-    fetch(request, {
-      method: 'POST',
-      // body: _data
+    fetch(`https://e2doix.herokuapp.com/feed`, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(_data)
     }).then(function(response) {
       console.log(response);
