@@ -11,13 +11,13 @@ const Contact = () => {
     }
 
     const request = new Request(
-      'https://e2doix.herokuapp.com/feed',
-      {headers: {Host: 'www.relationshipsthailand.org'}}
+      'https://e2doix.herokuapp.com/feed' //,
+      // {headers: {'X-CSRFToken': csrftoken}}
     );
     fetch(request, {
       method: 'POST',
-      body: _data
-      // body: JSON.stringify(_data)
+      // body: _data
+      body: JSON.stringify(_data)
     }).then(function(response) {
       console.log(response);
     }).catch(function(error) {
