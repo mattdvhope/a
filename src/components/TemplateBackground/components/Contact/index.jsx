@@ -1,22 +1,20 @@
 import React from "react";
 import "./Contact.css";
-import "../../../Contact2/globals.css";
-import "../../../Contact2/styleguide.css";
 
 function Contact(props) {
-  const { title, text1, messengerLogo, chat } = props;
-  
+  const { title, text1, group5, messenger } = props;
+
   return (
     <div className="container-center-horizontal">
       <div className="contact screen">
         <div className="overlap-group">
           <img
             className="vector"
-            src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/vector@1x.svg"
+            src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/vector@1x.svg"
           />
           <img
-            className="big-dark-rectangle"
-            src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/rectangle-1@1x.svg"
+            className="rectangle-1"
+            src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/rectangle-1@1x.svg"
           />
           <img
             className="rectangle-37"
@@ -74,23 +72,20 @@ function Contact(props) {
             className="rectangle-51"
             src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/rectangle-51@2x.svg"
           />
-          <img className="group-5" src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/61392a07173bee6db2de22b4/img/group-5-1@2x.png" />
+          <img className="group-5" src={group5} />
           <img
             className="green-rectangle"
             src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/green-rectangle@1x.svg"
           />
-          <h1 className="title notosans-bold-white-26px">{title}</h1>
           <div className="text-1">{text1}</div>
-
-          <a href="http://m.me/relationshipsthailand"><img className="messengerLogo" src={messengerLogo} /></a>
-          <a href="http://m.me/relationshipsthailand"><div className="chat">{chat}</div></a>
-          <a href="http://m.me/relationshipsthailand">
-            <img
-              className="jesus-icon"
-              src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/jesus-icon@2x.svg"
-            />
-          </a>
-
+          <h1 className="title">{title}</h1>
+        </div>
+        <div className="overlap-group1">
+          <img className="messenger" src={messenger} />
+          <img
+            className="jesus-icon"
+            src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/jesus-icon@2x.svg"
+          />
         </div>
       </div>
     </div>
