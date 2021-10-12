@@ -69,7 +69,7 @@ const BlogPost = ({ data }) => {
 
         <div style={{ position: `fixed`, bottom: `0px`, width: `60px`, right: `1.2em` }}>
           <a href="http://m.me/relationshipsthailand">
-            <img src="https://anima-uploads.s3.amazonaws.com/projects/61392976e87edf415321004d/releases/613ef1fcd9c4d2c5e96f0e0f/img/messenger@2x.png"/>
+            <img src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/messenger@2x.png"/>
           </a>
         </div>
 
