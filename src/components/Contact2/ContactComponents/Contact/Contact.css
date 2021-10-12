@@ -14,6 +14,20 @@
   width: 600px;
 }
 
+.overlap-group1 {
+  height: 1030px;
+  margin-top: -50px;
+  position: relative;
+  width: 600px;
+}
+
+.jesus-icon {
+  height: 1130px;
+  margin-top: -420px;
+  position: relative;
+  width: 450px;
+}
+
 @media screen and (max-width: 545px) {
   .overlap-group {
     margin-left: -3%;
@@ -182,7 +196,7 @@
   width: 1px;
 }
 
-.title {
+.title-of-template {
   left: 175px;
   letter-spacing: 0;
   position: absolute;
@@ -190,7 +204,7 @@
   width: 201px;
 }
 
-.text-1 {
+.text-1-template {
   color: var(--caribbean-green);
   font-family: var(--font-family-noto_sans);
   font-size: var(--font-size-xl);
@@ -210,7 +224,7 @@
   width: 65px;
 }
 
-.chat {
+.chat-of-template {
   color: var(--white);
   font-family: var(--font-family-noto_sans);
   font-size: var(--font-size-xl);

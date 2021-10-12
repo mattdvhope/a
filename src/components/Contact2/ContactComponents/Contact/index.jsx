@@ -79,17 +79,21 @@ function Contact(props) {
             className="green-rectangle"
             src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/green-rectangle@1x.svg"
           />
-          <h1 className="title notosans-bold-white-26px">{title}</h1>
-          <div className="text-1">{text1}</div>
+          <h1 className="title-of-template notosans-bold-white-26px">{title}</h1>
+          <div className="text-1-template">{text1}</div>
 
-          <a href="http://m.me/relationshipsthailand"><img className="messengerLogo" src={messengerLogo} /></a>
-          <a href="http://m.me/relationshipsthailand"><div className="chat">{chat}</div></a>
-          <a href="http://m.me/relationshipsthailand">
-            <img
-              className="jesus-icon"
-              src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/jesus-icon@2x.svg"
-            />
-          </a>
+
+          <div className="overlap-group1">
+            <a href="http://m.me/relationshipsthailand"><img className="messengerLogo" src={messengerLogo} /></a>
+          </div>
+
+          <div className="jesus-icon">
+            <a href="http://m.me/relationshipsthailand">
+              <img
+                src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/jesus-icon@2x.svg"
+              />
+            </a>
+          </div>
 
         </div>
       </div>
