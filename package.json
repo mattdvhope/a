@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "มิตรภาพเคียงข้างคุณ site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "MM",
   "dependencies": {
     "@hutsoninc/gatsby-plugin-facebook-pixel": "^1.0.1",
     "bootstrap": "^5.1.1",
