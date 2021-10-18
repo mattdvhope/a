@@ -3,3 +3,86 @@ body {
  background-color: #0E1A36;
  color: #fff;
 }
+
+
+@media screen and (min-width: 767px) {
+  .blog-container {
+    border-radius: 15px;
+    padding: 45px;
+    color: #0E1A36;
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .blog-container {
+    border-radius: 10px;
+    padding: 9px;
+    color: #0E1A36;
+    background-color: #fff;
+  }
+}
+
+.blog-content {
+  display: inline-block;
+}
+
+.video-box {
+  margin-left: auto;
+  margin-light: auto;
+  outline: 0.3rem solid #EEEBEB;
+}
+
+@media screen and (min-width: 930px) {
+  .video-box {
+    height: 22vw;
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .video-box {
+    height: 25vw;
+    width: 38vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .video-box {
+    height: 29vw;
+    width: 48vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .video-box {
+    height: 49vw;
+    width: 81vw;
+  }
+}
+
+.green-button {
+  color: #0E1A36;
+  border-color: #00C185;
+  background-color: #00C185;
+}
+
+@media screen and (min-width: 768px) {
+  .text-and-button {
+    float: right;
+    margin-left: 35px;
+  }
+  .text-under-video {
+    width: 25vw;
+  }
+  .green-button {
+    width: 10em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .green-button {
+    width: 13em;
+  }
+}
+

@@ -1,16 +1,11 @@
 import React from "react"
+import "./BlogPost.css";
 
 const YoutubeVideo = ({src, title}) => {
 	return (
 		<iframe // Youtube video 
       id="FrameHolder"
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        height: `49vw`,
-        width: `81vw`,
-        outline: `0.3rem solid #EEEBEB`,
-      }}
+      className="video-box" 
       src={src}
       title={title}
       frameBorder="0"

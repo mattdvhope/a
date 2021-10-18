@@ -4,6 +4,7 @@ import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
 import YoutubeVideo from "./YoutubeVideo";
 import ButtonForPrompt from "./ButtonForPrompt";
+import "./BlogPost.css";
 
 const YoutubeHolder = ({data}) => {
   const prompts = data.promptsForResponse;
@@ -27,7 +28,7 @@ const YoutubeHolder = ({data}) => {
     } else if (promptsElementNum !== prompts.length-1) {
       return (
         <div>
-          <h2 
+          <h2
             onClick={() => {
               setPrompt(promptsElementNum - 1);
               // scrollToTopOfBlog();
@@ -56,15 +57,18 @@ const YoutubeHolder = ({data}) => {
   }
 
   return (
-    <div className="container-fluid">
-      <div>
+    <div className="container-fluid blog-container">
+      <div className="blog-content">
         <YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} title={data.title} />
-        <div
-          dangerouslySetInnerHTML={{
-            __html: prompts[promptsElementNum].promptContent.promptContent
-          }}
-        />
-        {ButtonProvidedIfNeeded()}
+        <div className="text-and-button">
+          <div
+            className="text-under-video"
+            dangerouslySetInnerHTML={{
+              __html: prompts[promptsElementNum].promptContent.promptContent
+            }}
+          />
+          {ButtonProvidedIfNeeded()}
+        </div>
       </div>
     </div>
   )

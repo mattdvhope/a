@@ -1,12 +1,12 @@
 import React from "react"
+import "./BlogPost.css";
 
 const ButtonForPrompt = ({onClick, buttonWords}) => {
 	return (
 		<button
       id="button-for-youtube-survey"
       type="button"
-      className="btn btn-outline-success"
-      style={{ color: `#0E1A36`, borderColor: `#00C185`, backgroundColor: `#00C185`, width: `13em` }}
+      className="btn btn-outline-success green-button"
       onClick={onClick}
     >
       {buttonWords}
