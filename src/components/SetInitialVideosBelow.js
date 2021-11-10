@@ -11,7 +11,7 @@ const SetInitialVideosBelow = (data) => {
   const edgesArray = data.allContentfulBlogs.edges;
   const edgesBelow = edgesArray.filter(obj => obj.node.order > orderOfInitialVideo);
   const edBlwSorted = edgesBelow.sort((a,b) => a.node.order - b.node.order)
-  const oneBelow = edBlwSorted.slice(0, 1);
+  const oneBelow = edBlwSorted.slice(0, 2);
 
   useEffect(() => {
     setInitialVideosBelow(() =>

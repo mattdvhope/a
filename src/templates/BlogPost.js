@@ -21,8 +21,8 @@ const BlogPost = ({ data }) => {
 
   // // 2. Set 'initial' videos above and below the first video
   const [initialVideosAbove, setInitialVideosAbove, initVidAbvRef] = SetInitialVideosAbove(data);
-  const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data);
-
+  const [initialVideosBelow, setInitialVideosBelow, initVidBlwRef] = SetInitialVideosBelow(data)
+  
   // // 3a. Set infinite scrolling. Scrolling will create 'more' videos (from BlogPost.js) above & below
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling);
   const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data);
@@ -53,11 +53,10 @@ const BlogPost = ({ data }) => {
     .then(res => setIsFetching(false))
     .catch(err => console.log("error: ", err));
   }
-
   return (
     <Layout header="feed">
       <SEO title="วีดีโอ" />
-      <div className="container graphics">
+      <div className="container graphics ">
         {moreVidsAbv}
         {initialVideosAbove}
         <div className="site-container blog-post" ref={firstVideoRef}>
@@ -65,15 +64,12 @@ const BlogPost = ({ data }) => {
           {numberOfVideosBelow === 0 ? UnderLastVideo() : null}
         </div>
         {initialVideosBelow}
-        {moreVidsBlw}
-
+        {/* {moreVidsBlw} */}
         <div style={{ position: `fixed`, bottom: `0px`, width: `60px`, right: `1.2em` }}>
           <a href="http://m.me/relationshipsthailand">
             <img src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/messenger@2x.png"/>
           </a>
         </div>
-
-
       </div>
     </Layout>
   )
