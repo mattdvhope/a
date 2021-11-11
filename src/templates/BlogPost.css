@@ -26,7 +26,12 @@ body {
 .blog-content {
   display: inline-block;
 }
-
+.container-fluid .blog-container{
+  margin: 1px;
+}
+.blog-container{
+  margin-bottom: 30px;
+}
 .video-box {
   margin-left: auto;
   margin-light: auto;
@@ -85,4 +90,5 @@ body {
     width: 13em;
   }
 }
+
 

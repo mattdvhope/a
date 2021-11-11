@@ -8,7 +8,7 @@ import "./BlogPost.css";
 const YoutubeHolder = ({data}) => {
   const prompts = data.promptsForResponse;
   const [promptsElementNum, setPrompt] = useState(0);
-  // const buttonWords = prompts[promptsElementNum].buttonInvitation;
+  const buttonWords = prompts[promptsElementNum].buttonInvitation;
 
   // const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
 
@@ -22,7 +22,7 @@ const YoutubeHolder = ({data}) => {
               setPrompt(promptsElementNum + 1);
               // scrollToTopOfBlog();
             }}
-            // buttonWords={buttonWords}
+            buttonWords={buttonWords}
              />
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
@@ -40,7 +40,7 @@ const YoutubeHolder = ({data}) => {
               setPrompt(promptsElementNum + 1);
               // scrollToTopOfBlog();
             }}
-            // buttonWords={buttonWords} 
+            buttonWords={buttonWords} 
             />
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
