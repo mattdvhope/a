@@ -5,6 +5,7 @@ import UnderLastVideo from "./UnderLastVideo"
 const SetMoreVideosBelow = (data) => {
   const orderOfInitialVideo = data.contentfulBlogs.order;
   const [moreVideosBelow, setMoreVideosBelow] = useState(null);
+  console.log(moreVideosBelow,"moreVideosBelowmoreVideosBelow")
   const edgesArray = data.allContentfulBlogs.edges;
   const edgesBelow = edgesArray.filter(obj => obj.node.order > orderOfInitialVideo);
   const edBlwSorted = edgesBelow.sort((a,b) => a.node.order - b.node.order)

@@ -1,9 +1,9 @@
 import React from "react"
-import "./BlogPost.css";
+import "./BlogPost.css"
 
-const ButtonForPrompt = ({onClick, buttonWords}) => {
-	return (
-		<button
+const ButtonForPrompt = ({ onClick, buttonWords }) => {
+  return (
+    <button
       id="button-for-youtube-survey"
       type="button"
       className="btn btn-outline-success green-button"

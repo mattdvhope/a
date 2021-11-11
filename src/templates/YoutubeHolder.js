@@ -8,9 +8,10 @@ import "./BlogPost.css";
 const YoutubeHolder = ({data}) => {
   const prompts = data.promptsForResponse;
   const [promptsElementNum, setPrompt] = useState(0);
+  console.log("promptsElementNum::>>",promptsElementNum)
   const buttonWords = prompts[promptsElementNum].buttonInvitation;
 
-  // const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
+  const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
@@ -20,7 +21,7 @@ const YoutubeHolder = ({data}) => {
             onClick={() => {
               fbq('trackCustom', 'ClickedFirstButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
               setPrompt(promptsElementNum + 1);
-              // scrollToTopOfBlog();
+              scrollToTopOfBlog();
             }}
             buttonWords={buttonWords}
              />
@@ -31,7 +32,7 @@ const YoutubeHolder = ({data}) => {
           <h2
             onClick={() => {
               setPrompt(promptsElementNum - 1);
-              // scrollToTopOfBlog();
+              scrollToTopOfBlog();
             }}
           >⬅️&nbsp;</h2>
           <ButtonForPrompt

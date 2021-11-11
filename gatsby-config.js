@@ -2,7 +2,9 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const { spaceId, accessToken } = process.env;
+// const { spaceId, accessToken } = process.env;
+let spaceId = "tmve4xqjqh3q"
+let accessToken = "X_DZR8DSJISFLCccZIq2sVpAP1BONaIlbU9Yqsbp5fM"
 
 module.exports = {
   siteMetadata: {
