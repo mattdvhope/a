@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ data, header }) => {
-  const [menu, setMenu] = useState(false);
-  const [slug, setSlug] = useState('');
+  const [menu, setMenu] = useState(false)
+  const [slug, setSlug] = useState("")
 
   useEffect(() => {
-    setSlug(window.sessionStorage.getItem('slug'));
-  }, []);
+    setSlug(window.sessionStorage.getItem("slug"))
+  }, [])
 
   return (
     <header className={`site-header ${menu ? "active" : ""}`}>
@@ -17,7 +17,12 @@ const Header = ({ data, header }) => {
           <div className="logo">
             <Link to={`/${slug ? slug : "eating-the-fruit"}`}>
               {data.logo.file.url ? (
-                <img src="https://anima-uploads.s3.amazonaws.com/projects/616539c48947f58aad96ebd3/releases/61653d6e40305093f6f7c53a/img/birds-no-bkgd@2x.svg" alt="logo" height="55vh" style={{ position: `absolute`, top: `7px` }}/>
+                <img
+                  src="https://anima-uploads.s3.amazonaws.com/projects/616539c48947f58aad96ebd3/releases/61653d6e40305093f6f7c53a/img/birds-no-bkgd@2x.svg"
+                  alt="logo"
+                  height="55vh"
+                  style={{ position: `absolute`, top: `7px` }}
+                />
               ) : (
                 <span>{data.siteName}</span>
               )}
@@ -38,28 +43,28 @@ const Header = ({ data, header }) => {
                   setMenu(false)
                 }}
               >
-
                 {data.menus
                   .filter(item => item === "Contact")
                   .map(t => {
-                    {/*console.log(t);*/}
+                    {
+                      /*console.log(t);*/
+                    }
                     return (
-                      <li key={t} >
+                      <li key={t}>
                         <Link to={`/contact`}>ติดต่อเรา</Link>
                       </li>
-                    );
+                    )
                   })}
 
                 {data.menus
                   .filter(item => item === "About")
                   .map(t => {
                     return (
-                      <li key={t} >
+                      <li key={t}>
                         <Link to={`/about`}>เกี่ยวกับเรา</Link>
                       </li>
-                    );
+                    )
                   })}
-
               </ul>
             </div>
           ) : (
@@ -69,37 +74,37 @@ const Header = ({ data, header }) => {
                   setMenu(false)
                 }}
               >
+                {data.menus
+                  .filter(item => item === "Blogs")
+                  .map(t => {
+                    return (
+                      <li key={t}>
+                        <Link to={`/${slug ? slug : "eating-the-fruit"}`}>
+                          วิดีโอ
+                        </Link>
+                      </li>
+                    )
+                  })}
 
                 {data.menus
-                .filter(item => item === "Blogs")
-                .map(t => {
-                  return (
-                    <li key={t}>
-                      <Link to={`/${slug ? slug : "eating-the-fruit"}`}>วิดีโอ</Link>
-                    </li>
-                  );
-                })}
+                  .filter(item => item === "Contact")
+                  .map(t => {
+                    return (
+                      <li key={t}>
+                        <Link to={`/contact`}>ติดต่อเรา</Link>
+                      </li>
+                    )
+                  })}
 
                 {data.menus
-                .filter(item => item === "Contact")
-                .map(t => {
-                  return (
-                    <li key={t} >
-                      <Link to={`/contact`}>ติดต่อเรา</Link>
-                    </li>
-                  );
-                })}
-
-                {data.menus
-                .filter(item => item === "About")
-                .map(t => {
-                  return (
-                    <li key={t} >
-                      <Link to={`/about`}>เกี่ยวกับเรา</Link>
-                    </li>
-                  );
-                })}
-
+                  .filter(item => item === "About")
+                  .map(t => {
+                    return (
+                      <li key={t}>
+                        <Link to={`/about`}>เกี่ยวกับเรา</Link>
+                      </li>
+                    )
+                  })}
               </ul>
             </div>
           )}

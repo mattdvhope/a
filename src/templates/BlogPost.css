@@ -29,8 +29,18 @@ body {
 .container-fluid .blog-container{
   margin: 1px;
 }
-.blog-container{
-  margin-bottom: 30px;
+.site-container {
+  padding: 80px 0 0px 0;
+}
+.site-container > .container{
+  padding: 80px 0 0px 0;
+  margin-top: 0 !important;
+}
+.site-container .container.this-eol{
+  padding: 0px 0 80px 0;
+}
+.container-center-horizontal > *{
+  justify-content: center;
 }
 .video-box {
   margin-left: auto;

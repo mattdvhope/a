@@ -22,6 +22,7 @@ const UnderLastVideo = () => (
     <hr />
     <hr />
     <hr />
+    <hr /> 
     <hr />
     <hr />
     <hr />
@@ -36,8 +37,7 @@ const UnderLastVideo = () => (
     <hr />
     <hr />
     <hr />
-    <hr />
-    <hr />
+    <hr /> 
     <hr />
     <hr />
     <hr />

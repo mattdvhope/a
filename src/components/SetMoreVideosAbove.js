@@ -13,17 +13,13 @@ const SetMoreVideosAbove = data => {
   edAbvSorted.pop()
 
   useLayoutEffect(() => {
-    if (edAbvSorted) {
+    if (edAbvSorted) { 
       // in case there are no more videos above
       setMoreVideosAbove(() => (
         <div className="site-container blog-post">
           {edAbvSorted.map(({ node }, i) => (
             <div key={i} className="container">
               <YoutubeHolder data={node} />
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
           ))}
         </div>
