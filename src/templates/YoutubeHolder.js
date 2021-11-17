@@ -57,6 +57,61 @@ const YoutubeHolder = ({data}) => {
         </div>)
     }
   }
+  
+
+  
+  const promptss = data.promptsForResponse;
+  const [promptsEleNum, setPrompts] = useState(0);
+  
+  console.log("promptsEleNum::>>",promptsEleNum)
+  const buttonWord = promptss[promptsEleNum]?.buttonInvitation;
+
+  const scrollToTopOOfBlogs = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
+
+  const ButtonProvidedNeeded = () => {
+    if (promptsEleNum === 1) {
+      return (
+        <div>
+          <ButtonForPrompt
+            onClick={() => {
+              fbq('trackCustom', 'ClickedLastButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
+              setPrompts(promptsEleNum + 1);
+              scrollToTopOOfBlogs();
+            }}
+            buttonWord={buttonWord}
+             />
+        </div>)
+    } else if (promptsEleNum !== promptss.length - 1) {
+      return (
+        <div>
+          <h2
+            onClicks={() => {
+              setPrompts(promptsEleNum - 1);
+              scrollToTopOOfBlogs();
+            }}
+          >⬅️&nbsp;</h2>
+          <ButtonForPrompt
+            onClick={() => {
+              fbq('trackCustom', 'ClickedNextButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
+              setPrompts(promptsEleNum + 1);
+              // scrollToTopOfBlogs();
+            }}
+            buttonWord={buttonWord} 
+            />
+        </div>)
+    } else if (promptsEleNum === promptss.length - 1) {
+      return (
+        <div>
+          <br/>
+          <h1
+            onClicks={() => {
+              setPrompts(promptsEleNum - 1);
+              // scrollToTopOfBlog();
+            }}
+          >⬅️&nbsp;</h1>
+        </div>)
+    }
+  }
 
   return (
     <div className="container-fluid blog-container">
@@ -69,12 +124,13 @@ const YoutubeHolder = ({data}) => {
               __html: prompts[promptsElementNum].promptContent.promptContent
             }}
           />
-          {ButtonProvidedIfNeeded()}
+          {ButtonProvidedIfNeeded(),
+          ButtonProvidedNeeded()}
         </div>
       </div>
     </div>
   )
 
-}
+} 
 
-export default YoutubeHolder
+export default YoutubeHolder;

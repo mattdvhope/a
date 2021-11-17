@@ -69,7 +69,7 @@ const Header = ({ data, header }) => {
             </div>
           ) : (
             <div className="menu">
-              <ul
+              <ul 
                 onClick={() => {
                   setMenu(false)
                 }}
@@ -117,9 +117,9 @@ const Header = ({ data, header }) => {
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
-
 Header.defaultProps = {
   siteTitle: ``,
 }
 
 export default Header
+

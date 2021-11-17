@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
+import {  graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./BlogPost.css"
@@ -84,7 +84,7 @@ const BlogPost = ({ data }) => {
         >
           <a href="http://m.me/relationshipsthailand">
             <img src="https://anima-uploads.s3.amazonaws.com/projects/616543403583a3b2690a0d78/releases/6165436940305093f6f7c5e9/img/messenger@2x.png" />
-          </a>
+           </a>
         </div>
       </div>
     </Layout>
@@ -118,7 +118,6 @@ export const pageQuery = graphql`
         buttonInvitation
       }
     }
-
     contentfulHomePage {
       siteUrl
     }
