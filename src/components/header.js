@@ -46,9 +46,6 @@ const Header = ({ data, header }) => {
                 {data.menus
                   .filter(item => item === "Contact")
                   .map(t => {
-                    {
-                      /*console.log(t);*/
-                    }
                     return (
                       <li key={t}>
                         <Link to={`/contact`}>ติดต่อเรา</Link>

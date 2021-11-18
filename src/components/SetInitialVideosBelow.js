@@ -17,7 +17,8 @@ const SetInitialVideosBelow = (data) => {
     setInitialVideosBelow(() =>
       <div className="site-container blog-post">
         {oneBelow
-          .map(({ node }, i) => {
+          .map(({ node }, i) => { 
+            console.log(node)
             if (edgesBelow.length !== 1) {
               return (
                 <div key={i} className="container this-eol" ref={initVidBlwRef}>
@@ -32,6 +33,7 @@ const SetInitialVideosBelow = (data) => {
                 </div>
               )
             }
+            
           } // map
         )}
       </div>

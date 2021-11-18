@@ -16,7 +16,7 @@ const SetFirstVideoPosition = (firstVideoRef, slug) => { // MAYBE TEST 'async' &
     .then(res => {
       if (firstVidIsInPosition) return; // this may not be necessary, but is there for good measure
       const topOfFirstVid = firstVideoRef.current.getBoundingClientRect().top;
-      ScrollToSmoothly(topOfFirstVid, 1200);
+      ScrollToSmoothly(topOfFirstVid, 100);
       setFirstVidIsInPosition(true); // this may not be necessary, but is there for good measure
     })
   }, []); // useEffect
