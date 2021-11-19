@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState,  useRef } from "react"
 import {  graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -26,8 +26,8 @@ const BlogPost = ({ data }) => {
 
   // // 3a. Set infinite scrolling. Scrolling will create 'more' videos (from BlogPost.js) above & below
   const [isFetching, setIsFetching] = useInfiniteScroll(elementsFromScrolling)
-  const [moreVideosAbove, setMoreVideosAbove] = SetMoreVideosAbove(data)
-  const [moreVideosBelow, setMoreVideosBelow] = SetMoreVideosBelow(data)
+  const [moreVideosAbove] = SetMoreVideosAbove(data)
+  const [moreVideosBelow] = SetMoreVideosBelow(data)
 
   // // 3b. Actually attach these new components to the DOM
   const [moreVidsAbv, setMoreVidsAbv] = useState(null)

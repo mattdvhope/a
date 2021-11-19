@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
 import YoutubeVideo from "./YoutubeVideo";
 import ButtonForPrompt from "./ButtonForPrompt";
+
 import "./BlogPost.css";
 
 const YoutubeHolder = ({data}) => {
   const prompts = data.promptsForResponse;
   const [promptsElementNum, setPrompt] = useState(0);
-  console.log("promptsElementNum::>>",promptsElementNum)
-  const buttonWords = prompts[promptsElementNum].buttonInvitation;
-
+  const [buttonName,setButtonName] =useState("")
+  useEffect(() => {
+    setButtonName(prompts[promptsElementNum].buttonInvitation);
+  },[])
   const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
-
+console.log(promptsElementNum,"promptsElementNum")
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
       return (
@@ -23,7 +25,7 @@ const YoutubeHolder = ({data}) => {
               setPrompt(promptsElementNum + 1);
               scrollToTopOfBlog();
             }}
-            buttonWords={buttonWords}
+            buttonName={buttonName}
              />
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
@@ -39,9 +41,9 @@ const YoutubeHolder = ({data}) => {
             onClick={() => {
               fbq('trackCustom', 'ClickedNextButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
               setPrompt(promptsElementNum + 1);
-              // scrollToTopOfBlog();
+              scrollToTopOfBlog();
             }}
-            buttonWords={buttonWords} 
+            buttonName={buttonName} 
             />
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
@@ -51,7 +53,7 @@ const YoutubeHolder = ({data}) => {
           <h1
             onClick={() => {
               setPrompt(promptsElementNum - 1);
-              // scrollToTopOfBlog();
+              scrollToTopOfBlog();
             }}
           >⬅️&nbsp;</h1>
         </div>)
@@ -59,7 +61,7 @@ const YoutubeHolder = ({data}) => {
   }
   
 
-  
+  console.log("buttonNamebuttonNamebuttonNamebuttonNamebuttonName",buttonName)
   const promptss = data.promptsForResponse;
   const [promptsEleNum, setPrompts] = useState(0);
   
@@ -78,7 +80,7 @@ const YoutubeHolder = ({data}) => {
               setPrompts(promptsEleNum + 1);
               scrollToTopOOfBlogs();
             }}
-            buttonWord={buttonWord}
+            buttonName={buttonName}
              />
         </div>)
     } else if (promptsEleNum !== promptss.length - 1) {
@@ -96,7 +98,7 @@ const YoutubeHolder = ({data}) => {
               setPrompts(promptsEleNum + 1);
               // scrollToTopOfBlogs();
             }}
-            buttonWord={buttonWord} 
+            buttonName={buttonName} 
             />
         </div>)
     } else if (promptsEleNum === promptss.length - 1) {

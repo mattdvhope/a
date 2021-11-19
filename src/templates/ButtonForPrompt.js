@@ -1,7 +1,8 @@
 import React from "react"
 import "./BlogPost.css"
 
-const ButtonForPrompt = ({ onClick, buttonWords }) => {
+const ButtonForPrompt = ({ onClick, buttonName }) => {
+  console.log(buttonName,"dsfsasasassssssssssssssssssssssssd")
   return (
     <button
       id="button-for-youtube-survey"
@@ -9,7 +10,7 @@ const ButtonForPrompt = ({ onClick, buttonWords }) => {
       className="btn btn-outline-success green-button"
       onClick={onClick}
     >
-      {buttonWords}
+      {buttonName}
     </button>
   )
 }

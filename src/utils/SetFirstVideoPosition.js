@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { ScrollToSmoothly } from "./ScrollToSmoothly";
 
 // To set the first video's position AFTER the DOM loaded...////

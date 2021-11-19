@@ -1,18 +1,15 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import "bootstrap/dist/css/bootstrap.css";
-import Helmet from "react-helmet";
+import "bootstrap/dist/css/bootstrap.css"
+import Helmet from "react-helmet"
 
 import Header from "./header"
 // import Footer from "./footer";
 import "./layout.css"
-import "../css/style.css";
+import "../css/style.css"
 
 const Layout = ({ children, header }) => {
-
-  
-
   return (
     <StaticQuery
       query={graphql`
@@ -29,11 +26,13 @@ const Layout = ({ children, header }) => {
           }
         }
       `}
-      
-      render={data => (  
+      render={data => (
         <>
           <Helmet>
-            <meta name="facebook-domain-verification" content="mixactgwu5xh59m0q0ueqlj6zuanrj" />
+            <meta
+              name="facebook-domain-verification"
+              content="mixactgwu5xh59m0q0ueqlj6zuanrj"
+            />
           </Helmet>
 
           <Header
@@ -48,7 +47,7 @@ const Layout = ({ children, header }) => {
       )}
     />
   )
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

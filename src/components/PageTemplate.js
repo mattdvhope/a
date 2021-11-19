@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import Layout from "./layout"
 import Seo from "./seo"
 import ContactApp from "./Contact2/ContactApp"
