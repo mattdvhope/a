@@ -61,11 +61,9 @@ console.log(promptsElementNum,"promptsElementNum")
   }
   
 
-  console.log("buttonNamebuttonNamebuttonNamebuttonNamebuttonName",buttonName)
   const promptss = data.promptsForResponse;
   const [promptsEleNum, setPrompts] = useState(0);
   
-  console.log("promptsEleNum::>>",promptsEleNum)
   const buttonWord = promptss[promptsEleNum]?.buttonInvitation;
 
   const scrollToTopOOfBlogs = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null

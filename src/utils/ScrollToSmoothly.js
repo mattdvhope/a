@@ -11,7 +11,8 @@ export const ScrollToSmoothly = (pos, time) => {
         window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
     } else {
         window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time));
-    }
+
+      }
     if (progress < time) {
         window.requestAnimationFrame(step);
     } else {

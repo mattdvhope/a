@@ -10,4 +10,4 @@ const ReachedBottomOfDoc = () => {
   return InRangeOfDocHeight(heightAboveWindowScreen, windowScreenHeight, heightOfDocument);
 }
 
-export default ReachedBottomOfDoc;
+export default ReachedBottomOfDoc; 

@@ -11,4 +11,3 @@ const youtubeId = (youtubeUrl) => {
   }
   return video_id    
 }
-
