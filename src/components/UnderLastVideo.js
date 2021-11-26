@@ -4,7 +4,6 @@ const UnderLastVideo = () => (
   <>
     <br />
     <hr />
-    <hr />
     <h2
       style={{
         color: `#00C185`,

@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.css"
 import Helmet from "react-helmet"
 
 import Header from "./header"
-// import Footer from "./footer";
 import "./layout.css"
 import "../css/style.css"
 

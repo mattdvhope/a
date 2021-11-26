@@ -2,8 +2,6 @@ export const ScrollToSmoothly = (pos, time) => {
   var currentPos = window.pageYOffset;
   var start = null;
   if(time == null) time = 500;
-  // var pos = +pos
-  // var time = +time;
   window.requestAnimationFrame(function step(currentTime) {
     start = !start ? currentTime : start;
     var progress = currentTime - start;
