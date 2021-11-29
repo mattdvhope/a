@@ -14,7 +14,7 @@ const YoutubeHolder = ({data}) => {
     setButtonName(prompts[promptsElementNum].buttonInvitation);
   },[])
   const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
-console.log(promptsElementNum,"promptsElementNum")
+
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
       return (
